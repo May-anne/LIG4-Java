@@ -14,13 +14,18 @@ public class Tabuleiro {
 		}	
 	}
 	
-	public void checaSituacao() {//Verifica se peças podem ou não ser chamadas
-		
+	public boolean checaMovimento(int coluna, int index) {//TODO Verifica se peças podem ou não ser colocadas
+		return true; //Retorna true ou false dependendo da situação
 	}
 	
-	public String checaVitoria() {
+	public String checaVitoria(int index) { //TODO verifica se após jogada alguém ganhou
 		
 		return "Vitória";
 	}
 	
+	
+	public void alteraTab(int index) { //TODO Altera situacao do tabuleiro(colocando index do jogador na posição escolhida
+		
+		
+	}
 }
