@@ -20,7 +20,7 @@ public class Tabuleiro {
 	
 	public String checaVitoria() {
 		
-		return "String";
+		return "Vitória";
 	}
 	
 }
