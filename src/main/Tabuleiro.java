@@ -4,14 +4,13 @@ public class Tabuleiro {
 
 	private int colunas=7,linhas=6;
 	private int[][] matrizPecas=new int[this.linhas][this.colunas];
-	
-	public Tabuleiro() { //Construtor
-		
-		for(int x = 0;x<this.linhas;x++) {
-			for(int y = 0;y<this.linhas;y++) {
-				matrizPecas[x][y] = 0;
-			}
-		}	
+
+	public int getColunas(){
+		return colunas;
+	}
+
+	public int getLinhas(){
+		return linhas;
 	}
 	
 	public boolean checaMovimento(int coluna, int index) {//TODO Verifica se peças podem ou não ser colocadas
@@ -26,6 +25,13 @@ public class Tabuleiro {
 	
 	public void alteraTab(int index) { //TODO Altera situacao do tabuleiro(colocando index do jogador na posição escolhida
 		
-		
+	}
+
+	public Tabuleiro() { //Construtor
+		for(int x = 0; x < this.linhas; x++) {
+			for(int y = 0; y < this.colunas; y++) {
+				matrizPecas[x][y] = 0;
+			}
+		}	
 	}
 }
