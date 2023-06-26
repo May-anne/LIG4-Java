@@ -63,23 +63,62 @@ public class Tabuleiro {
 		
 	}
 	
-	public String checaVitoria(int index) { //TODO verifica se após jogada alguém ganhou
-		//for(int x = 0; x<this.linhas)
-		return "Vitória";
+	public boolean checaVitoria(int index) { //TODO verifica se após jogada alguém ganhou
+		
+		//Verificação vertical
+
+		for(int i = 0; i<this.linhas;i++){
+			for(int j = 0; j<this.colunas-3;j++){
+				if(this.matrizPecas[i][j] == index && this.matrizPecas[i+1][j] == index && this.matrizPecas[i+2][j] == index && this.matrizPecas[i+3][j] == index )
+					return true;
+			}
+		}
+
+
+		//Verificação horizontal
+
+		for(int i = 0; i<this.linhas-3;i++){
+			for(int j = 0; j<this.colunas;j++){
+				if(this.matrizPecas[i][j] == index && this.matrizPecas[i][j+1] == index && this.matrizPecas[i][j+2] == index && this.matrizPecas[i][j+3] == index )
+					return true;
+			}
+		}
+
+
+		//Horizontal Cima - Baixo
+
+		for(int i = 0; i<this.linhas-3;i++){
+			for(int j = 0; j<this.colunas-3;j++){
+				if(this.matrizPecas[i][j] == index && this.matrizPecas[i+1][j+1] == index && this.matrizPecas[i+2][j+2] == index && this.matrizPecas[i+3][j+3] == index )
+					return true;
+			}
+		}
+	
+		//Horizontal Baixo - Cima
+
+		for(int i = 0; i<this.linhas;i++){
+			for(int j = 0; j<this.colunas-3;j++){
+				if(this.matrizPecas[i][j] == index && this.matrizPecas[i-1][j+1] == index && this.matrizPecas[i-2][j+2] == index && this.matrizPecas[i-3][j+3] == index )
+					return true;
+			}
+		}
+
+		return false;
 	}
 	
 	
 	public int alteraTab(int index,int coluna) {
 		
 		//TODO Altera situacao do tabuleiro(colocando index do jogador na posição escolhida
-		for(int x=0; x<this.linhas; x++) {
-			if(this.matrizPecas[x+1][coluna]!=0)//Verifica se a próxima casa da coluna tem alguma peça, se tiver, a peça alterada deve ser a atual
-				this.matrizPecas[x][coluna] = index;
+		for(int x=0; x<this.linhas-1; x++) {
+			if(this.matrizPecas[x+1][coluna-1]!=0){//Verifica se a próxima casa da coluna tem alguma peça, se tiver, a peça alterada deve ser a atual
+				this.matrizPecas[x][coluna-1] = index;
 				imprimeMatriz();
 				return 1;
+			}
 		}
 		
-		this.matrizPecas[this.linhas][coluna] = index;
+		this.matrizPecas[this.linhas-1][coluna-1] = index;
 		imprimeMatriz();//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
 		return 1;
 		

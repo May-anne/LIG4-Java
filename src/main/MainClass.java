@@ -9,6 +9,8 @@ public class MainClass {
 		Pessoa jogador2 = new Pessoa("Jogador2",2);
 		
 		jogador1.escolheColuna(1, jogo);
+		jogador2.escolheColuna(1, jogo);
+
 
 	}
 
