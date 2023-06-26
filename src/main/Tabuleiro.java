@@ -2,17 +2,32 @@ package main;
 
 public class Tabuleiro {
 
-	private int colunas=7,linhas=6;
+	private int colunas=7, linhas=6;
 	private int[][] matrizPecas=new int[this.linhas][this.colunas];
+	Peça [][]tab = new Peça[linhas][colunas];
 	
 	public Tabuleiro() { //Construtor
 		for(int x = 0; x < this.linhas; x++) {
 			for(int y = 0; y < this.colunas; y++) {
-				matrizPecas[x][y] = 0;
+				tab[x][y] = null;
 			}
 		}	
 	}
 	
+	public void exibirTab(){
+		for(int linha = 0; linha < linhas; linha++){
+			System.out.print("|");
+			for(int coluna = 0; coluna < colunas; coluna++){
+				if(tab[linha][coluna] == null){
+					System.out.print("_");
+				}else{
+					System.out.print(tab[coluna][linha].getCor());
+				}
+				System.out.print("|");
+			}
+			System.out.println();
+		}
+	}
 	
 	public int getColunas(){
 		return colunas;
@@ -33,7 +48,7 @@ public class Tabuleiro {
 	}
 	
 	public String checaVitoria(int index) { //TODO verifica se após jogada alguém ganhou
-		for(int x = 0;x<this.linhas)
+		//for(int x = 0; x<this.linhas)
 		return "Vitória";
 	}
 	
@@ -41,7 +56,7 @@ public class Tabuleiro {
 	public int alteraTab(int index,int coluna) {
 		
 		//TODO Altera situacao do tabuleiro(colocando index do jogador na posição escolhida
-		for(int x=0;x<this.linhas;x++) {
+		for(int x=0; x<this.linhas; x++) {
 			if(this.matrizPecas[x+1][coluna]!=0)//Verifica se a próxima casa da coluna tem alguma peça, se tiver, a peça alterada deve ser a atual
 				this.matrizPecas[x][coluna] = index;
 				return 1;
