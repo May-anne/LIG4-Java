@@ -15,7 +15,7 @@ public class Pessoa {
 		
 		if(tabuleiro.checaMovimento(coluna,this.index)) {
 			
-			tabuleiro.alteraTab(this.index);
+			tabuleiro.alteraTab(this.index,coluna);
 			tabuleiro.checaVitoria(this.index);
 		
 		}else {
