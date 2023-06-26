@@ -4,7 +4,7 @@ public class Tabuleiro {
 
 	private int colunas=7, linhas=6;
 	private int[][] matrizPecas=new int[this.linhas][this.colunas];
-	Peça [][]tab = new Peça[linhas][colunas];
+	//Peça [][]tab = new Peça[linhas][colunas];
 	
 	public Tabuleiro() { //Construtor
 		for(int x = 0; x < this.linhas; x++) {
@@ -14,7 +14,7 @@ public class Tabuleiro {
 		}	
 	}
 	
-	public void exibirTab(){
+	/*public void exibirTab(){
 		for(int linha = 0; linha < linhas; linha++){
 			System.out.print("|");
 			for(int coluna = 0; coluna < colunas; coluna++){
@@ -27,7 +27,7 @@ public class Tabuleiro {
 			}
 			System.out.println();
 		}
-	}
+	}*/
 	
 	public void imprimeMatriz() {
 		for (int i = 0; i < matrizPecas.length; i++) {
@@ -51,18 +51,14 @@ public class Tabuleiro {
 	
 	public boolean checaMovimento(int coluna, int index) {//TODO Verifica se peças podem ou não ser colocadas
 		if(coluna<1 || coluna>this.colunas) { //Se coluna escolhida não existir
-			System.out.println("caso 1");
 			return false;
 		}
 		else if(this.matrizPecas[0][coluna]!=0) {//Se Coluna estiver cheia
-			System.out.println("caso 2");
 			return false;
 		}
 	    else{
-			System.out.println("caso 3");
 			return true;
 		}
-			
 		
 	}
 	
