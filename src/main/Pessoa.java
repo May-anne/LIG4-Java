@@ -12,9 +12,7 @@ public class Pessoa {
 	}
 	
 	public void escolheColuna(int coluna, Tabuleiro tabuleiro){
-		
-		if(tabuleiro.checaMovimento(coluna,this.index)) {
-			
+		if(tabuleiro.checaMovimento(coluna, this.index)) {
 			tabuleiro.alteraTab(this.index,coluna);
 			tabuleiro.checaVitoria(this.index);
 		

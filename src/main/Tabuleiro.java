@@ -9,7 +9,7 @@ public class Tabuleiro {
 	public Tabuleiro() { //Construtor
 		for(int x = 0; x < this.linhas; x++) {
 			for(int y = 0; y < this.colunas; y++) {
-				tab[x][y] = null;
+				matrizPecas[x][y] = 0;
 			}
 		}	
 	}
@@ -50,16 +50,19 @@ public class Tabuleiro {
 	}
 	
 	public boolean checaMovimento(int coluna, int index) {//TODO Verifica se peças podem ou não ser colocadas
-		
-		if(coluna<1 || coluna>this.colunas)  //Se coluna escolhida não existir
-			
+		if(coluna<1 || coluna>this.colunas) { //Se coluna escolhida não existir
+			System.out.println("caso 1");
 			return false;
-		else if(this.matrizPecas[0][coluna]!=0)//Se Coluna estiver cheia
-			
+		}
+		else if(this.matrizPecas[0][coluna]!=0) {//Se Coluna estiver cheia
+			System.out.println("caso 2");
 			return false;
-	    else 
-			
+		}
+	    else{
+			System.out.println("caso 3");
 			return true;
+		}
+			
 		
 	}
 	
@@ -68,23 +71,21 @@ public class Tabuleiro {
 		return "Vitória";
 	}
 	
-	
-	public int alteraTab(int index,int coluna) {
 		
-		//TODO Altera situacao do tabuleiro(colocando index do jogador na posição escolhida
-		for(int x=0; x<this.linhas; x++) {
-			if(this.matrizPecas[x+1][coluna]!=0)//Verifica se a próxima casa da coluna tem alguma peça, se tiver, a peça alterada deve ser a atual
-				this.matrizPecas[x][coluna] = index;
+	public int alteraTab(int index, int coluna) {
+    // TODO Alterar situação do tabuleiro (colocando index do jogador na posição escolhida)
+		for (int x = 0; x < this.linhas-1; x++) {
+			if (this.matrizPecas[x + 1][coluna-1] != 0) { // Verifica se a próxima casa da coluna tem alguma peça
+				this.matrizPecas[x][coluna-1] = index; // Se tiver, a peça alterada deve ser a atual
 				imprimeMatriz();
 				return 1;
+			}
 		}
-		
-		this.matrizPecas[this.linhas][coluna] = index;
-		imprimeMatriz();//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
+
+		this.matrizPecas[this.linhas-1][coluna-1] = index; // Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
+		imprimeMatriz();
 		return 1;
-		
-		
 	}
 
-	
 }
+
