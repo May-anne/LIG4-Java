@@ -68,13 +68,6 @@ public class Tabuleiro {
 	}
 	
 	
-	public int alteraTab(int index,int coluna) {
-		
-		//TODO Altera situacao do tabuleiro(colocando index do jogador na posição escolhida
-		for(int x=0; x<this.linhas-1; x++) {
-			if(this.matrizPecas[x+1][coluna-1]!=0){//Verifica se a próxima casa da coluna tem alguma peça, se tiver, a peça alterada deve ser a atual
-				this.matrizPecas[x][coluna-1] = index;
-		
 	public int alteraTab(int index, int coluna) {
     // TODO Alterar situação do tabuleiro (colocando index do jogador na posição escolhida)
 		for (int x = 0; x < this.linhas-1; x++) {
