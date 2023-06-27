@@ -11,7 +11,7 @@ public class Pessoa {
 		this.index = index; //identifica se é jogador 1 ou jogador 2, a cada partida index pode ser redefinido
 	}
 	
-	public void escolheColuna(int coluna, Tabuleiro tabuleiro){
+	public void escolheColuna(int coluna, Partida tabuleiro){
 		if(tabuleiro.checaMovimento(coluna, this.index)) {
 			tabuleiro.alteraTab(this.index,coluna);
 			tabuleiro.checaVitoria(this.index);
