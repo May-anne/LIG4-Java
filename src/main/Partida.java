@@ -30,7 +30,7 @@ public class Partida {
                 return 1;
             }
     }
-        tab.setMatrizPecas(tab.getLinhas()-1, coluna, index);
+        tab.setMatrizPecas(tab.getLinhas()-1, coluna-1, index);
         tab.imprimeMatriz();//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
         return 1;
     }
