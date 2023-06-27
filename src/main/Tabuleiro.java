@@ -4,7 +4,6 @@ public class Tabuleiro {
 
 	private int colunas=7, linhas=6;
 	private int[][] matrizPecas=new int[this.linhas][this.colunas];
-	//Peça [][]tab = new Peça[linhas][colunas];
 	
 	public Tabuleiro() { //Construtor
 		for(int x = 0; x < this.linhas; x++) {
@@ -13,22 +12,6 @@ public class Tabuleiro {
 			}
 		}	
 	}
-	
-	/*public void exibirTab(){
-		for(int linha = 0; linha < linhas; linha++){
-			System.out.print("|");
-			for(int coluna = 0; coluna < colunas; coluna++){
-				if(tab[linha][coluna] == null){
-					System.out.print("_");
-				}else{
-					System.out.print(tab[coluna][linha].getCor());
-				}
-				System.out.print("|");
-			}
-			System.out.println();
-		}
-	}*/
-	
 	public void imprimeMatriz() {
 		for (int i = 0; i < matrizPecas.length; i++) {
 		    for (int j = 0; j < matrizPecas[i].length; j++) {
@@ -40,7 +23,6 @@ public class Tabuleiro {
 		System.out.println();
 	}
 	
-	
 	public int getColunas(){
 		return colunas;
 	}
@@ -48,18 +30,22 @@ public class Tabuleiro {
 	public int getLinhas(){
 		return linhas;
 	}
+
+	public int getMatrizPecas(int linhas, int colunas){
+		return matrizPecas[linhas][colunas];
+	}
+
+	public void setMatrizPecas(int linha, int coluna, int index){
+		matrizPecas[linha][coluna] = index;
+	}
 	
 	public boolean checaMovimento(int coluna, int index) {//TODO Verifica se peças podem ou não ser colocadas
-		if(coluna<1 || coluna>this.colunas) { //Se coluna escolhida não existir
+		/*Se coluna escolhida não existir ou estiver cheia*/
+		if(coluna < 1 || coluna > this.colunas || this.matrizPecas[0][coluna] != 0 ) {
 			return false;
-		}
-		else if(this.matrizPecas[0][coluna]!=0) {//Se Coluna estiver cheia
-			return false;
-		}
-	    else{
+		} else {
 			return true;
-		}
-		
+		}	
 	}
 	
 	public String checaVitoria(int index) { //TODO verifica se após jogada alguém ganhou
