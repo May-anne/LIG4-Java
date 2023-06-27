@@ -53,11 +53,13 @@ public class Partida {
             if (tab.getMatrizPecas(x+1, coluna-1) != 0) { // Verifica se a próxima casa da coluna tem alguma peça
                 tab.setMatrizPecas(x, coluna-1, index);
                 tab.imprimeMatriz();
+                System.out.println("Caso 1");
                 return 1;
             }
     }
         tab.setMatrizPecas(tab.getLinhas()-1, coluna-1, index);
         tab.imprimeMatriz();//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
+        System.out.println("Caso 2");
         return 1;
     }
 }
