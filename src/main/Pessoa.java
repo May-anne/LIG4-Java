@@ -4,7 +4,7 @@ public class Pessoa {
 	
 	private String nome;
 	private int index;
-	private int ranking=0; // A cada vitória, soma +1
+	private int ranking = 0; // A cada vitória, soma +1
 	
 	public Pessoa(String nome, int index) {	
 		this.nome = nome;//futuramente colocar verificação para ver se nome já existe no ranking
@@ -14,11 +14,12 @@ public class Pessoa {
 	public void escolheColuna(int coluna, Partida tabuleiro){
 		if(tabuleiro.checaMovimento(coluna, this.index)) {
 			tabuleiro.alteraTab(this.index,coluna);
-			tabuleiro.checaVitoria(this.index);
-		
+			if(tabuleiro.checaVitoria(this.index)){
+				System.out.println(this.nome +" ganhou.");
+				ranking++;
+			}
 		}else {
-			
-			System.out.print("Movimento inválido");	
+			System.err.print("Movimento inválido");	
 		}
 	}
 	

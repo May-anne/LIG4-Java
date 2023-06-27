@@ -1,17 +1,22 @@
 package main;
 
 public class Menu {
-    private String modoJogo;
+    private int modoJogo;
 
     public void exibirMenu(){
         //Exemplo:
         System.out.println("****** MENU ******");
         System.out.println("Escolha o modo de jogo:");
-        System.out.println("1. Um jogador");
-        System.out.println("2. Dois jogadores");
+        System.out.println("1. Clássico");
+        System.out.println("2. LIG4 Turbo");
+    }
+    
+    public void getOpcao(int modoJogo){
+        this.modoJogo = modoJogo;
+        System.out.println("Opção escolhida: "+modoJogo);
     }
 
-    public String lerOpcao(){
+    public int lerOpcao(){
         return modoJogo;
     }
 
