@@ -23,5 +23,8 @@ public class Pessoa {
 		}
 	}
 	
+	public void somaRanking(){
+		this.ranking++;
+	}
 
 }
