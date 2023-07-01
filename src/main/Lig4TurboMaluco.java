@@ -8,6 +8,7 @@ public class Lig4TurboMaluco extends Partida {
     public int alteraTab(int index, int coluna){
         Random random = new Random();
         boolean altera;
+        int row, column;
 
         for (int x = 0; x < tab.getLinhas()-1; x++) {
 
@@ -18,13 +19,16 @@ public class Lig4TurboMaluco extends Partida {
                     for(int y = 0; y<3;y++){//Cliclos para percorrer todos os vizinhos
                         if(k==0){
 
+                            row = x-1;
+                            column = coluna - y;
+
                             altera = random.nextBoolean();//Boolean aleatório para decidir se troca ou não
 
-                            if(altera){
+                            if(altera && tab.getMatrizPecas(row, column) !=0){
                             
                                 try{
 
-                                tab.setMatrizPecas(x-1, coluna-y, index);//Peças na linha de cima
+                                tab.setMatrizPecas(row, column , index);//Peças na linha de cima
 
                                 }catch(IndexOutOfBoundsException e){//Verifica se a peça vizinha existe
 
@@ -33,10 +37,13 @@ public class Lig4TurboMaluco extends Partida {
                                 }
 
                             }else if(k==1){
+                                
+                                row = x;
+                                column = coluna-y;
 
                                 altera = random.nextBoolean();
 
-                                if(altera){
+                                if(altera && tab.getMatrizPecas(row, column)!=0){
 
                                     try{
                                         tab.setMatrizPecas(x, coluna-y, index);//Peças na mesma linha
@@ -47,12 +54,15 @@ public class Lig4TurboMaluco extends Partida {
                                 }
 
                             }else if(k==2){
+                                
+                                row = x+1;
+                                column = coluna-y;
 
                                 altera = random.nextBoolean();
 
-                                if(altera)
+                                if(altera && tab.getMatrizPecas(row, column)!=0)
                                 try{
-                                    tab.setMatrizPecas(x+1, coluna-y, index);//Peças na linha de baixo
+                                    tab.setMatrizPecas(row, column, index);//Peças na linha de baixo
                                 }catch(IndexOutOfBoundsException e){
                                     continue;
                                 }
@@ -76,26 +86,32 @@ public class Lig4TurboMaluco extends Partida {
             for(int y = 0;y<3;y++){//Nesse caso só há peças na mesma linha e em cima
 
                 if(k==0){
-
+                    row = tab.getLinhas()-1;
+                    column = coluna-y;
                     altera = random.nextBoolean();
 
-                    try{
+                    if(altera && tab.getMatrizPecas(row, column)!=0){
+                        try{
 
-                        tab.setMatrizPecas(tab.getLinhas()-1, coluna-y, index);//Mesma Linha
+                            tab.setMatrizPecas(row, column, index);//Mesma Linha
 
-                    }catch(IndexOutOfBoundsException e){
+                        }catch(IndexOutOfBoundsException e){
 
-                        continue;
+                            continue;
 
-                    }
+                    }}
 
                 }else{
-
+                    
+                    row = tab.getLinhas()-2;
+                    column = coluna-y;
                     altera = random.nextBoolean();
+
+                    if(altera && tab.getMatrizPecas(row, column)!=0){
 
                     try{
 
-                        tab.setMatrizPecas(tab.getLinhas()-2, coluna-y, index);//Em cima
+                        tab.setMatrizPecas(row, column, index);//Em cima
 
                     }catch(IndexOutOfBoundsException e){
 
@@ -104,6 +120,7 @@ public class Lig4TurboMaluco extends Partida {
                     }
 
                 }
+            }
         }
 
     }

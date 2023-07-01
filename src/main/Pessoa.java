@@ -22,9 +22,6 @@ public class Pessoa {
 			System.err.print("Movimento inválido");	
 		}
 	}
-	
-	public void somaRanking(){
-		this.ranking++;
-	}
+
 
 }
