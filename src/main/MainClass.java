@@ -12,6 +12,10 @@ public class MainClass {
 		jogador1.escolheColuna(2, game);
 		jogador2.escolheColuna(3, game);
 		jogador1.escolheColuna(4, game);
+		jogador1.escolheColuna(2, game);
+		jogador2.escolheColuna(3, game);
+		jogador1.escolheColuna(7, game);
+		jogador2.escolheColuna(6, game);
 
 	}
 

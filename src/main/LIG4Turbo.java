@@ -8,8 +8,8 @@ public class LIG4Turbo extends Partida{
     @Override
     public int alteraTab(int index, int coluna){
         super.alteraTab(index, coluna);
-        
-        if(coluna < tab.getColunas()+1){
+
+        if(coluna < tab.getColunas()){
             if(tab.getMatrizPecas(tab.getLinhaAtual(), coluna) != 0){
                 tab.setMatrizPecas(tab.getLinhaAtual(), coluna, index);
                 tab.imprimeMatriz();
