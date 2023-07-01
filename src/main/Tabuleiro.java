@@ -3,6 +3,7 @@ package main;
 public class Tabuleiro {
 
 	private int colunas=7, linhas=6;
+	private int linAtual;
 	private int[][] matrizPecas=new int[this.linhas][this.colunas];
 	
 	public Tabuleiro() { //Construtor
@@ -30,13 +31,21 @@ public class Tabuleiro {
 	public int getLinhas(){
 		return linhas;
 	}
-	
+
+	public void setLinhaAtual(int linAtual){
+		this.linAtual = linAtual;
+	}
+
+	public int getLinhaAtual(){
+		return linAtual;
+	}
+
 	public int getMatrizPecas(int linhas, int colunas){
 		return matrizPecas[linhas][colunas];
 	}
 
 	public void setMatrizPecas(int linha, int coluna, int index){
-		matrizPecas[linha][coluna] = index;
+		this.matrizPecas[linha][coluna] = index;
 	}
 }
 
