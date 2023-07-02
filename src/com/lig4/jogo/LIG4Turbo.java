@@ -1,4 +1,4 @@
-package main;
+package com.lig4.jogo;
 
 public class LIG4Turbo extends Partida{
     public LIG4Turbo(){ 

@@ -1,4 +1,4 @@
-package main;
+package com.lig4.jogo;
 
 public class Pessoa {
 	

@@ -1,4 +1,5 @@
-package main;
+package com.lig4.jogo;
+import com.lig4.base.Tabuleiro;
 
 public class Partida {
     Tabuleiro tab;
@@ -59,7 +60,6 @@ public class Partida {
     }
         tab.setMatrizPecas(tab.getLinhas()-1, coluna-1, index);
 		tab.setLinhaAtual(tab.getLinhas()-1);
-
         tab.imprimeMatriz();//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
         return 1;
     }

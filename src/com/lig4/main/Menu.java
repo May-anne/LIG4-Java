@@ -1,4 +1,4 @@
-package main;
+package com.lig4.main;
 
 public class Menu {
     private int modoJogo;

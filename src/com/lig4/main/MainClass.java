@@ -1,4 +1,6 @@
-package main;
+package com.lig4.main;
+import com.lig4.jogo.LIG4Turbo;
+import com.lig4.jogo.Pessoa;
 
 public class MainClass {
 
