@@ -4,7 +4,7 @@ import com.lig4.base.Tabuleiro;
 public class Classico {
     Tabuleiro tab;
 
-    public Partida(){
+    public Classico(){
         this.tab = new Tabuleiro();
     }
     
