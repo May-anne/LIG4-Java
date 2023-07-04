@@ -4,7 +4,10 @@ import java.util.Random;
 public class Lig4TurboMaluco extends Classico {
       
     
-
+    public Lig4TurboMaluco(){
+        super();
+    }
+    
     public int alteraTab(int index, int coluna){
         
 

@@ -4,8 +4,8 @@ import com.lig4.base.Tabuleiro;
 public class Classico {
     Tabuleiro tab;
 
-    public Classico(){
-        tab = new Tabuleiro();
+    public Partida(){
+        this.tab = new Tabuleiro();
     }
     
     public boolean checaMovimento(int coluna, int index) {//TODO Verifica se peças podem ou não ser colocadas
