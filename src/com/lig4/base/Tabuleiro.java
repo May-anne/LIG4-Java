@@ -41,9 +41,18 @@ public class Tabuleiro {
 	}
 
 	public int getMatrizPecas(int linhas, int colunas){
-		return matrizPecas[linhas][colunas];
-	}
 
+		try{
+			return matrizPecas[linhas][colunas];
+		}catch(Exception e){
+			try {
+				return matrizPecas[linhas][colunas-1];
+			} catch (Exception k) {
+				return matrizPecas[linhas][colunas+1];
+			}
+			
+	}
+}
 	public void setMatrizPecas(int linha, int coluna, int index){
 		this.matrizPecas[linha][coluna] = index;
 	}
