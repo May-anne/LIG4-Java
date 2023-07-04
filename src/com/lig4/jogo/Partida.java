@@ -5,7 +5,7 @@ public class Partida {
     Tabuleiro tab;
 
     public Partida(){
-        tab = new Tabuleiro();
+        this.tab = new Tabuleiro();
     }
     
     public boolean checaMovimento(int coluna, int index) {//TODO Verifica se peças podem ou não ser colocadas
