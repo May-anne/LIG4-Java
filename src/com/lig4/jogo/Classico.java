@@ -1,10 +1,10 @@
 package com.lig4.jogo;
 import com.lig4.base.Tabuleiro;
 
-public class Partida {
+public class Classico {
     Tabuleiro tab;
 
-    public Partida(){
+    public Classico(){
         tab = new Tabuleiro();
     }
     

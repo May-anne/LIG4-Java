@@ -1,7 +1,7 @@
 package com.lig4.jogo;
 import java.util.Random;
 
-public class Lig4TurboMaluco extends Partida {
+public class Lig4TurboMaluco extends Classico {
       
     
 

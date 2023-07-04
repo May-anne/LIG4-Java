@@ -1,6 +1,6 @@
 package com.lig4.jogo;
 
-public class LIG4Turbo extends Partida{
+public class LIG4Turbo extends Classico{
     public LIG4Turbo(){ 
 
     }

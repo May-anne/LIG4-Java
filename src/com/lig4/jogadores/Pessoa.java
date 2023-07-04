@@ -1,4 +1,6 @@
-package com.lig4.jogo;
+package com.lig4.jogadores;
+
+import com.lig4.jogo.Classico;
 
 public class Pessoa {
 	
@@ -11,7 +13,7 @@ public class Pessoa {
 		this.index = index; //identifica se é jogador 1 ou jogador 2, a cada partida index pode ser redefinido
 	}
 	
-	public void escolheColuna(int coluna, Partida tabuleiro){
+	public void escolheColuna(int coluna, Classico tabuleiro){
 		if(tabuleiro.checaMovimento(coluna, this.index)) {
 			tabuleiro.alteraTab(this.index,coluna);
 			if(tabuleiro.checaVitoria(this.index)){
