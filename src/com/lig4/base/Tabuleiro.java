@@ -2,7 +2,7 @@ package com.lig4.base;
 
 public class Tabuleiro {
 
-	private int colunas=7, linhas=6;
+	private int colunas = 7, linhas = 6;
 	private int linAtual;
 	private int[][] matrizPecas=new int[this.linhas][this.colunas];
 	

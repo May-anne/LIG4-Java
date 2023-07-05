@@ -1,14 +1,44 @@
 package com.lig4.jogo;
 import com.lig4.base.Tabuleiro;
+import com.lig4.jogadores.Pessoa;
 
 public class Classico {
-    Tabuleiro tab;
+    protected Tabuleiro tab = new Tabuleiro(); //Precisa ser private
+	private int linhaMax = tab.getLinhas();
+	private Pessoa jogador1, jogador2;
 
-    public Classico(){
-        this.tab = new Tabuleiro();
-    }
+	public Classico(Pessoa jogador1, Pessoa jogador2){
+		this.jogador1 = jogador1;
+		this.jogador2 = jogador2;
+		loopJogo(jogador1);
+	}
+
+	public Classico(){
+
+	}
+
+	public void loopJogo(Pessoa jogadorAtual){ //TODO mantém o jogo em loop até que alguém vença ou dê empate.
+		tab.imprimeMatriz();
+
+		String nomeJogador = jogadorAtual.getNome();
+		int indexJogador = jogadorAtual.getIndex();
+
+		int colunaEscolhida = jogadorAtual.escolheColuna();
+		boolean movimentoValido = checaMovimento(colunaEscolhida);
+
+		if(movimentoValido){
+			alteraTab(indexJogador, colunaEscolhida);
+			boolean vitoria = checaVitoria(indexJogador);
+			if(vitoria){
+				System.out.println("O jogador "+nomeJogador +" ganhou.");
+			}else{
+				Pessoa proximoJogador = (jogadorAtual == jogador1) ? jogador2 : jogador1; //Passa a vez para o próximo jogador.
+                loopJogo(proximoJogador);
+			}
+		}
+	}
     
-    public boolean checaMovimento(int coluna, int index) {//TODO Verifica se peças podem ou não ser colocadas
+    public boolean checaMovimento(int coluna) {//TODO Verifica se peças podem ou não ser colocadas
     /*Se coluna escolhida não existir ou estiver cheia*/
         if(coluna-1 < 0 || coluna > tab.getColunas()+1 || tab.getMatrizPecas(0, coluna-1) != 0 ) {
             return false;
@@ -19,28 +49,28 @@ public class Classico {
 
     public boolean checaVitoria(int index) { //TODO verifica se após jogada alguém ganhou
 		//Verificação vertical
-		for(int i = 0; i < tab.getLinhas()-3;i++){
+		for(int i = 0; i < linhaMax-3;i++){
 			for(int j = 0; j<tab.getColunas();j++){
 				if(tab.getMatrizPecas(i, j) == index && tab.getMatrizPecas(i+1, j) == index && tab.getMatrizPecas(i+2, j) == index && tab.getMatrizPecas(i+3, j) == index )
 					return true;
 			}
 		}
 		//Verificação horizontal
-		for(int i = 0; i < tab.getLinhas(); i++){
+		for(int i = 0; i < linhaMax; i++){
 			for(int j = 0; j < tab.getColunas()-3; j++){
 				if(tab.getMatrizPecas(i, j) == index && tab.getMatrizPecas(i, j+1) == index && tab.getMatrizPecas(i, j+2) == index && tab.getMatrizPecas(i, j+3) == index )
 					return true;
 			}
 		}
 		//Horizontal Cima - Baixo
-		for(int i = 0; i < tab.getLinhas()-3; i++){
+		for(int i = 0; i < linhaMax-3; i++){
 			for(int j = 0; j < tab.getColunas()-3; j++){
 				if(tab.getMatrizPecas(i, j) == index && tab.getMatrizPecas(i+1, j+1) == index && tab.getMatrizPecas(i+2, j+2) == index && tab.getMatrizPecas(i+3, j+3) == index )
 					return true;
 			}
 		}
 		//Horizontal Baixo - Cima
-		for(int i = 0; i < tab.getLinhas(); i++){
+		for(int i = 0; i < linhaMax; i++){
 			for(int j = 0; j < tab.getColunas()-3; j++){
 				if(tab.getMatrizPecas(i, j) == index && tab.getMatrizPecas(i-1, j+1) == index && tab.getMatrizPecas(i-2, j+2) == index && tab.getMatrizPecas(i-3, j+3) == index )
 					return true;
@@ -50,7 +80,7 @@ public class Classico {
 	}
     public int alteraTab(int index, int coluna) {
     // TODO Alterar situação do tabuleiro (colocando index do jogador na posição escolhida)
-        for (int x = 0; x < tab.getLinhas()-1; x++) {
+        for (int x = 0; x < linhaMax-1; x++) {
             if (tab.getMatrizPecas(x+1, coluna-1) != 0) { // Verifica se a próxima casa da coluna tem alguma peça
                 tab.setMatrizPecas(x, coluna-1, index);
 				tab.setLinhaAtual(x);
@@ -58,8 +88,8 @@ public class Classico {
                 return 1;
             }
     }
-        tab.setMatrizPecas(tab.getLinhas()-1, coluna-1, index);
-		tab.setLinhaAtual(tab.getLinhas()-1);
+        tab.setMatrizPecas(linhaMax-1, coluna-1, index);
+		tab.setLinhaAtual(linhaMax-1);
         tab.imprimeMatriz();//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
         return 1;
     }

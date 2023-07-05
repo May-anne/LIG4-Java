@@ -54,11 +54,11 @@ public class Start {
         getOpcao(lerOpcao());
 
         if(this.escolha == 1){
-            Pessoa jogador1 = new Pessoa(obterNomeJogador(1), 1);
-            Pessoa jogador2 = new Pessoa("Computador", 2);
+            jogador1 = new Pessoa(obterNomeJogador(1), 1);
+            jogador2 = new Pessoa("Computador", 2);
         } else if(this.escolha == 2){
-            Pessoa jogador1 = new Pessoa(obterNomeJogador(1), 1);
-            Pessoa jogador2 = new Pessoa(obterNomeJogador(2), 2);
+            jogador1 = new Pessoa(obterNomeJogador(1), 1);
+            jogador2 = new Pessoa(obterNomeJogador(2), 2);
         } else{
             System.err.println("Número inválido.");
             return;
@@ -70,13 +70,13 @@ public class Start {
 
         switch(this.escolha){
             case 1:
-                //Partida jogo = new Partida();
+                new Classico(jogador1, jogador2);
                 break;
             case 2:
-                //LIG4Turbo jogo = new LIG4Turbo();
+                //new LIG4Turbo(jogador1, jogador2);
                 break;
             case 3:
-                //LIG4TurboMaluco jogo = new LIG4TurboMaluco();
+                //new LIG4TurboMaluco(jogador1, jogador2);
                 break;
             default:
                 System.err.println("Opção inválida.");
