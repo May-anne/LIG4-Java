@@ -6,12 +6,11 @@ import com.lig4.jogadores.Pessoa;
 
 public class Lig4TurboMaluco extends Classico {
     
-    private Tabuleiro tab; //Precisa ser private
+    private Tabuleiro tab; 
 	private int linhaMax;
 	private Pessoa jogador1, jogador2;
 
     public Lig4TurboMaluco(Pessoa jogador1, Pessoa jogador2){
-        
         super(jogador1, jogador2); 
 
 		this.tab = super.getTabuleiro();
@@ -24,9 +23,16 @@ public class Lig4TurboMaluco extends Classico {
     }
     
     public void alteraTab(char corJogador, int coluna){
+        for (int x = 0; x < tab.getLinhas()-1; x++) {
 
-        super.alteraTab(corJogador, coluna);
-
+            if (tab.getMatrizPecas(x+1, coluna-1) != 0) { // Verifica se a próxima casa da coluna tem alguma peça
+                tab.setMatrizPecas(x, coluna-1, corJogador);
+                this.turboMalucoAltera(1, x, coluna, corJogador);
+        
+                tab.imprimeMatriz();    
+                return;
+            }   
+        }
         tab.setMatrizPecas(tab.getLinhas()-1, coluna-1, corJogador);//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
         this.turboMalucoAltera(2, tab.getLinhas()-1, coluna, corJogador);
         
@@ -54,11 +60,11 @@ public class Lig4TurboMaluco extends Classico {
                             
                                 try{
 
-                                tab.setMatrizPecas(row, column, corJogador);//Peças na linha de cima
+                                    tab.setMatrizPecas(row, column, corJogador);//Peças na linha de cima
 
                                 }catch(IndexOutOfBoundsException e){//Verifica se a peça vizinha existe
 
-                                continue;
+                                    continue;
 
                                 }
 
@@ -86,13 +92,13 @@ public class Lig4TurboMaluco extends Classico {
 
                                 altera = random.nextBoolean();
 
-                                if(altera && tab.getMatrizPecas(row, column)!=0)
-                                try{
-                                    tab.setMatrizPecas(row, column, corJogador);//Peças na linha de baixo
-                                }catch(IndexOutOfBoundsException e){
-                                    continue;
+                                if(altera && tab.getMatrizPecas(row, column)!=0){
+                                    try{
+                                        tab.setMatrizPecas(row, column, corJogador);//Peças na linha de baixo
+                                    }catch(IndexOutOfBoundsException e){
+                                        continue;
+                                    }
                                 }
-
                             }
 
                         }
@@ -100,50 +106,60 @@ public class Lig4TurboMaluco extends Classico {
                 }
 
         }else if(tipo==2){
+
             for(int k = 0;k<2;k++){
 
-            for(int y = 0;y<3;y++){//Nesse caso só há peças na mesma linha e em cima
+                for(int y = 0;y<3;y++){//Nesse caso só há peças na mesma linha e em cima
 
-                if(k==0){
-                    row = x;
-                    column = coluna-y;
-                    altera = random.nextBoolean();
+                    if(k==0){
+                        row = x;
+                        column = coluna-y;
+                        altera = random.nextBoolean();
 
-                    if(altera && tab.getMatrizPecas(row, column)!=0){
-                        try{
+                        if(altera && tab.getMatrizPecas(row, column)!=0){
+                            try{
 
-                            tab.setMatrizPecas(row, column, corJogador);//Mesma Linha
+                                tab.setMatrizPecas(row, column, corJogador);//Mesma Linha
 
-                        }catch(IndexOutOfBoundsException e){
+                            }catch(IndexOutOfBoundsException e){
 
-                            continue;
+                                continue;
 
-                    }}
+                            }
+                        }
 
-                }else{
+                    }else{
 
-                    row = x-1;
-                    column = coluna-y;
-                    altera = random.nextBoolean();
+                        row = x-1;
+                        column = coluna-y;
+                        altera = random.nextBoolean();
 
-                    if(altera && tab.getMatrizPecas(row, column)!=0){
+                        if(altera && tab.getMatrizPecas(row, column)!=0){
 
-                    try{
+                            try{
 
-                        tab.setMatrizPecas(row, column, corJogador);//Em cima
+                                tab.setMatrizPecas(row, column, corJogador);//Em cima
 
-                    }catch(IndexOutOfBoundsException e){
+                            }catch(IndexOutOfBoundsException e){
 
-                        continue;
+                                continue;
 
+                            }
+
+                        }
                     }
-
                 }
+
             }
         }
+    }
+
+    public void tarjaPreta(){
 
     }
-        }
+
+    public void hospicio(){
+        
     }
 }
 
