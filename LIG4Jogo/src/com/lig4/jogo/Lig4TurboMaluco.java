@@ -1,24 +1,32 @@
 package com.lig4.jogo;
 import java.util.Random;
+
+import com.lig4.base.Tabuleiro;
 import com.lig4.jogadores.Pessoa;
 
 public class Lig4TurboMaluco extends Classico {
     
+    private Tabuleiro tab; //Precisa ser private
+	private int linhaMax;
+	private Pessoa jogador1, jogador2;
+
     public Lig4TurboMaluco(Pessoa jogador1, Pessoa jogador2){
-        super(jogador1, jogador2);
+        
+        super(jogador1, jogador2); 
+
+		this.tab = super.getTabuleiro();
+		this.linhaMax = this.tab.getLinhas();
+		this.jogador1 = super.getJogador1();
+		this.jogador2 = super.getJogador2();
+
+		loopJogo(this.jogador1);
+
     }
     
     public void alteraTab(char corJogador, int coluna){
-        for (int x = 0; x < tab.getLinhas()-1; x++) {
 
-            if (tab.getMatrizPecas(x+1, coluna-1) != 0) { // Verifica se a próxima casa da coluna tem alguma peça
-                tab.setMatrizPecas(x, coluna-1, corJogador);
-                this.turboMalucoAltera(1, x, coluna, corJogador);
-        
-                tab.imprimeMatriz();    
-                return;
-            }   
-    }
+        super.alteraTab(corJogador, coluna);
+
         tab.setMatrizPecas(tab.getLinhas()-1, coluna-1, corJogador);//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
         this.turboMalucoAltera(2, tab.getLinhas()-1, coluna, corJogador);
         
