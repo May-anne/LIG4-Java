@@ -4,7 +4,7 @@ public class Tabuleiro {
 
 	private int colunas = 7, linhas = 6;
 	private int linAtual;
-	private char[][] matrizPecas=new char[this.linhas][this.colunas];
+	private char[][] matrizPecas = new char[this.linhas][this.colunas];
 	
 	public Tabuleiro() { //Construtor
 		for(int x = 0; x < this.linhas; x++) {
@@ -41,16 +41,14 @@ public class Tabuleiro {
 	}
 
 	public int getMatrizPecas(int linhas, int colunas){
-
 		try{
 			return matrizPecas[linhas][colunas];
-		}catch(Exception e){
+		} catch(Exception e){
 			try {
 				return matrizPecas[linhas][colunas-1];
 			} catch (Exception k) {
 				return matrizPecas[linhas][colunas+1];
-			}
-			
+			}	
 	}
 }
 	public void setMatrizPecas(int linha, int coluna, char corJogador){

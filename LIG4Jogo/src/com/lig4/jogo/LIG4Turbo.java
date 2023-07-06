@@ -7,24 +7,22 @@ public class LIG4Turbo extends Classico{
     }
 
     @Override
-    public int alteraTab(char corJogador, int coluna){
+    public void alteraTab(char corJogador, int coluna){
         super.alteraTab(corJogador, coluna);
         int linhaAtual = tab.getLinhaAtual();
 
         if(coluna < tab.getColunas()){
-            if(tab.getMatrizPecas(linhaAtual, coluna) != 0){
+            if(tab.getMatrizPecas(linhaAtual, coluna) != '0'){
                 tab.setMatrizPecas(linhaAtual, coluna, corJogador);
                 tab.imprimeMatriz();
             }
         }
 
         if(coluna > 1){
-            if(tab.getMatrizPecas(linhaAtual, coluna-2) != 0){
+            if(tab.getMatrizPecas(linhaAtual, coluna-2) != '0'){
                 tab.setMatrizPecas(linhaAtual, coluna-2, corJogador);
                 tab.imprimeMatriz();
             }      
         }
-
-        return 1;
     }
 }

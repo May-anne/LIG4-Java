@@ -8,7 +8,7 @@ public class Lig4TurboMaluco extends Classico {
         super(jogador1, jogador2);
     }
     
-    public int alteraTab(char corJogador, int coluna){
+    public void alteraTab(char corJogador, int coluna){
         for (int x = 0; x < tab.getLinhas()-1; x++) {
 
             if (tab.getMatrizPecas(x+1, coluna-1) != 0) { // Verifica se a próxima casa da coluna tem alguma peça
@@ -16,7 +16,7 @@ public class Lig4TurboMaluco extends Classico {
                 this.turboMalucoAltera(1, x, coluna, corJogador);
         
                 tab.imprimeMatriz();    
-                return 1;
+                return;
             }   
     }
         tab.setMatrizPecas(tab.getLinhas()-1, coluna-1, corJogador);//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
@@ -24,7 +24,7 @@ public class Lig4TurboMaluco extends Classico {
         
         tab.imprimeMatriz();
         System.out.println("Caso 2");
-        return 1;
+        return;
     }
     
     public void turboMalucoAltera(int tipo,int x, int coluna, char corJogador){

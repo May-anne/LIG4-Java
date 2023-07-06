@@ -6,6 +6,7 @@ import com.lig4.base.Peca;
 
 public class Start {
     private int escolha;
+    private int index = 1;
     private Pessoa jogador1, jogador2;
 
     public Start(){
@@ -30,10 +31,10 @@ public class Start {
 
     public String obterNomeJogador(){
         Scanner sc = new Scanner(System.in);
-        int index = 1;
 
         System.out.print("Informe o nome do jogador "+index+": ");
         String nomeJogador = sc.nextLine();
+        index++;
 
         return nomeJogador;
     }
@@ -88,5 +89,11 @@ public class Start {
                 System.err.println("Opção inválida.");
                 break;
         }
+    }
+
+    public void continuarJogo(){
+        System.out.println("Você deseja continuar jogando? ");
+        System.out.println("1. Sim");
+        System.out.println("2. Não");
     }
 }
