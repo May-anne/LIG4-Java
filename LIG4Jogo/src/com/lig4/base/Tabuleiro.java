@@ -1,6 +1,6 @@
 package com.lig4.base;
 
-public class Tabuleiro {
+public class Tabuleiro implements InterfaceTabuleiro{
 
 	private int colunas = 7, linhas = 6;
 	private int linAtual;
