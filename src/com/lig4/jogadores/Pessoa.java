@@ -3,7 +3,6 @@ package com.lig4.jogadores;
 import java.util.Scanner;
 
 public class Pessoa {
-	
 	private String nome;
 	private int index;
 	private int ranking; // A cada vitória, soma +1
@@ -48,6 +47,4 @@ public class Pessoa {
 			System.err.print("Movimento inválido");	
 		}
 	}*/
-
-
 }

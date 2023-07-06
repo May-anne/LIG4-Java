@@ -1,6 +1,6 @@
 package com.lig4.base;
 
-public class Peça {
+public class Peca {
     private String cor;
 
     public String getCor(){

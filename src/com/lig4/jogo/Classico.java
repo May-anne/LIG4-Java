@@ -13,10 +13,6 @@ public class Classico {
 		loopJogo(jogador1);
 	}
 
-	public Classico(){
-
-	}
-
 	public void loopJogo(Pessoa jogadorAtual){ //TODO mantém o jogo em loop até que alguém vença ou dê empate.
 		tab.imprimeMatriz();
 

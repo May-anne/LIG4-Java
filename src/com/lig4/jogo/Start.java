@@ -50,22 +50,23 @@ public class Start {
 
     public void iniciarJogo(){
         exibirQtdJogadores();
-
         getOpcao(lerOpcao());
 
-        if(this.escolha == 1){
-            jogador1 = new Pessoa(obterNomeJogador(1), 1);
-            jogador2 = new Pessoa("Computador", 2);
-        } else if(this.escolha == 2){
-            jogador1 = new Pessoa(obterNomeJogador(1), 1);
-            jogador2 = new Pessoa(obterNomeJogador(2), 2);
-        } else{
-            System.err.println("Número inválido.");
-            return;
+        switch(this.escolha){
+            case 1:
+                jogador1 = new Pessoa(obterNomeJogador(1), 1);
+                jogador2 = new Pessoa("Computador", 2);
+                break;
+            case 2:
+                jogador1 = new Pessoa(obterNomeJogador(1), 1);
+                jogador2 = new Pessoa(obterNomeJogador(2), 2);
+                break;
+            default:
+                System.err.println("Número inválido.");
+                break;
         }
 
         exibirMenu();
-
         getOpcao(lerOpcao());
 
         switch(this.escolha){
@@ -73,13 +74,14 @@ public class Start {
                 new Classico(jogador1, jogador2);
                 break;
             case 2:
-                //new LIG4Turbo(jogador1, jogador2);
+                new LIG4Turbo(jogador1, jogador2);
                 break;
             case 3:
-                //new LIG4TurboMaluco(jogador1, jogador2);
+                new Lig4TurboMaluco(jogador1, jogador2);
                 break;
             default:
                 System.err.println("Opção inválida.");
+                break;
         }
     }
 }
