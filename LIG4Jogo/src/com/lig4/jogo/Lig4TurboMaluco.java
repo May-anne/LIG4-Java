@@ -9,7 +9,7 @@ public class Lig4TurboMaluco extends Jogo{
     private Tabuleiro tab; 
 	private int linhaMax;
 	private Pessoa jogador1, jogador2;
-
+    private int nivel;
     public Lig4TurboMaluco(Pessoa jogador1, Pessoa jogador2){
 
         super(jogador1, jogador2); 
@@ -24,148 +24,69 @@ public class Lig4TurboMaluco extends Jogo{
     
     @Override
     public void alteraTab(char corJogador, int coluna){
-        for (int x = 0; x < this.tab.getLinhas()-1; x++) {
+        super.alteraTab(corJogador, coluna-1);
+        int linhaAtual = tab.getLinhaAtual();
+        if(nivel == 0)
+            alteraTabMaluco(coluna-1,linhaAtual,corJogador,tab,0);
+        else if(nivel == 1)
+            alteraTabMaluco(coluna,linhaAtual,corJogador,tab,1);
+        else if(nivel == 2)
+            hospicio(corJogador,tab);
 
-            if (this.tab.getMatrizPecas(x+1, coluna-1) != 0) {// Verifica se a próxima casa da coluna tem alguma peça
-                  
-                this.tab.setMatrizPecas(x, coluna-1, corJogador);
-                 
-                this.turboMalucoAltera(1, x, coluna, corJogador);
-        
-                this.tab.imprimeMatriz();    
-                return;
-            }   
-        }
-         
-        this.tab.setMatrizPecas(this.tab.getLinhas()-1, coluna-1, corJogador);//Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
-        
-        this.turboMalucoAltera(2, tab.getLinhas()-1, coluna, corJogador);
-        
-        this.tab.imprimeMatriz();
-
-        System.out.println("Caso 2");
-        return;
     }
-    
-    public void turboMalucoAltera(int tipo,int x, int coluna, char corJogador){
+
+    public void alteraTabMaluco(int coluna,int linhaAtual,char corJogador, Tabuleiro tab,int nivel){
         Random random = new Random();
-        boolean altera;
-        int row, column;
+        int min = 1;
+        int max = 4 ;
+        int row, column,prob,item;
+        
 
-        if(tipo==1){
-            for(int k = 0; k < 3;k++){
-                    for(int y = 0; y<3;y++){//Cliclos para percorrer todos os vizinhos
-                        if(k==0){
+        for(int y=-1; y<=1;y++){
+                
+            row = linhaAtual + y;
+            for(int x = -1;x<=1;x++){
+                column = coluna+x;
+                item = tab.getMatrizPecas(row, column);
+                prob = random.nextInt(max - min + 1) + min;
+                    
+                try{
 
-                            row = x-1;
-                            column = coluna - y;
-
-                            altera = random.nextBoolean();//Boolean aleatório para decidir se troca ou não
-
-                            if(altera && this.tab.getMatrizPecas(row, column) !=0){//Se o boolean for true e a peça vizinha não estiver vazia, a troca vai ocorrer
-                            
-                                try{
-
-                                    this.tab.setMatrizPecas(row, column, corJogador);//Peças na linha de cima
-
-                                }catch(IndexOutOfBoundsException e){//Verifica se a peça vizinha existe
-
-                                    continue;
-
-                                }
-
-                            }else if(k==1){
-                                
-                                row = x;
-                                column = coluna-y;
-
-                                altera = random.nextBoolean();
-
-                                if(altera && this.tab.getMatrizPecas(row, column)!=0){
-
-                                    try{
-                                        this.tab.setMatrizPecas(x, coluna-y, corJogador);//Peças na mesma linha
-                                    }catch(IndexOutOfBoundsException e){
-                                        continue;
-                                    }
-
-                                }
-
-                            }else if(k==2){
-                                
-                                row = x+1;
-                                column = coluna-y;
-
-                                altera = random.nextBoolean();
-
-                                if(altera && this.tab.getMatrizPecas(row, column)!=0){
-                                    try{
-                                        this.tab.setMatrizPecas(row, column, corJogador);//Peças na linha de baixo
-                                    }catch(IndexOutOfBoundsException e){
-                                        continue;
-                                    }
-                                }
-                            }
-
-                        }
+                    if(item != corJogador && item!='0' && prob==1 && nivel == 0){//25% de chance de alterar as peças ao redor
+                        tab.setMatrizPecas(row, column, corJogador);
+                    }else if(item != corJogador && item!='0'  && prob>1 && nivel == 1){//75% de chance de alterar as peças ao redor
+                        tab.setMatrizPecas(row, column, corJogador);
                     }
+
+                }catch(IndexOutOfBoundsException e){
+                    continue;
                 }
+                            // TODO: handle exception
+            }
+                
+        }
 
-        }else if(tipo==2){
 
-            for(int k = 0;k<2;k++){
+        
+            
+    }
+        
 
-                for(int y = 0;y<3;y++){//Nesse caso só há peças na mesma linha e em cima
 
-                    if(k==0){
-                        row = x;
-                        column = coluna-y;
-                        altera = random.nextBoolean();
+    public void hospicio(char corJogador,Tabuleiro tab){//Altera todas as peças do tabuleiro 50/50 de chance, um casino completo
+        Random random = new Random();
+        int item;
+        boolean prob;
 
-                        if(altera && this.tab.getMatrizPecas(row, column)!=0){
-                            try{
-
-                                this.tab.setMatrizPecas(row, column, corJogador);//Mesma Linha
-
-                            }catch(IndexOutOfBoundsException e){
-
-                                continue;
-
-                            }
-                        }
-
-                    }else{
-
-                        row = x-1;
-                        column = coluna-y;
-                        altera = random.nextBoolean();
-
-                        if(altera && this.tab.getMatrizPecas(row, column)!=0){
-
-                            try{
-
-                                this.tab.setMatrizPecas(row, column, corJogador);//Em cima
-
-                            }catch(IndexOutOfBoundsException e){
-
-                                continue;
-
-                            }
-
-                        }
-                    }
+        for(int y=0;y<tab.getLinhas();y++){
+            for(int x = 0; x<tab.getColunas();x++){
+                item = tab.getMatrizPecas(y,x);
+                prob = random.nextBoolean();
+                if(item !='0' && item != corJogador && prob){
+                    tab.setMatrizPecas(y, x, corJogador);
                 }
-
             }
         }
-    }
-
-    public void tarjaPreta(){
-
-    }
-
-    public void hospicio(){
-
     }
 }
 
