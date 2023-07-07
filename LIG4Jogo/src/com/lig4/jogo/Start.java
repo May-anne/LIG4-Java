@@ -29,6 +29,13 @@ public class Start {
         System.out.println("2. Dois jogadores");
     }
 
+    public void exibirNivelTurboMaluco(){
+        System.out.println("Escolha o nível do Turbo Maluco ");
+        System.out.println("1. Dor de cabeça");
+        System.out.println("2. Tarja Preta");
+        System.out.println("3. Hospício");
+    }
+
     public String obterNomeJogador(){
         Scanner sc = new Scanner(System.in);
 
@@ -83,7 +90,21 @@ public class Start {
                 new LIG4Turbo(jogador1, jogador2);
                 break;
             case 3:
-                new Lig4TurboMaluco(jogador1, jogador2);
+
+                getOpcao(lerOpcao());
+
+                switch(this.escolha){
+                case 1:
+                    new Lig4TurboMaluco(jogador1, jogador2,1);
+                    break;
+                case 2:
+                    new Lig4TurboMaluco(jogador1, jogador2,2);
+                    break;
+                case 3:
+                    new Lig4TurboMaluco(jogador1, jogador2,3);
+                    break;
+                }
+                
                 break;
             default:
                 System.err.println("Opção inválida.");

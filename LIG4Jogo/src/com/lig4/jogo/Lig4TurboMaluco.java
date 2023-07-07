@@ -10,7 +10,7 @@ public class Lig4TurboMaluco extends Jogo{
 	private int linhaMax;
 	private Pessoa jogador1, jogador2;
     private int nivel;
-    public Lig4TurboMaluco(Pessoa jogador1, Pessoa jogador2){
+    public Lig4TurboMaluco(Pessoa jogador1, Pessoa jogador2, int nivel){
 
         super(jogador1, jogador2); 
 
@@ -18,16 +18,17 @@ public class Lig4TurboMaluco extends Jogo{
 		this.linhaMax = this.tab.getLinhas();
 		this.jogador1 = super.getJogador1();
 		this.jogador2 = super.getJogador2();
+        this.nivel=nivel;
 
         super.loopJogo(this.jogador1);
     }
     
     @Override
     public void alteraTab(char corJogador, int coluna){
-        super.alteraTab(corJogador, coluna-1);
+        super.alteraTab(corJogador, coluna);
         int linhaAtual = tab.getLinhaAtual();
         if(nivel == 0)
-            alteraTabMaluco(coluna-1,linhaAtual,corJogador,tab,0);
+            alteraTabMaluco(coluna,linhaAtual,corJogador,tab,0);
         else if(nivel == 1)
             alteraTabMaluco(coluna,linhaAtual,corJogador,tab,1);
         else if(nivel == 2)
