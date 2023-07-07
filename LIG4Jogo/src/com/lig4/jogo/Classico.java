@@ -17,7 +17,8 @@ public class Classico extends Jogo {
 		this.jogador1 = super.getJogador1();
 		this.jogador2 = super.getJogador2();
 
-		loopJogo(this.jogador1);
+		super.loopJogo(this.jogador1);
+
 	}
 
 	

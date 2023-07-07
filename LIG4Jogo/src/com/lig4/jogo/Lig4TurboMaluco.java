@@ -4,13 +4,14 @@ import java.util.Random;
 import com.lig4.base.Tabuleiro;
 import com.lig4.jogadores.Pessoa;
 
-public class Lig4TurboMaluco extends Classico {
+public class Lig4TurboMaluco extends Jogo{
     
     private Tabuleiro tab; 
 	private int linhaMax;
 	private Pessoa jogador1, jogador2;
 
     public Lig4TurboMaluco(Pessoa jogador1, Pessoa jogador2){
+        
         super(jogador1, jogador2); 
 
 		this.tab = super.getTabuleiro();
@@ -18,8 +19,7 @@ public class Lig4TurboMaluco extends Classico {
 		this.jogador1 = super.getJogador1();
 		this.jogador2 = super.getJogador2();
 
-		loopJogo(this.jogador1);
-
+	
     }
     
     public void alteraTab(char corJogador, int coluna){
@@ -159,7 +159,7 @@ public class Lig4TurboMaluco extends Classico {
     }
 
     public void hospicio(){
-        
+
     }
 }
 
