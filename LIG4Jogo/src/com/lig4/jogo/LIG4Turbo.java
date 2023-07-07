@@ -4,7 +4,7 @@ import com.lig4.jogadores.Pessoa;
 
 public class LIG4Turbo extends Jogo{
 
-    protected Tabuleiro tab; //Precisa ser private
+    private Tabuleiro tab; //Precisa ser private
 	private int linhaMax;
 	private Pessoa jogador1, jogador2;
 
@@ -16,13 +16,16 @@ public class LIG4Turbo extends Jogo{
 		this.linhaMax = this.tab.getLinhas();
 		this.jogador1 = super.getJogador1();
 		this.jogador2 = super.getJogador2();
+        
 
 		super.loopJogo(this.jogador1);
     }
 
     @Override
     public void alteraTab(char corJogador, int coluna){
+
         super.alteraTab(corJogador, coluna);
+
         int linhaAtual = tab.getLinhaAtual();
 
         if(coluna < tab.getColunas()){
@@ -39,4 +42,6 @@ public class LIG4Turbo extends Jogo{
             }      
         }
     }
+
+    
 }

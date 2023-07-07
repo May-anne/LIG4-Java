@@ -5,15 +5,15 @@ import com.lig4.jogadores.Pessoa;
 
 public class Jogo {
     
-    private Tabuleiro tab = new Tabuleiro(); //Precisa ser private
-	private int linhaMax = tab.getLinhas();
+    private Tabuleiro tab= new Tabuleiro();;  //Precisa ser private
+	private int linhaMax= tab.getLinhas();;
 	private Pessoa jogador1, jogador2;
 
     public Jogo(Pessoa jogador1, Pessoa jogador2){
-        
+    
 		this.jogador1 = jogador1;
 		this.jogador2 = jogador2;
-		loopJogo(jogador1);
+		
 	
     }
 
