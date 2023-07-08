@@ -4,8 +4,9 @@ import com.lig4.base.Tabuleiro;
 import com.lig4.jogadores.Pessoa;
 
 public class Jogo {
-    private Tabuleiro tab= new Tabuleiro();;  //Precisa ser private
-	private int linhaMax= tab.getLinhas();;
+	
+    private Tabuleiro tab= new Tabuleiro();
+	private int linhaMax= tab.getLinhas();
 	private Pessoa jogador1, jogador2;
 
     public Jogo(Pessoa jogador1, Pessoa jogador2){
@@ -24,44 +25,43 @@ public class Jogo {
         return this.jogador2;
     }
 
-
-    public void loopJogo(Pessoa jogadorAtual){ //TODO mantém o jogo em loop até que alguém vença ou dê empate.
+	public void loopJogo(Pessoa jogadorAtual) {
 		tab.imprimeMatriz();
-
+	
 		String nomeJogador = jogadorAtual.getNome();
 		char corJogador = jogadorAtual.getCorPeca();
-		int qtdJogadas = 0;
 
 		int colunaEscolhida = jogadorAtual.escolheColuna();
-		boolean movimentoValido = checaMovimento(colunaEscolhida);
-
-		if(movimentoValido){
+		int qtdJogadas = 0;
+	
+		try { //Checar se o movimento é válido.
 			this.alteraTab(corJogador, colunaEscolhida);
 			boolean vitoria = this.checaVitoria(corJogador);
 			qtdJogadas++;
 
-			if(vitoria){
+			if (vitoria) {
 				tab.imprimeMatriz();
-				System.out.println("O jogador "+nomeJogador +" ganhou.");
-			} else if(qtdJogadas == linhaMax*tab.getColunas()){
+				System.out.println("O jogador " + nomeJogador + " ganhou.");
+				//continuarJogo();
+			} else if (qtdJogadas == linhaMax * tab.getColunas()) {
 				System.out.println("Empate.");
 				//continuarJogo();
+			} else {
+				Pessoa proximoJogador = (jogadorAtual == jogador1) ? jogador2 : jogador1;
+				loopJogo(proximoJogador);
 			}
-			else{
-				Pessoa proximoJogador = (jogadorAtual == jogador1) ? jogador2 : jogador1; //Passa a vez para o próximo jogador.
-                loopJogo(proximoJogador);
-			}
+		} catch (IndexOutOfBoundsException e) { //Pedir ao usuário que insira algo válido.
+			System.out.println(nomeJogador+", insira uma coluna válida.");
+			loopJogo(jogadorAtual);
 		}
 	}
-
-    public boolean checaMovimento(int coluna) {//TODO Verifica se peças podem ou não ser colocadas
-    /*Se coluna escolhida não existir ou estiver cheia*/
-        if(coluna-1 < 0 || coluna > tab.getColunas()+1 || tab.getMatrizPecas(1, coluna-1) != '0' ) {
+   /* public boolean checaMovimento(int coluna) {//TODO Verifica se peças podem ou não ser colocadas
+        if(coluna-1 < 0 || coluna > tab.getColunas() || tab.getMatrizPecas(0, coluna-1) != '0' ) {
             return false;
         } else {
             return true;
         }	
-    }
+    }*/
 
     public void alteraTab(char corJogador, int coluna) {	
     // TODO Alterar situação do tabuleiro (colocando index do jogador na posição escolhida)
