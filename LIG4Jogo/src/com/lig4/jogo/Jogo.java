@@ -4,17 +4,13 @@ import com.lig4.base.Tabuleiro;
 import com.lig4.jogadores.Pessoa;
 
 public class Jogo {
-    
     private Tabuleiro tab= new Tabuleiro();;  //Precisa ser private
 	private int linhaMax= tab.getLinhas();;
 	private Pessoa jogador1, jogador2;
 
     public Jogo(Pessoa jogador1, Pessoa jogador2){
-    
 		this.jogador1 = jogador1;
-		this.jogador2 = jogador2;
-		
-	
+		this.jogador2 = jogador2;	
     }
 
     public Tabuleiro getTabuleiro(){
@@ -45,6 +41,7 @@ public class Jogo {
 			qtdJogadas++;
 
 			if(vitoria){
+				tab.imprimeMatriz();
 				System.out.println("O jogador "+nomeJogador +" ganhou.");
 			} else if(qtdJogadas == linhaMax*tab.getColunas()){
 				System.out.println("Empate.");
@@ -59,7 +56,7 @@ public class Jogo {
 
     public boolean checaMovimento(int coluna) {//TODO Verifica se peças podem ou não ser colocadas
     /*Se coluna escolhida não existir ou estiver cheia*/
-        if(coluna-1 < 0 || coluna > tab.getColunas()+1 || tab.getMatrizPecas(0, coluna-1) != '0' ) {
+        if(coluna-1 < 0 || coluna > tab.getColunas()+1 || tab.getMatrizPecas(1, coluna-1) != '0' ) {
             return false;
         } else {
             return true;

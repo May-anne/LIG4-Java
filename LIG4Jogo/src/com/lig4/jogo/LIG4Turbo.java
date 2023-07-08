@@ -16,27 +16,24 @@ public class LIG4Turbo extends Jogo{
 		this.linhaMax = this.tab.getLinhas();
 		this.jogador1 = super.getJogador1();
 		this.jogador2 = super.getJogador2();
-        
 
 		super.loopJogo(this.jogador1);
     }
 
     @Override
     public void alteraTab(char corJogador, int coluna){
-
         super.alteraTab(corJogador, coluna);
-
         int linhaAtual = tab.getLinhaAtual();
 
         if(coluna < tab.getColunas()){
-            if(tab.getMatrizPecas(linhaAtual, coluna) != '0'){
+            if(tab.getMatrizPecas(linhaAtual, coluna) != '0' && tab.getMatrizPecas(linhaAtual, coluna) != corJogador){
                 tab.setMatrizPecas(linhaAtual, coluna, corJogador);
                 tab.imprimeMatriz();
             }
         }
 
         if(coluna > 1){
-            if(tab.getMatrizPecas(linhaAtual, coluna-2) != '0'){
+            if(tab.getMatrizPecas(linhaAtual, coluna-2) != '0' && tab.getMatrizPecas(linhaAtual, coluna) != corJogador){
                 tab.setMatrizPecas(linhaAtual, coluna-2, corJogador);
                 tab.imprimeMatriz();
             }      

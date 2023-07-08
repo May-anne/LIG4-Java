@@ -9,7 +9,6 @@ public class Classico extends Jogo {
 	private Pessoa jogador1, jogador2;
 	
 	public Classico(Pessoa jogador1, Pessoa jogador2){
-
 		super(jogador1, jogador2); 
 
 		this.tab = super.getTabuleiro();

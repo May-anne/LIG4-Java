@@ -91,17 +91,18 @@ public class Start {
                 break;
             case 3:
 
+                exibirNiveis();
                 getOpcao(lerOpcao());
 
                 switch(this.escolha){
+                case 0:
+                    new Lig4TurboMaluco(jogador1, jogador2,0);
+                    break;
                 case 1:
                     new Lig4TurboMaluco(jogador1, jogador2,1);
                     break;
                 case 2:
                     new Lig4TurboMaluco(jogador1, jogador2,2);
-                    break;
-                case 3:
-                    new Lig4TurboMaluco(jogador1, jogador2,3);
                     break;
                 }
                 
@@ -116,5 +117,12 @@ public class Start {
         System.out.println("Você deseja continuar jogando? ");
         System.out.println("1. Sim");
         System.out.println("2. Não");
+    }
+
+    public void exibirNiveis(){
+        System.out.println("Escolha o nível de maluquice: ");
+        System.out.println("0. Loucura");
+        System.out.println("1. Insanidade");
+        System.out.println("2. Hospício");
     }
 }

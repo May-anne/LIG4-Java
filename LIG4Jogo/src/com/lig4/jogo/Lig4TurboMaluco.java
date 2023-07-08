@@ -27,6 +27,7 @@ public class Lig4TurboMaluco extends Jogo{
     public void alteraTab(char corJogador, int coluna){
         super.alteraTab(corJogador, coluna);
         int linhaAtual = tab.getLinhaAtual();
+
         if(nivel == 0)
             alteraTabMaluco(coluna,linhaAtual,corJogador,tab,0);
         else if(nivel == 1)
@@ -36,43 +37,35 @@ public class Lig4TurboMaluco extends Jogo{
 
     }
 
-    public void alteraTabMaluco(int coluna,int linhaAtual,char corJogador, Tabuleiro tab,int nivel){
+    public void alteraTabMaluco(int coluna, int linhaAtual, char corJogador, Tabuleiro tab, int nivel) {
         Random random = new Random();
         int min = 1;
-        int max = 4 ;
-        int row, column,prob,item;
-        
-
-        for(int y=-1; y<=1;y++){
-                
-            row = linhaAtual + y;
-            for(int x = -1;x<=1;x++){
-                column = coluna+x;
-                item = tab.getMatrizPecas(row, column);
-                prob = random.nextInt(max - min + 1) + min;
-                    
-                try{
-
-                    if(item != corJogador && item!='0' && prob==1 && nivel == 0){//25% de chance de alterar as peças ao redor
-                        tab.setMatrizPecas(row, column, corJogador);
-                    }else if(item != corJogador && item!='0'  && prob>1 && nivel == 1){//75% de chance de alterar as peças ao redor
-                        tab.setMatrizPecas(row, column, corJogador);
+        int max = 4;
+        boolean troca = false;
+    
+        for (int y = -1; y <= 1; y++) {
+            int row = linhaAtual + y;
+            for (int x = -1; x <= 1; x++) {
+                int column = (coluna-1) + x;
+                if (row >= 0 && row < tab.getLinhas() && column >= 0 && column < tab.getColunas() && (Math.abs(row - linhaAtual) <= 1) && (Math.abs(column - coluna) <= 1)) {
+                    int item = tab.getMatrizPecas(row, column);
+                    int prob = random.nextInt(max - min + 1) + min;
+                    if (item != corJogador && item != '0') {
+                        if ((prob == 1 && nivel == 0) || (prob > 1 && nivel == 1)) {
+                            System.out.println("Mudei alguma");
+                            tab.setMatrizPecas(row, column, corJogador);
+                            troca = true;
+                            break;
+                        }
                     }
-
-                }catch(IndexOutOfBoundsException e){
-                    continue;
                 }
-                            // TODO: handle exception
             }
-                
+            if(troca)
+                break;
         }
 
 
-        
-            
     }
-        
-
 
     public void hospicio(char corJogador,Tabuleiro tab){//Altera todas as peças do tabuleiro 50/50 de chance, um casino completo
         Random random = new Random();
