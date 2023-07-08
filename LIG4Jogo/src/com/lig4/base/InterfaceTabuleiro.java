@@ -1,5 +1,7 @@
 package com.lig4.base;
 
+import com.lig4.exception.AtributoInvalidoException;
+
 public interface InterfaceTabuleiro {
     
     public void imprimeMatriz();
@@ -14,6 +16,6 @@ public interface InterfaceTabuleiro {
 		
     public int getMatrizPecas(int linhas, int colunas);
 
-    public void setMatrizPecas(int linha, int coluna, char corJogador);
+    public void setMatrizPecas(int linha, int coluna, char corJogador) throws AtributoInvalidoException;
 
 }

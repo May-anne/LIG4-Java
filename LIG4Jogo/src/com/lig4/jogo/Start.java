@@ -3,6 +3,7 @@ package com.lig4.jogo;
 import java.util.Scanner;
 import com.lig4.jogadores.Pessoa;
 import com.lig4.base.Peca;
+import com.lig4.exception.AtributoInvalidoException;
 
 public class Start {
     private int escolha;
@@ -65,6 +66,13 @@ public class Start {
         Peca peca1 = new Peca('A');
         Peca peca2 = new Peca('V');
 
+        try { //Meio inútil
+            peca1.setCor('A');
+            peca2.setCor('G');
+        } catch (AtributoInvalidoException e) {
+            System.out.println("Erro. "+e.getMessage());
+        }
+
         switch(this.escolha){
             case 1:
                 jogador1 = new Pessoa(obterNomeJogador(), peca1);
@@ -105,7 +113,6 @@ public class Start {
                     new Lig4TurboMaluco(jogador1, jogador2,2);
                     break;
                 }
-                
                 break;
             default:
                 System.err.println("Opção inválida.");

@@ -1,5 +1,7 @@
 package com.lig4.base;
 
+import com.lig4.exception.AtributoInvalidoException;
+
 public class Tabuleiro implements InterfaceTabuleiro{
 
 	private int colunas = 7, linhas = 6;
@@ -32,7 +34,7 @@ public class Tabuleiro implements InterfaceTabuleiro{
 		return linhas;
 	}
 
-	public void setLinhaAtual(int linAtual){
+	public void setLinhaAtual(int linAtual){ //Nunca vai entrar em exceção.
 		this.linAtual = linAtual;
 	}
 
@@ -40,7 +42,7 @@ public class Tabuleiro implements InterfaceTabuleiro{
 		return linAtual;
 	}
 
-	public int getMatrizPecas(int linhas, int colunas){
+	public int getMatrizPecas(int linhas, int colunas){ //Revisar depois.
 		try{
 			return matrizPecas[linhas][colunas];
 		} catch(Exception e){
@@ -51,7 +53,10 @@ public class Tabuleiro implements InterfaceTabuleiro{
 			}	
 	}
 }
-	public void setMatrizPecas(int linha, int coluna, char corJogador){
+	public void setMatrizPecas(int linha, int coluna, char corJogador) throws AtributoInvalidoException{
+		if((linha < 0 && linha > 5) || (coluna < 0 && coluna > 6)){
+			throw new AtributoInvalidoException("Valor inexistente na matriz de peças.");
+		}
 		this.matrizPecas[linha][coluna] = corJogador;
 	}
 }

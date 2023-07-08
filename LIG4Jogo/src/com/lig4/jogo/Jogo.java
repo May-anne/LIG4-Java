@@ -1,6 +1,7 @@
 package com.lig4.jogo;
 
 import com.lig4.base.Tabuleiro;
+import com.lig4.exception.AtributoInvalidoException;
 import com.lig4.jogadores.Pessoa;
 
 public class Jogo {
@@ -35,6 +36,8 @@ public class Jogo {
 		int qtdJogadas = 0;
 	
 		try { //Checar se o movimento é válido.
+			jogadorAtual.setColunaEscolhida(colunaEscolhida);
+
 			this.alteraTab(corJogador, colunaEscolhida);
 			boolean vitoria = this.checaVitoria(corJogador);
 			qtdJogadas++;
@@ -50,30 +53,30 @@ public class Jogo {
 				Pessoa proximoJogador = (jogadorAtual == jogador1) ? jogador2 : jogador1;
 				loopJogo(proximoJogador);
 			}
-		} catch (IndexOutOfBoundsException e) { //Pedir ao usuário que insira algo válido.
-			System.out.println(nomeJogador+", insira uma coluna válida.");
+		} catch (AtributoInvalidoException e) { //Pedir (novamente) ao usuário que insira algo válido.
+			System.out.println("Erro. "+e.getMessage());
 			loopJogo(jogadorAtual);
 		}
 	}
-   /* public boolean checaMovimento(int coluna) {//TODO Verifica se peças podem ou não ser colocadas
-        if(coluna-1 < 0 || coluna > tab.getColunas() || tab.getMatrizPecas(0, coluna-1) != '0' ) {
-            return false;
-        } else {
-            return true;
-        }	
-    }*/
-
     public void alteraTab(char corJogador, int coluna) {	
     // TODO Alterar situação do tabuleiro (colocando index do jogador na posição escolhida)
         for (int x = 0; x < linhaMax-1; x++) {
             if (tab.getMatrizPecas(x+1, coluna-1) != '0') { // Verifica se a próxima casa da coluna tem alguma peça
-                tab.setMatrizPecas(x, coluna-1,  corJogador);
+				try{
+					tab.setMatrizPecas(x, coluna-1, corJogador);
+				}catch(AtributoInvalidoException e){
+					System.out.println("Erro. "+e.getMessage());
+				}
 				tab.setLinhaAtual(x);
                 tab.imprimeMatriz();
                 return;
     	    }
         }
-        tab.setMatrizPecas(linhaMax-1, coluna-1, corJogador);
+		try{
+			tab.setMatrizPecas(linhaMax-1, coluna-1, corJogador);
+		}catch(AtributoInvalidoException e){
+			System.out.println("Erro. "+e.getMessage());
+		}
 		tab.setLinhaAtual(linhaMax-1);
         tab.imprimeMatriz(); //Se não tiver nenhuma peça na coluna, a peça vai ficar na última linha da coluna
         return;

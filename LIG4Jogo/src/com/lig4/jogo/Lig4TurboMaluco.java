@@ -2,6 +2,7 @@ package com.lig4.jogo;
 import java.util.Random;
 
 import com.lig4.base.Tabuleiro;
+import com.lig4.exception.AtributoInvalidoException;
 import com.lig4.jogadores.Pessoa;
 
 public class Lig4TurboMaluco extends Jogo{
@@ -46,15 +47,20 @@ public class Lig4TurboMaluco extends Jogo{
             for (int x = -1; x <= 1; x++) {
                 int column = (coluna-1) + x;
                 if (row >= 0 && row < linhaMax && column >= 0 && column < tab.getColunas() && (Math.abs(row - linhaAtual) <= 1) && (Math.abs(column - coluna) <= 1)) {
-                    int item = tab.getMatrizPecas(row, column);
-                    int prob = random.nextInt(max - min + 1) + min;
-                    if (item != corJogador && item != '0') {
-                        if ((prob == 1 && nivel == 0) || (prob > 1 && nivel == 1)) {
-                            System.out.println("Mudei alguma");
-                            tab.setMatrizPecas(row, column, corJogador);
-                            troca = true;
-                            break;
+                    try {
+                        int item = tab.getMatrizPecas(row, column);
+                        int prob = random.nextInt(max - min + 1) + min;
+                        if (item != corJogador && item != '0') {
+                            if ((prob == 1 && nivel == 0) || (prob > 1 && nivel == 1)) {
+                                System.out.println("Mudei alguma");
+                                tab.setMatrizPecas(row, column, corJogador);
+                                troca = true;
+                                break;
+                            }
                         }
+                    } catch (AtributoInvalidoException e) {
+                        System.out.println("Erro:" + e.getMessage());
+                        break;
                     }
                 }
             }
@@ -72,7 +78,12 @@ public class Lig4TurboMaluco extends Jogo{
                 item = tab.getMatrizPecas(y,x);
                 prob = random.nextBoolean();
                 if(item !='0' && item != corJogador && prob){
-                    tab.setMatrizPecas(y, x, corJogador);
+                    try{
+                        tab.setMatrizPecas(y, x, corJogador);
+                    } catch(AtributoInvalidoException e){
+                        System.out.println("Erro. "+e.getMessage());
+                    }
+                    
                 }
             }
         }
