@@ -8,14 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MainClass extends Application {
+public class MainClass{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//new Start();
-		launch(args);
+		new Start();
+		//launch(args);
 	}
 
-	@Override
+	/*@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
         FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("view.fxml"));
@@ -25,6 +25,6 @@ public class MainClass extends Application {
         primaryStage.setTitle("LIG4");
         primaryStage.setScene(tela);
         primaryStage.show();
-	}
+	}*/
 
 }

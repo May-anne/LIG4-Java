@@ -28,11 +28,11 @@ public class Lig4TurboMaluco extends Jogo{
         super.alteraTab(corJogador, coluna);
         int linhaAtual = tab.getLinhaAtual();
 
-        if(nivel == 0)
-            alteraTabMaluco(coluna,linhaAtual,corJogador,tab,0);
-        else if(nivel == 1)
+        if(nivel == 1)
             alteraTabMaluco(coluna,linhaAtual,corJogador,tab,1);
         else if(nivel == 2)
+            alteraTabMaluco(coluna,linhaAtual,corJogador,tab,2);
+        else if(nivel == 3)
             hospicio(corJogador,tab);
     }
 
