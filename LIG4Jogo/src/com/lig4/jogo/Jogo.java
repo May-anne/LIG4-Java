@@ -45,10 +45,10 @@ public class Jogo {
 			if (vitoria) {
 				tab.imprimeMatriz();
 				System.out.println("O jogador " + nomeJogador + " ganhou.");
-				//continuarJogo();
+				continuarJogo();
 			} else if (qtdJogadas == linhaMax * tab.getColunas()) {
 				System.out.println("Empate.");
-				//continuarJogo();
+				continuarJogo();
 			} else {
 				Pessoa proximoJogador = (jogadorAtual == jogador1) ? jogador2 : jogador1;
 				loopJogo(proximoJogador);
@@ -113,5 +113,11 @@ public class Jogo {
 		}
 		return false;
 	}
+
+	public void continuarJogo(){
+        System.out.println("Você deseja continuar jogando? ");
+        System.out.println("1. Sim");
+        System.out.println("2. Não");
+    }
 
 }

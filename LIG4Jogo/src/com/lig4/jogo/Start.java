@@ -120,12 +120,6 @@ public class Start {
         }
     }
 
-    public void continuarJogo(){
-        System.out.println("Você deseja continuar jogando? ");
-        System.out.println("1. Sim");
-        System.out.println("2. Não");
-    }
-
     public void exibirNiveis(){
         System.out.println("Escolha o nível de maluquice: ");
         System.out.println("0. Loucura");
