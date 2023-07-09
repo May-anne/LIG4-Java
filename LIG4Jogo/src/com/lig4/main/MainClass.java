@@ -11,13 +11,13 @@ import javafx.stage.Stage;
 public class MainClass extends Application {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new Start();
+		//new Start();
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
- // TODO Auto-generated method stub
+		// TODO Auto-generated method stub
         FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("view.fxml"));
         Parent root = fxmlloader.load();
         Scene tela = new Scene(root);
