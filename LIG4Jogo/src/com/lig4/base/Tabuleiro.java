@@ -25,6 +25,14 @@ public class Tabuleiro implements InterfaceTabuleiro{
 		
 		System.out.println();
 	}
+
+	public void limparMatriz() {
+		for (int i = 0; i < linhas; i++) {
+			for (int j = 0; j < colunas; j++) {
+				matrizPecas[i][j] = '0';
+			}
+		}
+	}
 	
 	public int getColunas(){
 		return colunas;

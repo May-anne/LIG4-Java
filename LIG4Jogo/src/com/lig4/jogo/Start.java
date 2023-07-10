@@ -47,12 +47,14 @@ public class Start {
         return nomeJogador;
     }
     
-    public void getOpcao(int escolha){
+    public void setOpcao(int escolha) throws AtributoInvalidoException{
+        if(escolha < 1 || escolha > 3){
+            throw new AtributoInvalidoException("Opção inválida.");
+        }
         this.escolha = escolha;
     }
 
     public int lerOpcao(){
-        //return escolha;
         Scanner sc = new Scanner(System.in);
         int opcao = sc.nextInt();
 
@@ -61,19 +63,13 @@ public class Start {
 
     public void iniciarJogo(){
         exibirQtdJogadores();
-        getOpcao(lerOpcao());
-
         Peca peca1 = new Peca('A');
         Peca peca2 = new Peca('V');
 
-        try { //Meio inútil
-            peca1.setCor('A');
-            peca2.setCor('G');
-        } catch (AtributoInvalidoException e) {
-            System.out.println("Erro. "+e.getMessage());
-        }
+        try{
+            setOpcao(lerOpcao());
 
-        switch(this.escolha){
+            switch(this.escolha){
             case 1:
                 jogador1 = new Pessoa(obterNomeJogador(), peca1);
                 jogador2 = new Pessoa("Computador", peca2);
@@ -83,47 +79,61 @@ public class Start {
                 jogador2 = new Pessoa(obterNomeJogador(), peca2);
                 break;
             default:
-                System.err.println("Número inválido.");
+                System.err.println("Opção inválida.");
+                iniciarJogo();
                 break;
+        }
+        }catch(AtributoInvalidoException e){
+            System.out.println("Erro. "+e.getMessage());
+            iniciarJogo();
+        }
+
+        try {
+            peca1.setCor('A');
+            peca2.setCor('G');
+        } catch (AtributoInvalidoException e) {
+            System.out.println("Erro. "+e.getMessage());
         }
 
         exibirMenu();
-        getOpcao(lerOpcao());
 
-        switch(this.escolha){
-            case 1:
-                new Classico(jogador1, jogador2);
-                break;
-            case 2:
-                new LIG4Turbo(jogador1, jogador2);
-                break;
-            case 3:
-
-                exibirNiveis();
-                getOpcao(lerOpcao());
-
-                switch(this.escolha){
-                case 0:
-                    new Lig4TurboMaluco(jogador1, jogador2,0);
-                    break;
+        try{
+            setOpcao(lerOpcao());
+            switch(this.escolha){
                 case 1:
-                    new Lig4TurboMaluco(jogador1, jogador2,1);
+                    new Classico(jogador1, jogador2);
                     break;
                 case 2:
-                    new Lig4TurboMaluco(jogador1, jogador2,2);
+                    new LIG4Turbo(jogador1, jogador2);
                     break;
-                }
-                break;
-            default:
-                System.err.println("Opção inválida.");
-                break;
+                case 3:
+                    exibirNivelTurboMaluco();
+                    try{
+                        setOpcao(lerOpcao());
+                        switch(this.escolha){
+                        case 1:
+                            new Lig4TurboMaluco(jogador1, jogador2,1);
+                            break;
+                        case 2:
+                            new Lig4TurboMaluco(jogador1, jogador2,2);
+                            break;
+                        case 3:
+                            new Lig4TurboMaluco(jogador1, jogador2,3);
+                            break;
+                        default:
+                            break;
+                        }
+                    }catch(AtributoInvalidoException e){
+                        System.out.println("Erro. "+e.getMessage());
+                        iniciarJogo();
+                    }
+                default:
+                    break;
+            }
         }
-    }
-
-    public void exibirNiveis(){
-        System.out.println("Escolha o nível de maluquice: ");
-        System.out.println("0. Loucura");
-        System.out.println("1. Insanidade");
-        System.out.println("2. Hospício");
+        catch(AtributoInvalidoException e){
+            System.out.println("Erro. "+e.getMessage());
+            iniciarJogo();
+        }
     }
 }

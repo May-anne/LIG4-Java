@@ -6,6 +6,8 @@ public interface InterfaceTabuleiro {
     
     public void imprimeMatriz();
 
+    public void limparMatriz();
+
     public int getColunas();
 
     public int getLinhas();

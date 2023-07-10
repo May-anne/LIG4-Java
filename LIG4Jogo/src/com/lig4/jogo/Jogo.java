@@ -1,5 +1,7 @@
 package com.lig4.jogo;
 
+import java.util.Scanner;
+
 import com.lig4.base.Tabuleiro;
 import com.lig4.exception.AtributoInvalidoException;
 import com.lig4.jogadores.Pessoa;
@@ -9,6 +11,7 @@ public class Jogo {
     private Tabuleiro tab= new Tabuleiro();
 	private int linhaMax= tab.getLinhas();
 	private Pessoa jogador1, jogador2;
+	int escolha;
 
     public Jogo(Pessoa jogador1, Pessoa jogador2){
 		this.jogador1 = jogador1;
@@ -33,7 +36,7 @@ public class Jogo {
 		char corJogador = jogadorAtual.getCorPeca();
 
 		int colunaEscolhida = jogadorAtual.escolheColuna();
-		int qtdJogadas = 0;
+		int qtdJogadas = 0, pontuacao = 0;
 	
 		try { //Checar se o movimento é válido.
 			jogadorAtual.setColunaEscolhida(colunaEscolhida);
@@ -45,7 +48,17 @@ public class Jogo {
 			if (vitoria) {
 				tab.imprimeMatriz();
 				System.out.println("O jogador " + nomeJogador + " ganhou.");
+				jogadorAtual.setRanking(pontuacao++);
 				continuarJogo();
+				try{
+					setContinuarouNao(getContinuarouNao());
+					if(this.escolha == 1){
+						tab.limparMatriz();
+						loopJogo(jogadorAtual);
+					}
+				} catch(AtributoInvalidoException e){
+					System.out.println("Erro. "+e.getMessage());
+				}
 			} else if (qtdJogadas == linhaMax * tab.getColunas()) {
 				System.out.println("Empate.");
 				continuarJogo();
@@ -115,9 +128,23 @@ public class Jogo {
 	}
 
 	public void continuarJogo(){
-        System.out.println("Você deseja continuar jogando? ");
+        System.out.println("Deseja continuar jogando? ");
         System.out.println("1. Sim");
         System.out.println("2. Não");
     }
+
+	public void setContinuarouNao(int escolha) throws AtributoInvalidoException{
+		if(escolha < 0 || escolha > 2){
+			throw new AtributoInvalidoException("Opção inválida.");
+		}
+		this.escolha = escolha;
+	}
+
+	public int getContinuarouNao(){
+		Scanner sc = new Scanner(System.in);
+		escolha = sc.nextInt();
+
+		return escolha;
+	}
 
 }
