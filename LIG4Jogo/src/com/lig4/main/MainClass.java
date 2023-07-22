@@ -24,7 +24,7 @@ public class MainClass extends Application {
        
 		Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/view.fxml"));
 		menu = new Scene(fxmlMenu, 640,400);
-
+		
 		Parent fxmlModoJogo = FXMLLoader.load(getClass().getResource("../view/modo_jogo.fxml"));
 		modoJogo = new Scene(fxmlModoJogo, 640,400);
 
@@ -60,8 +60,8 @@ public class MainClass extends Application {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new Start();
-		//launch(args);
+		//new Start();
+		launch(args);
 	}
 
 }
