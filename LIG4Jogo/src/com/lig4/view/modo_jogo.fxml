@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="400.0" fitWidth="709.0" layoutY="1.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Imagens/wallpaper-jogo.jpg" />
+                  <Image url="@wallpaper-jogo.jpg" />
                </image>
             </ImageView>
             <Button layoutX="191.0" layoutY="120.0" mnemonicParsing="false" onAction="#btClassico" prefHeight="45.0" prefWidth="259.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;" text="Clássico" textFill="WHITE">

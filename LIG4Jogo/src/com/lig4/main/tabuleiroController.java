@@ -14,7 +14,7 @@ import javafx.scene.shape.Circle;
 
 public class tabuleiroController {
     private String idBotaoClicado;
-    private TabuleiroGUI tabGui = new TabuleiroGUI();
+    private TabuleiroGUI tabGui;
     private nomesController nomes = new nomesController();
     private int col;
 
@@ -28,9 +28,15 @@ public class tabuleiroController {
 
         Pessoa jogador1 = nomes.getJogador1();
         Pessoa jogador2 = nomes.getJogador2();
+
+        System.out.println("Nome = "+jogador1.getNome());
+
+        System.out.println(jogador1.getNome());
+
+        tabGui = new TabuleiroGUI(jogador1, jogador2);
         
         col = obterColuna();
-        tabGui.alteraTabGui(grid, col, jogador1, jogador2);
+        tabGui.alteraTabGui(grid, col);
     }
 
     public int obterColuna(){

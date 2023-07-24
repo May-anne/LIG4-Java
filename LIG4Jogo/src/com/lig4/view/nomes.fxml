@@ -16,14 +16,9 @@
          <children>
             <ImageView fitHeight="400.0" fitWidth="683.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Imagens/wallpaper-jogo.jpg" />
+                  <Image url="@wallpaper-jogo.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="220.0" layoutY="59.0" prefHeight="30.0" prefWidth="202.0" text="Informe os nomes" textAlignment="JUSTIFY" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="23.0" />
-               </font>
-            </Label>
             <Label layoutX="91.0" layoutY="148.0" text="Jogador 1:" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="20.0" />
@@ -44,6 +39,11 @@
             </Button>
             <TextField fx:id="textfield1" layoutX="215.0" layoutY="151.0" prefHeight="25.0" prefWidth="318.0" />
             <TextField fx:id="textfield2" layoutX="215.0" layoutY="226.0" prefHeight="25.0" prefWidth="318.0" />
+            <ImageView fitHeight="72.0" fitWidth="400.0" layoutX="133.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../Imagens/TelaSAM/image-nomes.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

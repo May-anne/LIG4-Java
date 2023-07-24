@@ -50,9 +50,6 @@ public class nomesController {
         peca1 = new Peca('A');
         peca2 = new Peca('V');
 
-        System.out.println("nome1 = "+nome1);
-        System.out.println("nome2 = "+nome2);
-
         jogador1 = new Pessoa(nome1, peca1);
         jogador2 = new Pessoa(nome2, peca2);
 
