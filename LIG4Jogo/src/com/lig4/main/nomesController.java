@@ -36,6 +36,17 @@ public class nomesController {
             return;
         }
 
+        if(nome1.equals(nome2)){
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText(null);
+            alert.setContentText("Inválido! Nomes iguais.");
+            textfield1.clear();
+            textfield2.clear();
+            alert.showAndWait();
+            return;
+        }
+
         peca1 = new Peca('A');
         peca2 = new Peca('V');
 
@@ -46,5 +57,13 @@ public class nomesController {
         jogador2 = new Pessoa(nome2, peca2);
 
         MainClass.changeScreen("tabuleiro");
+    }
+
+    public Pessoa getJogador1(){
+        return jogador1;
+    }
+
+    public Pessoa getJogador2(){
+        return jogador2;
     }
 }

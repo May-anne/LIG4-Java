@@ -21,9 +21,8 @@ public class MainClass extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
 		Image logoImage = new Image(getClass().getResourceAsStream("../view/logo.png"));
-
-        // Definir o logo como ícone da aplicação
         primaryStage.getIcons().add(logoImage);
+		
 		// TODO Auto-generated method stub
 		stage.setTitle("LIG4");
        

@@ -1,5 +1,7 @@
 package com.lig4.gui;
 
+import com.lig4.jogadores.Pessoa;
+
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -11,7 +13,7 @@ public class TabuleiroGUI {
     private final int colunaMax = 7;
     private int row = linhaMax - 1;
 
-    public void alteraTabGui(GridPane gridPane, int col) {
+    public void alteraTabGui(GridPane gridPane, int col, Pessoa jogador1, Pessoa jogador2) {
             Circle circuloAtual = getCirculo(gridPane, col-1, row);
             Circle circuloProximo = getCirculo(gridPane, col-1, row + 1);
 

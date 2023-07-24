@@ -1,6 +1,7 @@
 package com.lig4.main;
 
 import com.lig4.gui.TabuleiroGUI;
+import com.lig4.jogadores.Pessoa;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -14,6 +15,7 @@ import javafx.scene.shape.Circle;
 public class tabuleiroController {
     private String idBotaoClicado;
     private TabuleiroGUI tabGui = new TabuleiroGUI();
+    private nomesController nomes = new nomesController();
     private int col;
 
     @FXML
@@ -23,9 +25,12 @@ public class tabuleiroController {
     protected void btEscolherColuna(MouseEvent event) {
         Button botaoClicado = (Button) event.getSource();
         idBotaoClicado = botaoClicado.getId();
+
+        Pessoa jogador1 = nomes.getJogador1();
+        Pessoa jogador2 = nomes.getJogador2();
         
         col = obterColuna();
-        tabGui.alteraTabGui(grid, col);
+        tabGui.alteraTabGui(grid, col, jogador1, jogador2);
     }
 
     public int obterColuna(){
