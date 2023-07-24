@@ -7,6 +7,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class MainClass extends Application {
@@ -19,8 +20,12 @@ public class MainClass extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
+		Image logoImage = new Image(getClass().getResourceAsStream("../view/logo.png"));
+
+        // Definir o logo como ícone da aplicação
+        primaryStage.getIcons().add(logoImage);
 		// TODO Auto-generated method stub
-		stage.setTitle("Lig4");
+		stage.setTitle("LIG4");
        
 		Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/view.fxml"));
 		menu = new Scene(fxmlMenu, 640,400);

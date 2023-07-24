@@ -42,8 +42,8 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField layoutX="215.0" layoutY="151.0" prefHeight="25.0" prefWidth="318.0" />
-            <TextField layoutX="215.0" layoutY="226.0" prefHeight="25.0" prefWidth="318.0" />
+            <TextField fx:id="textfield1" layoutX="215.0" layoutY="151.0" prefHeight="25.0" prefWidth="318.0" />
+            <TextField fx:id="textfield2" layoutX="215.0" layoutY="226.0" prefHeight="25.0" prefWidth="318.0" />
          </children>
       </Pane>
    </children>
