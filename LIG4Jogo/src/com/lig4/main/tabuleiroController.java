@@ -17,9 +17,23 @@ public class tabuleiroController {
     private TabuleiroGUI tabGui;
     private nomesController nomes = new nomesController();
     private int col;
+    private boolean jogador1Vez = true;
+    private Pessoa jogadorAtual;
 
     @FXML
     private GridPane grid = new GridPane();
+
+    @FXML
+    protected void btColorir(MouseEvent event){
+        Button botaoEntrar = (Button) event.getSource();
+        botaoEntrar.setOpacity(0.48);
+    }
+
+    @FXML
+    protected void btDescolorir(MouseEvent event){
+        Button botaoSair = (Button) event.getSource();
+        botaoSair.setOpacity(0);
+    }
 
     @FXML
     protected void btEscolherColuna(MouseEvent event) {
@@ -29,13 +43,16 @@ public class tabuleiroController {
         Pessoa jogador1 = nomes.getJogador1();
         Pessoa jogador2 = nomes.getJogador2();
 
-        System.out.println("Nome = "+jogador1.getNome());
-
-        System.out.println(jogador1.getNome());
-
         tabGui = new TabuleiroGUI(jogador1, jogador2);
         
         col = obterColuna();
+
+        if (jogador1Vez) {
+            jogadorAtual = jogador1;
+        } else {
+            jogadorAtual = jogador2;
+        }
+
         tabGui.alteraTabGui(grid, col);
     }
 

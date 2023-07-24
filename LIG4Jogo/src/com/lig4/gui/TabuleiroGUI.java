@@ -15,6 +15,8 @@ public class TabuleiroGUI {
     private Pessoa jogadorAtual, jogador1, jogador2;
 
     public TabuleiroGUI(Pessoa jogador1, Pessoa jogador2) {
+        this.jogador1 = jogador1;
+        this.jogador2 = jogador2;
         this.jogadorAtual = jogador1;
     }
 
@@ -33,8 +35,6 @@ public class TabuleiroGUI {
         } else {
             System.out.println("A coluna está cheia!");
         }
-    
-        jogadorAtual = (jogadorAtual == jogador1) ? jogador2 : jogador1;
     }
     
 
