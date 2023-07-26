@@ -190,11 +190,7 @@
             </StackPane>
             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="2">
                <children>
-                  <StackPane>
-                     <children>
-                        <Circle fill="WHITE" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </StackPane>
+                  <Circle fill="WHITE" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </StackPane>
             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="0">
