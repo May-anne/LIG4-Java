@@ -17,7 +17,7 @@ public class tabuleiroController {
     private TabuleiroGUI tabGui;
     private nomesController nomes = new nomesController();
     private int col;
-    private boolean jogador1Vez = true;
+    private int jogador1Vez = 0;
     private Pessoa jogadorAtual;
 
     @FXML
@@ -47,13 +47,13 @@ public class tabuleiroController {
         
         col = obterColuna();
 
-        if (jogador1Vez) {
-            jogadorAtual = jogador1;
-        } else {
-            jogadorAtual = jogador2;
-        }
-
-        tabGui.alteraTabGui(grid, col);
+        if(jogador1Vez !=1)
+            jogador1Vez = 1;
+        else
+            jogador1Vez = 2;
+        
+        
+        tabGui.alteraTabGui(grid, col, jogador1Vez);
     }
 
     public int obterColuna(){

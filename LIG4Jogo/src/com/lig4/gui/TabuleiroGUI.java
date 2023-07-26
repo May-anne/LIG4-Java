@@ -17,12 +17,17 @@ public class TabuleiroGUI {
     public TabuleiroGUI(Pessoa jogador1, Pessoa jogador2) {
         this.jogador1 = jogador1;
         this.jogador2 = jogador2;
-        this.jogadorAtual = jogador1;
+        
     }
 
-    public void alteraTabGui(GridPane gridPane, int col) {
+    public void alteraTabGui(GridPane gridPane, int col,int player) {
         Circle circuloAtual;
-        Circle circuloProximo = getCirculo(gridPane, col - 1, row + 1);
+        if(player == 1){
+            jogadorAtual = jogador1;
+        }else{
+            jogadorAtual = jogador2;
+        }
+
         System.out.println(row);
         for(int i = 1; i<=6; i++){
             row = linhaMax - i;
@@ -31,7 +36,7 @@ public class TabuleiroGUI {
 
             if(circuloAtual.getFill().equals(Color.WHITE)){
 
-                circuloAtual.setFill(jogadorAtual == jogador1 ? Color.RED : Color.YELLOW);
+                circuloAtual.setFill(player == 1 ? Color.RED : Color.YELLOW);
                 break;
 
             } else if(!circuloAtual.getFill().equals(Color.WHITE)){
@@ -43,7 +48,9 @@ public class TabuleiroGUI {
        
     }
     
-
+    public boolean checaVitoria(){
+        return false;
+    }
     public Circle getCirculo(GridPane gridPane, int col, int row) {
 
         for (Node node : gridPane.getChildren()) {
