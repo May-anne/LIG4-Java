@@ -18,7 +18,7 @@
    <children>
       <ImageView fitHeight="550.0" fitWidth="901.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Imagens/TelaSAM/teste3.jpg" />
+            <Image url="@teste3.jpg" />
          </image>
       </ImageView>
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#004c99" height="423.0" layoutX="85.0" layoutY="85.0" stroke="#004ead" strokeType="INSIDE" width="631.0" />
@@ -292,12 +292,12 @@
       </Button>
       <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="85.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/do-utilizador%20(1).png" />
+            <Image url="@do-utilizador%20(1).png" />
          </image>
       </ImageView>
       <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="677.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/do-utilizador%20(1).png" />
+            <Image url="@do-utilizador%20(1).png" />
          </image>
       </ImageView>
       <Text fx:id="nomeJogador1" fill="WHITE" layoutX="142.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
