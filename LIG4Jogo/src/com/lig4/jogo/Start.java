@@ -90,7 +90,7 @@ public class Start {
 
         try {
             peca1.setCor('A');
-            peca2.setCor('G');
+            peca2.setCor('V');
         } catch (AtributoInvalidoException e) {
             System.out.println("Erro. "+e.getMessage());
         }

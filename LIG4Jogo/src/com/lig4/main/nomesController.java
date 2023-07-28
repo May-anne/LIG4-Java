@@ -1,18 +1,21 @@
 package com.lig4.main;
 
-import com.lig4.base.Peca;
+import java.io.IOException;
 import com.lig4.jogadores.Pessoa;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
 public class nomesController {
-    private Pessoa jogador1;
-    private Pessoa jogador2;
-    private char peca1;
-    private char peca2;
+    private Pessoa jogador1, jogador2;
+    private char peca1, peca2;
 
     @FXML
     private TextField textfield1 = new TextField();
@@ -21,7 +24,7 @@ public class nomesController {
     private TextField textfield2 = new TextField();
 
     @FXML 
-    protected void btIniciarAction(){
+    protected void btIniciarAction(ActionEvent event) throws IOException{
         String nome1 = textfield1.getText();
         String nome2 = textfield2.getText();
 
@@ -53,14 +56,18 @@ public class nomesController {
         jogador1 = new Pessoa(nome1, peca1);
         jogador2 = new Pessoa(nome2, peca2);
 
-        MainClass.changeScreen("tabuleiro");
-    }
+        //Passar informação para a próxima tela.
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/tabuleiro.fxml"));
+        Parent root = loader.load();
+        tabuleiroController tabController = loader.getController();
+        tabController.setJogador1(jogador1);
+        tabController.setJogador2(jogador2);
+        tabController.mostrarNome1(jogador1.getNome());
+        tabController.mostrarNome2(jogador2.getNome());
 
-    public Pessoa getJogador1(){
-        return jogador1;
-    }
-
-    public Pessoa getJogador2(){
-        return jogador2;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

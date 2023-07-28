@@ -10,13 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class MainClass extends Application {
-	
+public class MainClass extends Application {	
 	private static Stage stage;
-
-	private static Scene menu,tabuleiro,modoJogo,turboMaluco,nomes;
+	private static Scene menu, tabuleiro, modoJogo, turboMaluco, nomes;
 	
-
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
@@ -39,7 +36,7 @@ public class MainClass extends Application {
 		turboMaluco = new Scene(fxmlTurboMaluco, 640,400);
 
 		Parent fxmlTabuleiro = FXMLLoader.load(getClass().getResource("../view/tabuleiro.fxml"));
-		tabuleiro = new Scene(fxmlTabuleiro, 674,485);
+		tabuleiro = new Scene(fxmlTabuleiro, 800, 550);
       
 	
         stage.setScene(menu);
@@ -52,14 +49,7 @@ public class MainClass extends Application {
 		}else if(src.equals("turboMaluco")){
 			stage.setScene(turboMaluco);
 		}else if(src.equals("nomes")){
-			FXMLLoader loader = new FXMLLoader(MainClass.class.getResource("../view/nomes.fxml"));
-            Parent root = loader.load();
-
-            
-            tabuleiroController controller = loader.getController();
-            controller.setJogadores(jogador1, jogador2);
-
-            stage.setScene(new Scene(root, 640, 400));
+            stage.setScene(nomes);
 		}else if(src.equals("tabuleiro")){
 			stage.setScene(tabuleiro);
 		}else if(src.equals("sair")){
