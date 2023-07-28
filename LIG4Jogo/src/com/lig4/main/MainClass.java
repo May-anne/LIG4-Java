@@ -52,7 +52,14 @@ public class MainClass extends Application {
 		}else if(src.equals("turboMaluco")){
 			stage.setScene(turboMaluco);
 		}else if(src.equals("nomes")){
-			stage.setScene(nomes);
+			FXMLLoader loader = new FXMLLoader(MainClass.class.getResource("../view/nomes.fxml"));
+            Parent root = loader.load();
+
+            
+            tabuleiroController controller = loader.getController();
+            controller.setJogadores(jogador1, jogador2);
+
+            stage.setScene(new Scene(root, 640, 400));
 		}else if(src.equals("tabuleiro")){
 			stage.setScene(tabuleiro);
 		}else if(src.equals("sair")){

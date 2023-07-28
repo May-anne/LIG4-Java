@@ -11,8 +11,8 @@ import javafx.scene.control.Alert.AlertType;
 public class nomesController {
     private Pessoa jogador1;
     private Pessoa jogador2;
-    private Peca peca1;
-    private Peca peca2;
+    private char peca1;
+    private char peca2;
 
     @FXML
     private TextField textfield1 = new TextField();
@@ -47,8 +47,8 @@ public class nomesController {
             return;
         }
 
-        peca1 = new Peca('A');
-        peca2 = new Peca('V');
+        peca1 = 'A';
+        peca2 = 'V';
 
         jogador1 = new Pessoa(nome1, peca1);
         jogador2 = new Pessoa(nome2, peca2);

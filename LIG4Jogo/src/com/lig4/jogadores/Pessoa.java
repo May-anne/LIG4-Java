@@ -6,11 +6,11 @@ import com.lig4.exception.AtributoInvalidoException;
 
 public class Pessoa {
 	private String nome;
-	private Peca peca;
+	private char peca;
 	private int col;
 	private int ranking; // A cada vitória, soma +1
 	
-	public Pessoa(String nome, Peca peca) {	
+	public Pessoa(String nome, char peca) {	
 		this.nome = nome; //Futuramente colocar verificação para ver se nome já existe no ranking
 		this.peca = peca; //Identifica se é jogador 1 ou jogador 2. A cada partida, a cor pode ser redefinida
 	}
@@ -31,11 +31,11 @@ public class Pessoa {
 	}
 
 	public char getCorPeca(){
-		return peca.getCor();
+		return this.peca;
 	}
 
 	public void setCorPeca(char cor) throws AtributoInvalidoException{
-		this.peca.setCor(cor);
+		this.peca = cor;
 	}
 
 	public String getNome(){

@@ -63,8 +63,8 @@ public class Start {
 
     public void iniciarJogo(){
         exibirQtdJogadores();
-        Peca peca1 = new Peca('A');
-        Peca peca2 = new Peca('V');
+        char peca1 = 'V';
+        char peca2 = 'A';
 
         try{
             setOpcao(lerOpcao());

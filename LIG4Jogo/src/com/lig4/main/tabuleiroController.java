@@ -5,7 +5,10 @@ import com.lig4.jogadores.Pessoa;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -15,10 +18,11 @@ import javafx.scene.shape.Circle;
 public class tabuleiroController {
     private String idBotaoClicado;
     private TabuleiroGUI tabGui;
-    private nomesController nomes = new nomesController();
+    
     private int col;
     private int jogador1Vez = 0;
-    private Pessoa jogadorAtual;
+    protected Pessoa jogadorAtual, jogador1,jogador2;
+    char peca1,peca2;
 
     @FXML
     private GridPane grid = new GridPane();
@@ -34,16 +38,54 @@ public class tabuleiroController {
         Button botaoSair = (Button) event.getSource();
         botaoSair.setOpacity(0);
     }
+    @FXML
+    private TextField textfield1 = new TextField();
+
+    @FXML
+    private TextField textfield2 = new TextField();
+
+    @FXML 
+    protected void btIniciarAction(){
+        String nome1 = textfield1.getText();
+        String nome2 = textfield2.getText();
+
+        if(nome1.isEmpty() || nome2.isEmpty()){
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText(null);
+            alert.setContentText("Insira nomes válidos!");
+            textfield1.clear();
+            textfield2.clear();
+            alert.showAndWait();
+            return;
+        }
+
+        if(nome1.equals(nome2)){
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText(null);
+            alert.setContentText("Inválido! Nomes iguais.");
+            textfield1.clear();
+            textfield2.clear();
+            alert.showAndWait();
+            return;
+        }
+
+        this.jogador1 = new Pessoa(nome1, 'V');
+        this.jogador2 = new Pessoa(nome2, 'A');
+        System.out.println(jogador1);
+        System.out.println(jogador2);
+
+        MainClass.changeScreen("tabuleiro");
+    }
 
     @FXML
     protected void btEscolherColuna(MouseEvent event) {
         Button botaoClicado = (Button) event.getSource();
         idBotaoClicado = botaoClicado.getId();
 
-        Pessoa jogador1 = nomes.getJogador1();
-        Pessoa jogador2 = nomes.getJogador2();
 
-        tabGui = new TabuleiroGUI(jogador1, jogador2);
+        tabGui = new TabuleiroGUI(this.jogador1, this.jogador2);
         
         col = obterColuna();
 
@@ -52,8 +94,9 @@ public class tabuleiroController {
         else
             jogador1Vez = 2;
         
-        
+        System.out.println(jogador1);
         tabGui.alteraTabGui(grid, col, jogador1Vez);
+        boolean vit = tabGui.checaVitoria(grid, jogador1);
     }
 
     public int obterColuna(){

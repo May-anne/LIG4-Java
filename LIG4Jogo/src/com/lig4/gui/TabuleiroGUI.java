@@ -48,9 +48,38 @@ public class TabuleiroGUI {
        
     }
     
-    public boolean checaVitoria(){
+    public boolean checaVitoria(GridPane gridPane, Pessoa pessoa){
+
+        char peca = pessoa.getCorPeca();
+        Circle p1,p2,p3,p4;
+        Color cor = Color.rgb(0, 0, 0);
+
+        
+        if(peca=='V')
+           cor = Color.RED;
+        else if(peca=='A')
+           cor = Color.YELLOW;
+
+        // for(int row = 0; row<=3;row++){
+        //     for(int col = 0; col<=6;col++){
+            
+        //         p1 = getCirculo(gridPane, col, row);
+        //         p2 = getCirculo(gridPane, col, row+1);
+        //         p3 = getCirculo(gridPane, col, row+2);
+        //         p4 = getCirculo(gridPane, col, row+3);
+               
+        //         if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
+        //             System.out.println("Alguem venceu");
+        //             return true;
+        //         }
+            
+        //     }
+        // }
+        
         return false;
     }
+
+
     public Circle getCirculo(GridPane gridPane, int col, int row) {
 
         for (Node node : gridPane.getChildren()) {
