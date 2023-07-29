@@ -20,26 +20,26 @@ public class MainClass extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
-		Image logoImage = new Image(getClass().getResourceAsStream("../view/logo.png"));
+		Image logoImage = new Image(getClass().getResourceAsStream("../view/resources/logo.png"));
         primaryStage.getIcons().add(logoImage);
 		
 		// TODO Auto-generated method stub
 		stage.setTitle("LIG4");
        
 		Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/view.fxml"));
-		menu = new Scene(fxmlMenu, 640,400);
+		menu = new Scene(fxmlMenu, 800, 550);
 		
 		Parent fxmlModoJogo = FXMLLoader.load(getClass().getResource("../view/modo_jogo.fxml"));
-		modoJogo = new Scene(fxmlModoJogo, 640,400);
+		modoJogo = new Scene(fxmlModoJogo, 800, 550);
 
 		Parent fxmlNomes = FXMLLoader.load(getClass().getResource("../view/nomes.fxml"));
-		nomes = new Scene(fxmlNomes, 640,400);
+		nomes = new Scene(fxmlNomes, 800, 550);
 
 		Parent fxmlTurboMaluco = FXMLLoader.load(getClass().getResource("../view/turbo_maluco.fxml"));
-		turboMaluco = new Scene(fxmlTurboMaluco, 640,400);
+		turboMaluco = new Scene(fxmlTurboMaluco, 800, 550);
 
 		Parent fxmlTabuleiro = FXMLLoader.load(getClass().getResource("../view/tabuleiro.fxml"));
-		tabuleiro = new Scene(fxmlTabuleiro, 674,485);
+		tabuleiro = new Scene(fxmlTabuleiro, 800, 550);
       
 	
         stage.setScene(menu);

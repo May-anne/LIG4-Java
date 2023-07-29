@@ -18,7 +18,7 @@
          <children>
             <ImageView fitHeight="544.0" fitWidth="886.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Wallpaper.jpg" />
+                  <Image url="@resources/Wallpaper.jpg" />
                </image>
             </ImageView>
             <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#66b2ff" height="163.0" layoutX="119.0" layoutY="272.0" stroke="#0066cc" strokeType="INSIDE" width="563.0" />
@@ -44,7 +44,7 @@
             <TextField fx:id="textfield2" layoutX="302.0" layoutY="374.0" prefHeight="25.0" prefWidth="318.0" />
             <ImageView fitHeight="132.0" fitWidth="338.0" layoutX="255.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@logoJogo.png" />
+                  <Image url="@resources/logoJogo.png" />
                </image>
             </ImageView>
             <Circle fill="#ffcc00" layoutX="327.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
@@ -53,7 +53,7 @@
             <Circle fill="#ffcc00" layoutX="474.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
             <ImageView fitHeight="50.0" fitWidth="487.0" layoutX="169.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@tituloNomes.png" />
+                  <Image url="@resources/tituloNomes.png" />
                </image>
             </ImageView>
          </children>

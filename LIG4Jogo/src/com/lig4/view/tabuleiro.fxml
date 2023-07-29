@@ -17,9 +17,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lig4.main.tabuleiroController">
    <children>
-      <ImageView fitHeight="550.0" fitWidth="901.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="550.0" fitWidth="813.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@teste3.jpg" />
+            <Image url="@resources/teste3.jpg" />
          </image>
       </ImageView>
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#004c99" height="423.0" layoutX="85.0" layoutY="85.0" stroke="#004ead" strokeType="INSIDE" width="631.0" />
@@ -293,12 +293,12 @@
       </Button>
       <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="85.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@do-utilizador%20(1).png" />
+            <Image url="@resources/do-utilizador%20(1).png" />
          </image>
       </ImageView>
       <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="677.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@do-utilizador%20(1).png" />
+            <Image url="@resources/do-utilizador%20(1).png" />
          </image>
       </ImageView>
       <Text fx:id="vez1" fill="#ff3333" layoutX="142.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">

@@ -50,7 +50,7 @@
                <children>
                   <ImageView fitHeight="590.0" fitWidth="910.0" opacity="0.06" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Wallpaper.jpg" />
+                        <Image url="@resources/Wallpaper.jpg" />
                      </image>
                   </ImageView>
                   <Button layoutX="324.0" layoutY="275.0" mnemonicParsing="false" onAction="#btIniciarAction" prefHeight="59.0" prefWidth="147.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3;" text="Iniciar" textFill="WHITE">
@@ -79,7 +79,7 @@
                   </Button>
                   <ImageView fitHeight="161.0" fitWidth="357.0" layoutX="219.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@logoJogo.png" />
+                        <Image url="@resources/logoJogo.png" />
                      </image>
                   </ImageView>
                   <Circle fill="#ffcc00" layoutX="343.0" layoutY="217.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
