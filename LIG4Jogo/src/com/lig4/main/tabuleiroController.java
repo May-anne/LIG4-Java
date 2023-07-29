@@ -80,7 +80,7 @@ public class tabuleiroController {
             vez2.setOpacity(0);  
         }
         tabGui.alteraTabGui(grid, col, jogadorAtual);
-        boolean vit = tabGui.checaVitoria(grid, jogador1);
+        boolean vit = tabGui.checaVitoria(grid, jogadorAtual);
     }
 
     public int obterColuna(){

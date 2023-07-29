@@ -10,10 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class MainClass extends Application {	
-	private static Stage stage;
-	private static Scene menu, tabuleiro, modoJogo, turboMaluco, nomes;
+public class MainClass extends Application {
 	
+	private static Stage stage;
+
+	private static Scene menu,tabuleiro,modoJogo,turboMaluco,nomes;
+	
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
@@ -24,19 +27,19 @@ public class MainClass extends Application {
 		stage.setTitle("LIG4");
        
 		Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/view.fxml"));
-		menu = new Scene(fxmlMenu, 800, 550);
+		menu = new Scene(fxmlMenu, 640,400);
 		
 		Parent fxmlModoJogo = FXMLLoader.load(getClass().getResource("../view/modo_jogo.fxml"));
-		modoJogo = new Scene(fxmlModoJogo, 800, 550);
+		modoJogo = new Scene(fxmlModoJogo, 640,400);
 
 		Parent fxmlNomes = FXMLLoader.load(getClass().getResource("../view/nomes.fxml"));
-		nomes = new Scene(fxmlNomes, 800, 550);
+		nomes = new Scene(fxmlNomes, 640,400);
 
 		Parent fxmlTurboMaluco = FXMLLoader.load(getClass().getResource("../view/turbo_maluco.fxml"));
-		turboMaluco = new Scene(fxmlTurboMaluco, 800, 550);
+		turboMaluco = new Scene(fxmlTurboMaluco, 640,400);
 
 		Parent fxmlTabuleiro = FXMLLoader.load(getClass().getResource("../view/tabuleiro.fxml"));
-		tabuleiro = new Scene(fxmlTabuleiro, 800, 550);
+		tabuleiro = new Scene(fxmlTabuleiro, 674,485);
       
 	
         stage.setScene(menu);
@@ -49,14 +52,12 @@ public class MainClass extends Application {
 		}else if(src.equals("turboMaluco")){
 			stage.setScene(turboMaluco);
 		}else if(src.equals("nomes")){
-            stage.setScene(nomes);
+			stage.setScene(nomes);
 		}else if(src.equals("tabuleiro")){
 			stage.setScene(tabuleiro);
 		}else if(src.equals("sair")){
 			Platform.exit();
 			System.exit(0);
-		}else if(src.equals("sair")){
-			stage.setScene(menu);
 		}
 	}
 
@@ -64,7 +65,6 @@ public class MainClass extends Application {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//new Start();
-		//oi
 		launch(args);
 	}
 
