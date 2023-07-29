@@ -2,7 +2,7 @@ package com.lig4.gui;
 
 import java.util.Random;
 
-import com.lig4.exception.AtributoInvalidoException;
+
 import com.lig4.jogadores.Pessoa;
 
 import javafx.scene.layout.GridPane;
@@ -15,7 +15,6 @@ public class TurboMalucoGui extends TabuleiroGUI{
 
     public TurboMalucoGui(Pessoa jogador1, Pessoa jogador2, int nivel){
         super(jogador1,jogador2);
-
         this.nivel = nivel;
     }
 
@@ -25,10 +24,10 @@ public class TurboMalucoGui extends TabuleiroGUI{
 
         int row = super.getLinhaAtual();
 
-        switch(this.nivel){
-            case 1:
-
-        }
+        if(this.nivel == 0 || this.nivel == 1)
+            turboMalucoAlteraGui(gridPane, jogadorAtual, col, row, this.nivel);
+        else if(this.nivel == 2)
+            hospicio(gridPane, jogadorAtual);
         
 
     }
