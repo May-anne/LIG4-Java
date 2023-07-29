@@ -44,48 +44,48 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lig4.main.MainController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="422.0" prefWidth="654.0" style="-fx-background-size: 800;" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
          <children>
-            <Pane maxWidth="640.0" prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: #0066CC; -fx-background-size: 800;">
+            <Pane maxWidth="857.0" prefHeight="550.0" prefWidth="857.0" style="-fx-background-color: #0066CC; -fx-background-size: 800;">
                <children>
-                  <ImageView fitHeight="407.0" fitWidth="750.0" opacity="0.06" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="590.0" fitWidth="910.0" opacity="0.06" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@wallpaper-jogo.jpg" />
+                        <Image url="@Wallpaper.jpg" />
                      </image>
                   </ImageView>
-                  <Button layoutX="260.0" layoutY="200.0" mnemonicParsing="false" onAction="#btIniciarAction" prefHeight="45.0" prefWidth="121.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;" text="Iniciar" textFill="WHITE">
+                  <Button layoutX="324.0" layoutY="275.0" mnemonicParsing="false" onAction="#btIniciarAction" prefHeight="59.0" prefWidth="147.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3;" text="Iniciar" textFill="WHITE">
                      <font>
-                        <Font name="Trebuchet MS" size="19.0" />
+                        <Font name="Trebuchet MS" size="25.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="260.0" layoutY="260.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="121.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 2;" text="Ranking" textFill="WHITE">
+                  <Button layoutX="324.0" layoutY="357.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="147.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Ranking" textFill="WHITE">
                      <font>
-                        <Font name="Trebuchet MS" size="19.0" />
+                        <Font name="Trebuchet MS" size="25.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="260.0" layoutY="323.0" mnemonicParsing="false" onAction="#btSairAction" prefHeight="45.0" prefWidth="121.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 2;" text="Sair" textFill="WHITE">
+                  <Button layoutX="324.0" layoutY="441.0" mnemonicParsing="false" onAction="#btSairAction" prefHeight="59.0" prefWidth="147.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Sair" textFill="WHITE">
                      <font>
-                        <Font name="Trebuchet MS" size="19.0" />
+                        <Font name="Trebuchet MS" size="25.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fitHeight="131.0" fitWidth="314.0" layoutX="173.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="161.0" fitWidth="357.0" layoutX="219.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@logoJogo.png" />
                      </image>
                   </ImageView>
-                  <Circle fill="#ffcc00" layoutX="260.0" layoutY="164.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
-                  <Circle fill="#ffcc00" layoutX="296.0" layoutY="164.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
-                  <Circle fill="#ffcc00" layoutX="333.0" layoutY="164.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
-                  <Circle fill="#ffcc00" layoutX="369.0" layoutY="164.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
+                  <Circle fill="#ffcc00" layoutX="343.0" layoutY="217.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
+                  <Circle fill="#ffcc00" layoutX="379.0" layoutY="217.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
+                  <Circle fill="#ffcc00" layoutX="416.0" layoutY="217.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
+                  <Circle fill="#ffcc00" layoutX="452.0" layoutY="217.0" radius="12.0" stroke="#ffcc00" strokeType="INSIDE" />
                </children>
             </Pane>
          </children>

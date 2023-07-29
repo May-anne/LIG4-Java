@@ -1,12 +1,20 @@
 package com.lig4.main;
 
+import java.io.IOException;
+
 import com.lig4.gui.TabuleiroGUI;
 import com.lig4.jogadores.Pessoa;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class tabuleiroController {
     private String idBotaoClicado;
@@ -20,10 +28,10 @@ public class tabuleiroController {
     private GridPane grid = new GridPane();
 
     @FXML
-    private Text nomeJogador1;
+    private Label nomeJogador1;
 
     @FXML
-    private Text nomeJogador2;
+    private Label nomeJogador2;
 
     @FXML
     private Text vez1;
@@ -35,6 +43,17 @@ public class tabuleiroController {
     protected void btColorir(MouseEvent event){
         Button botaoEntrar = (Button) event.getSource();
         botaoEntrar.setOpacity(0.48);
+    }
+
+    @FXML
+    protected void btVoltar(MouseEvent event) throws IOException{
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/view.fxml"));
+       Parent root = loader.load();
+       Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+       Scene scene = new Scene(root);
+       stage.setScene(scene);
+       stage.show();
+
     }
 
     @FXML

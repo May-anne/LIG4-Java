@@ -8,40 +8,52 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lig4.main.nomesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lig4.main.nomesController">
    <children>
-      <Pane maxWidth="640.0" prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: #0066CC; -fx-background-size: 800;">
+      <Pane maxWidth="836.0" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #0066CC; -fx-background-size: 800;">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="683.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="544.0" fitWidth="886.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@wallpaper-jogo.jpg" />
+                  <Image url="@Wallpaper.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="91.0" layoutY="148.0" text="Jogador 1:" textFill="#fffefe">
+            <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#66b2ff" height="163.0" layoutX="119.0" layoutY="272.0" stroke="#0066cc" strokeType="INSIDE" width="563.0" />
+            <Label layoutX="163.0" layoutY="302.0" prefHeight="36.0" prefWidth="121.0" text="Jogador 1:" textFill="#fffefe">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="91.0" layoutY="223.0" text="Jogador 2:" textFill="#fffefe">
+            <Label layoutX="163.0" layoutY="370.0" text="Jogador 2:" textFill="#fffefe">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Button layoutX="260.0" layoutY="304.0" mnemonicParsing="false" onAction="#btIniciarAction" prefHeight="45.0" prefWidth="121.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;" text="Iniciar" textFill="WHITE">
+            <Button layoutX="345.0" layoutY="465.0" mnemonicParsing="false" onAction="#btIniciarAction" prefHeight="50.0" prefWidth="136.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3;" text="Iniciar" textFill="WHITE">
                <font>
-                  <Font name="Trebuchet MS" size="19.0" />
+                  <Font name="Trebuchet MS" size="23.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField fx:id="textfield1" layoutX="215.0" layoutY="151.0" prefHeight="25.0" prefWidth="318.0" />
-            <TextField fx:id="textfield2" layoutX="215.0" layoutY="226.0" prefHeight="25.0" prefWidth="318.0" />
-            <ImageView fitHeight="72.0" fitWidth="400.0" layoutX="133.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="textfield1" layoutX="302.0" layoutY="308.0" prefHeight="25.0" prefWidth="318.0" />
+            <TextField fx:id="textfield2" layoutX="302.0" layoutY="374.0" prefHeight="25.0" prefWidth="318.0" />
+            <ImageView fitHeight="132.0" fitWidth="338.0" layoutX="255.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Imagens/TelaSAM/image-nomes.png" />
+                  <Image url="@logoJogo.png" />
+               </image>
+            </ImageView>
+            <Circle fill="#ffcc00" layoutX="327.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="425.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="376.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="474.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <ImageView fitHeight="50.0" fitWidth="487.0" layoutX="169.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@tituloNomes.png" />
                </image>
             </ImageView>
          </children>

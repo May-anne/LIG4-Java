@@ -24,16 +24,16 @@ public class MainClass extends Application {
 		stage.setTitle("LIG4");
        
 		Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/view.fxml"));
-		menu = new Scene(fxmlMenu, 640,400);
+		menu = new Scene(fxmlMenu, 800, 550);
 		
 		Parent fxmlModoJogo = FXMLLoader.load(getClass().getResource("../view/modo_jogo.fxml"));
-		modoJogo = new Scene(fxmlModoJogo, 640,400);
+		modoJogo = new Scene(fxmlModoJogo, 800, 550);
 
 		Parent fxmlNomes = FXMLLoader.load(getClass().getResource("../view/nomes.fxml"));
-		nomes = new Scene(fxmlNomes, 640,400);
+		nomes = new Scene(fxmlNomes, 800, 550);
 
 		Parent fxmlTurboMaluco = FXMLLoader.load(getClass().getResource("../view/turbo_maluco.fxml"));
-		turboMaluco = new Scene(fxmlTurboMaluco, 640,400);
+		turboMaluco = new Scene(fxmlTurboMaluco, 800, 550);
 
 		Parent fxmlTabuleiro = FXMLLoader.load(getClass().getResource("../view/tabuleiro.fxml"));
 		tabuleiro = new Scene(fxmlTabuleiro, 800, 550);
@@ -55,6 +55,8 @@ public class MainClass extends Application {
 		}else if(src.equals("sair")){
 			Platform.exit();
 			System.exit(0);
+		}else if(src.equals("sair")){
+			stage.setScene(menu);
 		}
 	}
 

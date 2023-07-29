@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -282,7 +283,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="754.0" layoutY="14.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="32.0" style="-fx-background-color: #FF1A1A;" text="X" textFill="WHITE">
+      <Button fx:id="btSair" layoutX="754.0" layoutY="14.0" mnemonicParsing="false" onAction="#btVoltar" prefHeight="24.0" prefWidth="32.0" style="-fx-background-color: #FF1A1A;" text="X" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -300,25 +301,25 @@
             <Image url="@do-utilizador%20(1).png" />
          </image>
       </ImageView>
-      <Text fx:id="nomeJogador1" fill="WHITE" layoutX="142.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-         <font>
-            <Font name="Trebuchet MS" size="20.0" />
-         </font>
-      </Text>
-      <Text fx:id="nomeJogador2" fill="WHITE" layoutX="617.0" layoutY="53.0" lineSpacing="20.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="INSIDE" strokeWidth="0.0" style="-fx-text-alignment: RIGHT;" text="Text" textAlignment="RIGHT">
-         <font>
-            <Font name="Trebuchet MS" size="20.0" />
-         </font>
-      </Text>
       <Text fx:id="vez1" fill="#ff3333" layoutX="142.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
          <font>
             <Font name="Trebuchet MS Bold" size="16.0" />
          </font>
       </Text>
-      <Text fx:id="vez2" fill="#ffcc00" layoutX="589.0" layoutY="70.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
+      <Text fx:id="vez2" fill="#ffcc00" layoutX="592.0" layoutY="69.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
          <font>
             <Font name="Trebuchet MS Bold" size="16.0" />
          </font>
       </Text>
+      <Label fx:id="nomeJogador2" layoutX="609.0" layoutY="31.0" text="Label" textAlignment="RIGHT" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="nomeJogador1" layoutX="144.0" layoutY="31.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
