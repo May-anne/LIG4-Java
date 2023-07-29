@@ -20,7 +20,7 @@
             </ImageView>
             <Button alignment="CENTER" layoutX="275.0" layoutY="285.0" mnemonicParsing="false" onAction="#btClassico" prefHeight="49.0" prefWidth="259.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3;" text="Clássico" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Trebuchet MS" size="24.0" />
+                  <Font name="Trebuchet MS" size="23.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -28,7 +28,7 @@
             </Button>
             <Button alignment="CENTER" layoutX="275.0" layoutY="366.0" mnemonicParsing="false" onAction="#btTurbo" prefHeight="45.0" prefWidth="259.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Turbo" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Trebuchet MS" size="24.0" />
+                  <Font name="Trebuchet MS" size="23.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -36,7 +36,7 @@
             </Button>
             <Button alignment="CENTER" layoutX="275.0" layoutY="446.0" mnemonicParsing="false" onAction="#btTurboMalucoAction" prefHeight="45.0" prefWidth="259.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Turbo Maluco" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Trebuchet MS" size="24.0" />
+                  <Font name="Trebuchet MS" size="23.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -51,7 +51,7 @@
             <Circle fill="#ffcc00" layoutX="429.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
             <Circle fill="#ffcc00" layoutX="380.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
             <Circle fill="#ffcc00" layoutX="478.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <Button layoutX="695.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #FF1A1A;" text="Voltar" textFill="WHITE">
+            <Button layoutX="739.0" layoutY="28.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -63,6 +63,14 @@
                <image>
                   <Image url="@resources/tituloModo.png" />
                </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="54.0" layoutX="746.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../Downloads/voltar.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
          </children>
       </Pane>
