@@ -21,11 +21,9 @@ import javafx.stage.Stage;
 
 public class tabuleiroController {
     private String idBotaoClicado;
-    private TabuleiroGUI tabGui;
     private int col, modo;
     protected Pessoa jogadorAtual, jogador1, jogador2;
     private char peca1, peca2;
-
 
     @FXML
     private GridPane grid = new GridPane();
@@ -78,16 +76,19 @@ public class tabuleiroController {
             vez1.setOpacity(1);
             vez2.setOpacity(0);  
         }
+        
+        col = obterColuna();
 
         if(modo == 1){
             ClassicoGUI jogo = new ClassicoGUI(this.jogador1, this.jogador2);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
+            boolean vit = jogo.checaVitoria(grid, jogadorAtual);
         }else if(modo == 3 || modo == 4 || modo == 5){
             TurboMalucoGui jogo = new TurboMalucoGui(jogador1, jogador2, modo);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
+            boolean vit = jogo.checaVitoria(grid, jogadorAtual);
         }
 
-        boolean vit = tabGui.checaVitoria(grid, jogadorAtual);
     }
 
     public int obterColuna(){

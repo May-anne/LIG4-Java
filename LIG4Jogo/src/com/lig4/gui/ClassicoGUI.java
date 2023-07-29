@@ -15,6 +15,7 @@ public class ClassicoGUI extends TabuleiroGUI {
         super.alteraTabGui(gridPane, col, jogadorAtural);
     }
 
+    @Override
     public boolean checaVitoria(GridPane gridPane, Pessoa pessoa){
         return super.checaVitoria(gridPane, pessoa);
     }

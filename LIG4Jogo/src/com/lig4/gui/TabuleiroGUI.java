@@ -25,13 +25,12 @@ public abstract class TabuleiroGUI {
         Circle circuloAtual;
 
         System.out.println("Jogador atual: "+jogadorAtual.getNome());
-
-        System.out.println(row);
+        
         for(int i = 1; i<=6; i++){
             row = linhaMax - i;
             circuloAtual = getCirculo(gridPane, col - 1, row);
 
-            if(circuloAtual.getFill().equals(Color.WHITE)){
+            if(circuloAtual.getFill().equals(Color.WHITE) || circuloAtual == null){
                 circuloAtual.setFill(jogadorAtual == jogador1 ? Color.RED : Color.YELLOW);
                 break;
             } else if(!circuloAtual.getFill().equals(Color.WHITE)){
@@ -55,32 +54,33 @@ public abstract class TabuleiroGUI {
         for(int row = 0; row<3;row++){//Verificação vertical
             for(int col = 0; col<=6;col++){
             
-                 p1 = getCirculo(gridPane, col, row);
-                 p2 = getCirculo(gridPane, col, row+1);
-                 p3 = getCirculo(gridPane, col, row+2);
-                 p4 = getCirculo(gridPane, col, row+3);
-               
-                 if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
-                     System.out.println("Alguem venceu");
-                     return true;
-                 }
-            
+                p1 = getCirculo(gridPane, col, row);
+                p2 = getCirculo(gridPane, col, row+1);
+                p3 = getCirculo(gridPane, col, row+2);
+                p4 = getCirculo(gridPane, col, row+3);
+                
+                if(p1 != null && p2 != null && p3 != null && p4 != null){
+                    if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
+                        System.out.println("Alguem venceu");
+                        return true;
+                    }
+                }
              }
          }
 
           for(int row = 0; row<6;row++){//Verificação Horizontal
             for(int col = 0; col<4;col++){
+                p1 = getCirculo(gridPane, col, row);
+                p2 = getCirculo(gridPane, col+1, row);
+                p3 = getCirculo(gridPane, col+2, row);
+                p4 = getCirculo(gridPane, col+3, row);
             
-                 p1 = getCirculo(gridPane, col, row);
-                 p2 = getCirculo(gridPane, col+1, row);
-                 p3 = getCirculo(gridPane, col+2, row);
-                 p4 = getCirculo(gridPane, col+3, row);
-               
-                 if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
-                     System.out.println("Alguem venceu");
-                     return true;
-                 }
-            
+                if(p1 != null && p2 != null && p3 != null && p4 != null){
+                    if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
+                        System.out.println("Alguem venceu");
+                        return true;
+                    }
+                }
              }
          }
 
@@ -88,16 +88,17 @@ public abstract class TabuleiroGUI {
          for(int row = 0; row<3;row++){//Horizontal Baixo-Cima
             for(int col = 0; col<4;col++){
             
-                 p1 = getCirculo(gridPane, col, row);
-                 p2 = getCirculo(gridPane, col+1, row+1);
-                 p3 = getCirculo(gridPane, col+2, row+2);
-                 p4 = getCirculo(gridPane, col+3, row+3);
+                p1 = getCirculo(gridPane, col, row);
+                p2 = getCirculo(gridPane, col+1, row+1);
+                p3 = getCirculo(gridPane, col+2, row+2);
+                p4 = getCirculo(gridPane, col+3, row+3);
                
-                 if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
-                     System.out.println("Alguem venceu");
-                     return true;
-                 }
-            
+                if(p1 != null && p2 != null && p3 != null && p4 != null){
+                    if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
+                        System.out.println("Alguem venceu");
+                        return true;
+                    }
+                }
              }
          }
 
@@ -110,10 +111,12 @@ public abstract class TabuleiroGUI {
                  p3 = getCirculo(gridPane, col+2, row-2);
                  p4 = getCirculo(gridPane, col+3, row-3);
                
-                 if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
-                     System.out.println("Alguem venceu");
-                     return true;
-                 }
+                if(p1 != null && p2 != null && p3 != null && p4 != null){
+                    if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
+                        System.out.println("Alguem venceu");
+                        return true;
+                    }
+                }
             
              }
          }
