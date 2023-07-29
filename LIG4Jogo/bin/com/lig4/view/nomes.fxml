@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,15 +23,21 @@
                </image>
             </ImageView>
             <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#66b2ff" height="163.0" layoutX="119.0" layoutY="272.0" stroke="#0066cc" strokeType="INSIDE" width="563.0" />
-            <Label layoutX="163.0" layoutY="302.0" prefHeight="36.0" prefWidth="121.0" text="Jogador 1:" textFill="#fffefe">
+            <Label layoutX="163.0" layoutY="302.0" prefHeight="36.0" prefWidth="121.0" text="Jogador 1:" textFill="#0066cc">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
+               <effect>
+                  <Bloom threshold="0.35" />
+               </effect>
             </Label>
-            <Label layoutX="163.0" layoutY="370.0" text="Jogador 2:" textFill="#fffefe">
+            <Label layoutX="163.0" layoutY="370.0" text="Jogador 2:" textFill="#0066cc">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
+               <effect>
+                  <Bloom threshold="0.35" />
+               </effect>
             </Label>
             <Button layoutX="345.0" layoutY="465.0" mnemonicParsing="false" onAction="#btIniciarAction" prefHeight="50.0" prefWidth="136.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3;" text="Iniciar" textFill="WHITE">
                <font>
@@ -58,5 +65,21 @@
             </ImageView>
          </children>
       </Pane>
+      <Button layoutX="739.0" layoutY="28.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="26.0" fitWidth="54.0" layoutX="746.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/voltar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>
