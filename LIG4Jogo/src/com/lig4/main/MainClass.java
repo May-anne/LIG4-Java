@@ -34,7 +34,7 @@ public class MainClass extends Application {
 
 		Parent fxmlNomes = FXMLLoader.load(getClass().getResource("../view/nomes.fxml"));
 		nomes = new Scene(fxmlNomes, 800, 550);
-
+		//aaa
 		Parent fxmlTurboMaluco = FXMLLoader.load(getClass().getResource("../view/turbo_maluco.fxml"));
 		turboMaluco = new Scene(fxmlTurboMaluco, 800, 550);
 

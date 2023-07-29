@@ -7,7 +7,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class TabuleiroGUI {
+public abstract class TabuleiroGUI {
+    
     private final int linhaMax = 6;
     private final int colunaMax = 7;
     private int row;
@@ -37,10 +38,8 @@ public class TabuleiroGUI {
         }
     }
     
+    public abstract void  alteraTabuleiro(GridPane gridPane,int col, Pessoa jogadorAtual);
 
-    public void alteraTabGuiMaluco(GridPane gridPane, int col, Pessoa jogadorAtual){
-        
-    }
     public boolean checaVitoria(GridPane gridPane, Pessoa pessoa){
 
         char peca = pessoa.getCorPeca();
@@ -139,5 +138,18 @@ public class TabuleiroGUI {
             }
         }
         return null;
+    }
+
+
+    public int getLinhas(){
+        return this.linhaMax;
+    }
+
+    public int getColunas(){
+        return this.colunaMax;
+    }
+
+    public int getLinhaAtual(){
+        return row;
     }
 }
