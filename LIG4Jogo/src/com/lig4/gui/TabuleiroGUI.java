@@ -19,8 +19,7 @@ public abstract class TabuleiroGUI {
         this.jogador2 = jogador2;  
     }
 
-
-    public abstract void  alteraTabuleiro(GridPane gridPane,int col, Pessoa jogadorAtual);
+    public abstract void alteraTabuleiro(GridPane gridPane,int col, Pessoa jogadorAtual);
 
     public void alteraTabGui(GridPane gridPane, int col, Pessoa jogadorAtual) {
         Circle circuloAtual;

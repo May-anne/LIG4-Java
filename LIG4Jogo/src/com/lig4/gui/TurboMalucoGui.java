@@ -24,12 +24,10 @@ public class TurboMalucoGui extends TabuleiroGUI{
 
         int row = super.getLinhaAtual();
 
-        if(this.nivel == 0 || this.nivel == 1)
+        if(this.nivel == 3 || this.nivel == 4)
             turboMalucoAlteraGui(gridPane, jogadorAtual, col, row, this.nivel);
-        else if(this.nivel == 2)
+        else if(this.nivel == 5)
             hospicio(gridPane, jogadorAtual);
-        
-
     }
 
     public void turboMalucoAlteraGui(GridPane gridPane,Pessoa jogadorAtual,int coluna, int linhaAtual, int nivel ){
@@ -43,7 +41,7 @@ public class TurboMalucoGui extends TabuleiroGUI{
         int max = 4;
         boolean troca = false;
 
-        for(int addLinha = -1;addLinha<=1;addLinha++){
+        for(int addLinha = -1; addLinha <=1; addLinha++){
             row = linhaAtual + addLinha;
             for(int addColuna = -1; addColuna<=1; addColuna++){
                 column = coluna + addColuna;

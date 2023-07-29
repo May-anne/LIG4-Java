@@ -2,7 +2,9 @@ package com.lig4.main;
 
 import java.io.IOException;
 
+import com.lig4.gui.ClassicoGUI;
 import com.lig4.gui.TabuleiroGUI;
+import com.lig4.gui.TurboMalucoGui;
 import com.lig4.jogadores.Pessoa;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -19,7 +22,7 @@ import javafx.stage.Stage;
 public class tabuleiroController {
     private String idBotaoClicado;
     private TabuleiroGUI tabGui;
-    private int col;
+    private int col, modo;
     protected Pessoa jogadorAtual, jogador1, jogador2;
     private char peca1, peca2;
 
@@ -53,7 +56,6 @@ public class tabuleiroController {
        Scene scene = new Scene(root);
        stage.setScene(scene);
        stage.show();
-
     }
 
     @FXML
@@ -67,9 +69,6 @@ public class tabuleiroController {
         Button botaoClicado = (Button) event.getSource();
         idBotaoClicado = botaoClicado.getId();
 
-        tabGui = new TabuleiroGUI(this.jogador1, this.jogador2);
-        col = obterColuna();
-
         if(jogadorAtual == null || jogadorAtual != jogador1){
             jogadorAtual = jogador1;
             vez1.setOpacity(0);
@@ -79,7 +78,15 @@ public class tabuleiroController {
             vez1.setOpacity(1);
             vez2.setOpacity(0);  
         }
-        tabGui.alteraTabGui(grid, col, jogadorAtual);
+
+        if(modo == 1){
+            ClassicoGUI jogo = new ClassicoGUI(this.jogador1, this.jogador2);
+            jogo.alteraTabuleiro(grid, col, jogadorAtual);
+        }else if(modo == 3 || modo == 4 || modo == 5){
+            TurboMalucoGui jogo = new TurboMalucoGui(jogador1, jogador2, modo);
+            jogo.alteraTabuleiro(grid, col, jogadorAtual);
+        }
+
         boolean vit = tabGui.checaVitoria(grid, jogadorAtual);
     }
 
@@ -116,6 +123,10 @@ public class tabuleiroController {
 
     public void mostrarNome2(String nome){
         nomeJogador2.setText(nome);
+    }
+
+    public void obterModo(int modo){
+        this.modo = modo;
     }
 
 }

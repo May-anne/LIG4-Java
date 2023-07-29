@@ -16,6 +16,7 @@ import javafx.scene.Node;
 public class nomesController {
     private Pessoa jogador1, jogador2;
     private char peca1, peca2;
+    private int modo;
 
     @FXML
     private TextField textfield1 = new TextField();
@@ -64,10 +65,15 @@ public class nomesController {
         tabController.setJogador2(jogador2);
         tabController.mostrarNome1(jogador1.getNome());
         tabController.mostrarNome2(jogador2.getNome());
+        tabController.obterModo(modo);
 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void setModo(int modo){
+        this.modo = modo;
     }
 }
