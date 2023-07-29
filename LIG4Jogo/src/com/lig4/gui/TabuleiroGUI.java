@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public abstract class TabuleiroGUI {
-    
+
     private final int linhaMax = 6;
     private final int colunaMax = 7;
     private int row;
@@ -18,6 +18,9 @@ public abstract class TabuleiroGUI {
         this.jogador1 = jogador1;
         this.jogador2 = jogador2;  
     }
+
+
+    public abstract void  alteraTabuleiro(GridPane gridPane,int col, Pessoa jogadorAtual);
 
     public void alteraTabGui(GridPane gridPane, int col, Pessoa jogadorAtual) {
         Circle circuloAtual;
@@ -37,8 +40,6 @@ public abstract class TabuleiroGUI {
             }
         }
     }
-    
-    public abstract void  alteraTabuleiro(GridPane gridPane,int col, Pessoa jogadorAtual);
 
     public boolean checaVitoria(GridPane gridPane, Pessoa pessoa){
 
@@ -117,11 +118,18 @@ public abstract class TabuleiroGUI {
             
              }
          }
-
-
         
         return false;
     }
+
+    public void setPeca(GridPane gridPane, int col, int row, Pessoa jogadorAtual){
+
+        Circle circulo = getCirculo(gridPane, col, row);
+        Color cor = jogadorAtual.equals(this.jogador1) ? Color.RED : Color.YELLOW;
+        circulo.setFill(cor);
+
+    }
+
 
 
     public Circle getCirculo(GridPane gridPane, int col, int row) {
@@ -140,7 +148,6 @@ public abstract class TabuleiroGUI {
         return null;
     }
 
-
     public int getLinhas(){
         return this.linhaMax;
     }
@@ -152,4 +159,13 @@ public abstract class TabuleiroGUI {
     public int getLinhaAtual(){
         return row;
     }
+
+    public Pessoa getJogador1(){
+        return this.jogador1;
+    }
+
+    public Pessoa getJogador2(){
+        return this.jogador2;
+    }
+
 }
