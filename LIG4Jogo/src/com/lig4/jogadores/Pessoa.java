@@ -3,7 +3,7 @@ package com.lig4.jogadores;
 import java.util.Scanner;
 import com.lig4.base.Peca;
 import com.lig4.exception.AtributoInvalidoException;
-
+//a
 public class Pessoa {
 	private String nome;
 	private char peca;

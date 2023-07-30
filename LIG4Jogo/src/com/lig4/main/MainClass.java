@@ -16,7 +16,7 @@ public class MainClass extends Application {
 
 	private static Scene menu,tabuleiro,modoJogo,turboMaluco,nomes;
 	
-
+//aaaaaa
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;

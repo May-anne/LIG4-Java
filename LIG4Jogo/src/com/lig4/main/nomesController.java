@@ -53,7 +53,7 @@ public class nomesController {
 
         peca1 = 'A';
         peca2 = 'V';
-
+//a
         jogador1 = new Pessoa(nome1, peca1);
         jogador2 = new Pessoa(nome2, peca2);
 
