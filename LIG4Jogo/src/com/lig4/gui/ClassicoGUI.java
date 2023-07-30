@@ -11,8 +11,8 @@ public class ClassicoGUI extends TabuleiroGUI {
     }
 
     @Override
-    public void alteraTabuleiro(GridPane gridPane,int col,  Pessoa jogadorAtural){
-        super.alteraTabGui(gridPane, col, jogadorAtural);
+    public void alteraTabuleiro(GridPane gridPane,int col,  Pessoa jogadorAtual){
+        super.alteraTabGui(gridPane, col, jogadorAtual);
     }
 
     @Override

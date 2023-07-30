@@ -23,8 +23,6 @@ public abstract class TabuleiroGUI {
 
     public void alteraTabGui(GridPane gridPane, int col, Pessoa jogadorAtual) {
         Circle circuloAtual;
-
-        System.out.println("Jogador atual: "+jogadorAtual.getNome());
         
         for(int i = 1; i<=6; i++){
             row = linhaMax - i;
@@ -42,11 +40,9 @@ public abstract class TabuleiroGUI {
     }
 
     public boolean checaVitoria(GridPane gridPane, Pessoa pessoa){
-
         char peca = pessoa.getCorPeca();
         Circle p1,p2,p3,p4;
         Color cor = Color.rgb(0, 0, 0);
-
         
         if(peca=='V')
            cor = Color.RED;
@@ -127,7 +123,7 @@ public abstract class TabuleiroGUI {
     }
 
     public void setPeca(GridPane gridPane, int col, int row, Pessoa jogadorAtual){
-        
+
         Circle circulo = getCirculo(gridPane, col, row);
         Color cor = jogadorAtual.equals(this.jogador1) ? Color.RED : Color.YELLOW;
         circulo.setFill(cor);

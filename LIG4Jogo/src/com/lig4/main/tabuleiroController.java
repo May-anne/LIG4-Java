@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.lig4.gui.ClassicoGUI;
 import com.lig4.gui.TabuleiroGUI;
+import com.lig4.gui.TurboGUI;
 import com.lig4.gui.TurboMalucoGui;
 import com.lig4.jogadores.Pessoa;
 import javafx.fxml.FXML;
@@ -67,28 +68,31 @@ public class tabuleiroController {
         Button botaoClicado = (Button) event.getSource();
         idBotaoClicado = botaoClicado.getId();
 
-        if(jogadorAtual == null || jogadorAtual != jogador1){
+        if (jogadorAtual == null)
             jogadorAtual = jogador1;
-            vez1.setOpacity(0);
-            vez2.setOpacity(1);
-        } else {
-            jogadorAtual = jogador2;
-            vez1.setOpacity(1);
-            vez2.setOpacity(0);  
-        }
         
         col = obterColuna();
 
         if(modo == 1){
             ClassicoGUI jogo = new ClassicoGUI(this.jogador1, this.jogador2);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
-            boolean vit = jogo.checaVitoria(grid, jogadorAtual);
         }else if(modo == 3 || modo == 4 || modo == 5){
             TurboMalucoGui jogo = new TurboMalucoGui(jogador1, jogador2, modo);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
-            boolean vit = jogo.checaVitoria(grid, jogadorAtual);
+        }else if(modo == 2){
+            TurboGUI jogo = new TurboGUI(jogador1, jogador2);
+            jogo.alteraTabuleiro(grid, col, jogadorAtual);
         }
 
+        if(jogadorAtual == jogador1){
+            jogadorAtual = jogador2;
+            vez1.setOpacity(0);
+            vez2.setOpacity(1);
+        } else {
+            jogadorAtual = jogador1;
+            vez1.setOpacity(1);
+            vez2.setOpacity(0);  
+        }
     }
 
     public int obterColuna(){
