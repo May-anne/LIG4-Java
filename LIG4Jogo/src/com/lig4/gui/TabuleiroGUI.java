@@ -11,7 +11,7 @@ public abstract class TabuleiroGUI {
 
     private final int linhaMax = 6;
     private final int colunaMax = 7;
-    private int row;
+    private int row, linhaAtual;
     private Pessoa jogador1, jogador2;
 
     public TabuleiroGUI(Pessoa jogador1, Pessoa jogador2) {
@@ -30,11 +30,13 @@ public abstract class TabuleiroGUI {
             row = linhaMax - i;
             circuloAtual = getCirculo(gridPane, col - 1, row);
 
-            if(circuloAtual.getFill().equals(Color.WHITE) || circuloAtual == null){
+            if(circuloAtual.getFill().equals(Color.WHITE)){
                 circuloAtual.setFill(jogadorAtual == jogador1 ? Color.RED : Color.YELLOW);
+                setLinhaAtual(row);
                 break;
             } else if(!circuloAtual.getFill().equals(Color.WHITE)){
                 System.out.println("Espaço preenchido, passando pro próximo de cima");
+                setLinhaAtual(row);
             }
         }
     }
@@ -125,14 +127,12 @@ public abstract class TabuleiroGUI {
     }
 
     public void setPeca(GridPane gridPane, int col, int row, Pessoa jogadorAtual){
-
+        
         Circle circulo = getCirculo(gridPane, col, row);
         Color cor = jogadorAtual.equals(this.jogador1) ? Color.RED : Color.YELLOW;
         circulo.setFill(cor);
 
     }
-
-
 
     public Circle getCirculo(GridPane gridPane, int col, int row) {
         for (Node node : gridPane.getChildren()) {
@@ -159,7 +159,7 @@ public abstract class TabuleiroGUI {
     }
 
     public int getLinhaAtual(){
-        return row;
+        return linhaAtual;
     }
 
     public Pessoa getJogador1(){
@@ -168,6 +168,10 @@ public abstract class TabuleiroGUI {
 
     public Pessoa getJogador2(){
         return this.jogador2;
+    }
+
+    public void setLinhaAtual(int linhaAtual){
+        this.linhaAtual = linhaAtual;
     }
 
 }
