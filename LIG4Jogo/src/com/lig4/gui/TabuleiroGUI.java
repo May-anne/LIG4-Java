@@ -38,8 +38,27 @@ public abstract class TabuleiroGUI {
             }
         }
     }
+    public boolean empate(GridPane gridPane){
+        Circle circuloAtual;
+        boolean cheio = true;
+        for(int row = 0; row<linhaMax;row++){
+            for(int col = 0; col<colunaMax;col++){
+                circuloAtual = getCirculo(gridPane, col, row);
+                if(circuloAtual.getFill().equals(Color.WHITE)){
+                    cheio = false;
+                }
+            }
+            if(!cheio)
+                break;
+        }
 
-    public boolean checaVitoria(GridPane gridPane, Pessoa pessoa){
+        if(cheio)
+            return true;
+        else
+            return false;
+
+    }
+    public int checaVitoria(GridPane gridPane, Pessoa pessoa){
         char peca = pessoa.getCorPeca();
         Circle p1,p2,p3,p4;
         Color cor = Color.rgb(0, 0, 0);
@@ -60,7 +79,7 @@ public abstract class TabuleiroGUI {
                 if(p1 != null && p2 != null && p3 != null && p4 != null){
                     if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
                         System.out.println("Alguem venceu");
-                        return true;
+                        return 1;
                     }
                 }
              }
@@ -76,7 +95,7 @@ public abstract class TabuleiroGUI {
                 if(p1 != null && p2 != null && p3 != null && p4 != null){
                     if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
                         System.out.println("Alguem venceu");
-                        return true;
+                        return 1;
                     }
                 }
              }
@@ -94,7 +113,7 @@ public abstract class TabuleiroGUI {
                 if(p1 != null && p2 != null && p3 != null && p4 != null){
                     if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
                         System.out.println("Alguem venceu");
-                        return true;
+                        return 1;
                     }
                 }
              }
@@ -112,14 +131,17 @@ public abstract class TabuleiroGUI {
                 if(p1 != null && p2 != null && p3 != null && p4 != null){
                     if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
                         System.out.println("Alguem venceu");
-                        return true;
+                        return 1;
                     }
                 }
             
              }
          }
         
-        return false;
+        if(empate(gridPane))
+            return 2;
+        else
+            return 0;
     }
 
     public void setPeca(GridPane gridPane, int col, int row, Pessoa jogadorAtual){

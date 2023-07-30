@@ -37,13 +37,13 @@ public class TurboGUI extends TabuleiroGUI{
             }
         }
 
-        if(checaVitoria(gridPane, jogadorAtual)){
+        if(checaVitoria(gridPane, jogadorAtual)==1){
             System.out.println(jogadorAtual.getNome());
         }
     }
 
     @Override
-    public boolean checaVitoria(GridPane gridPane, Pessoa pessoa){
+    public int checaVitoria(GridPane gridPane, Pessoa pessoa){
         return super.checaVitoria(gridPane, pessoa);
     }
     
