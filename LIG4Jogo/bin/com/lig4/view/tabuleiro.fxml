@@ -319,7 +319,7 @@
             <Font name="Trebuchet MS" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="739.0" layoutY="28.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
+      <Button fx:id="voltarTab" layoutX="739.0" layoutY="28.0" mnemonicParsing="false" onAction="#btVoltar" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -329,7 +329,7 @@
       </Button>
       <ImageView fitHeight="26.0" fitWidth="54.0" layoutX="746.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/voltar.png" />
+            <Image url="@resources/voltar.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />

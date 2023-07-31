@@ -1,6 +1,7 @@
 package com.lig4.main;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import com.lig4.gui.ClassicoGUI;
 import com.lig4.gui.TurboGUI;
@@ -13,7 +14,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -25,7 +29,6 @@ public class tabuleiroController {
     private int col, modo;
     protected Pessoa jogadorAtual, jogador1, jogador2;
     private Ranking rank;
-    private String nomeModo;
 
     @FXML
     private GridPane grid = new GridPane();
@@ -58,19 +61,16 @@ public class tabuleiroController {
     }
 
     @FXML
-    protected void btVoltar(MouseEvent event) throws IOException{
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/view.fxml"));
-       Parent root = loader.load();
-       Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-       Scene scene = new Scene(root);
-       stage.setScene(scene);
-       stage.show();
-    }
-
-    @FXML
     protected void btDescolorir(MouseEvent event){
         Button botaoSair = (Button) event.getSource();
         botaoSair.setOpacity(0);
+    }
+
+    @FXML
+    protected void btVoltar(){
+        if(escolherVoltar()){
+            MainClass.changeScreen("menu");
+        }
     }
 
     @FXML
@@ -157,6 +157,22 @@ public class tabuleiroController {
     public void mostrarPontos(Pessoa jogador1, Pessoa jogador2){
         labelPontos1.setText(Integer.toString(jogador1.getPontos()));
         labelPontos2.setText(Integer.toString(jogador2.getPontos()));
+    }
+
+    public boolean escolherVoltar(){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Voltar");
+        alert.setHeaderText("Deseja voltar?");
+        alert.setContentText("Clique OK para continuar ou Cancelar para sair.");
+
+        ButtonType buttonOK = new ButtonType("OK");
+        ButtonType buttonCancelar = new ButtonType("Cancelar");
+
+        alert.getButtonTypes().setAll(buttonOK, buttonCancelar);
+
+        Optional<ButtonType> result = alert.showAndWait();
+
+        return result.orElse(ButtonType.CANCEL) == buttonOK;
     }
 
 }

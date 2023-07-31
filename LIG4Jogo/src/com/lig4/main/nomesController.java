@@ -86,4 +86,10 @@ public class nomesController {
         else
             return "Turbo Maluco";
     }
+
+    @FXML
+    protected void btVoltar(){
+        MainClass.changeScreen("modoJogo");
+    }
+
 }
