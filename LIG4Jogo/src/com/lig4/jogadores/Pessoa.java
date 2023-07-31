@@ -1,10 +1,11 @@
 package com.lig4.jogadores;
 
+import java.io.Serializable;
 import java.util.Scanner;
 import com.lig4.base.Peca;
 import com.lig4.exception.AtributoInvalidoException;
 //aa
-public class Pessoa {
+public class Pessoa implements Serializable {
 	private String nome;
 	private char peca;
 	private int col;

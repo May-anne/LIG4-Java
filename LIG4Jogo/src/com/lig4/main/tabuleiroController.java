@@ -69,6 +69,11 @@ public class tabuleiroController {
     @FXML
     protected void btVoltar(){
         if(escolherVoltar()){
+            rank = new Ranking();
+            rank.carregaRanking();
+            rank.addJogador(jogador1);
+            rank.addJogador(jogador2);
+            rank.salvarRanking();
             MainClass.changeScreen("menu");
         }
     }
