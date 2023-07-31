@@ -44,6 +44,16 @@ public abstract class TabuleiroGUI {
             mostrarVitoria(jogadorAtual);
         }
     }
+
+    public void reiniciarTab(GridPane gridPane){
+        Circle circuloAtual;
+        for(int x = 0; x < colunaMax;x++){
+            for(int y =0; y< linhaMax;y++){
+                circuloAtual = getCirculo(gridPane, x, y);
+                circuloAtual.setFill(Color.WHITE);
+            }
+        }
+    }
     public boolean empate(GridPane gridPane){
         Circle circuloAtual;
         boolean cheio = true;

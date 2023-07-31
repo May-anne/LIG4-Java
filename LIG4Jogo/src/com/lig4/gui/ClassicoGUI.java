@@ -19,5 +19,5 @@ public class ClassicoGUI extends TabuleiroGUI {
     public int checaVitoria(GridPane gridPane, Pessoa pessoa){
         return super.checaVitoria(gridPane, pessoa);
     }
-
+//a
 }

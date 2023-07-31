@@ -72,7 +72,7 @@ public class nomesController {
         stage.setScene(scene);
         stage.show();
     }
-
+//a
     public void setModo(int modo){
         this.modo = modo;
     }
