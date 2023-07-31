@@ -66,14 +66,24 @@ public class nomesController {
         tabController.mostrarNome1(jogador1.getNome());
         tabController.mostrarNome2(jogador2.getNome());
         tabController.obterModo(modo);
+        tabController.mostrarModo(nomeModo(modo));
 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-//a
+
     public void setModo(int modo){
         this.modo = modo;
+    }
+
+    public String nomeModo(int modo){
+        if(modo == 1)
+            return "Clássico";
+        else if(modo == 2)
+            return "Turbo";
+        else
+            return "Turbo Maluco";
     }
 }

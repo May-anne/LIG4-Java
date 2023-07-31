@@ -59,7 +59,6 @@ public class TurboMalucoGui extends TabuleiroGUI{
                     circuloAtual = super.getCirculo(gridPane, column, row);
                     
                     prob = random.nextInt(max - min + 1) + min;
-                    
 
                     if((circuloAtual.getFill().equals(cor)) && !(circuloAtual.getFill().equals(Color.WHITE))){
                         System.out.println("Circulo atende");
@@ -93,15 +92,10 @@ public class TurboMalucoGui extends TabuleiroGUI{
                 prob = random.nextBoolean();
 
                 if(!(circulo.getFill().equals(Color.WHITE)) && circulo.getFill().equals(cor) && prob){
-
                     super.setPeca(gridPane, x, y, jogadorAtual);
             
                 }
             }
         }
-
-
     }
-
-
 }

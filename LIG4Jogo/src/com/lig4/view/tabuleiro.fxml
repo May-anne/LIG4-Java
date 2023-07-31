@@ -17,13 +17,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lig4.main.tabuleiroController">
    <children>
-      <ImageView fitHeight="550.0" fitWidth="813.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pontosJogador1" fitHeight="550.0" fitWidth="813.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resources/teste3.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#004c99" height="423.0" layoutX="85.0" layoutY="85.0" stroke="#004ead" strokeType="INSIDE" width="631.0" />
-      <GridPane fx:id="grid" hgap="2.0" layoutX="85.0" layoutY="95.0" prefHeight="404.0" prefWidth="631.0" vgap="5.0">
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#004c99" height="423.0" layoutX="85.0" layoutY="114.0" stroke="#004ead" strokeType="INSIDE" width="631.0" />
+      <GridPane fx:id="grid" hgap="2.0" layoutX="85.0" layoutY="123.0" prefHeight="404.0" prefWidth="631.0" vgap="5.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -254,61 +254,67 @@
             </StackPane>
          </children>
       </GridPane>
-      <Button fx:id="button1" layoutX="93.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="413.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
+      <Button fx:id="button1" layoutX="93.0" layoutY="119.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="413.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-    <Button fx:id="button2" layoutX="183.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
+    <Button fx:id="button2" layoutX="183.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button fx:id="button3" layoutX="272.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
+         </cursor>
+      </Button>
+      <Button fx:id="button3" layoutX="272.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button fx:id="button4" layoutX="363.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
+         </cursor>
+      </Button>
+      <Button fx:id="button4" layoutX="363.0" layoutY="114.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button fx:id="button5" layoutX="452.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
+         </cursor>
+      </Button>
+      <Button fx:id="button5" layoutX="452.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button fx:id="button6" layoutX="542.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
+         </cursor>
+      </Button>
+      <Button fx:id="button6" layoutX="542.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="423.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button fx:id="button7" layoutX="633.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="413.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
+         </cursor>
+      </Button>
+      <Button fx:id="button7" layoutX="633.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#btEscolherColuna" onMouseEntered="#btColorir" onMouseExited="#btDescolorir" opacity="0.0" prefHeight="413.0" prefWidth="75.0" style="-fx-background-color: #FFCC00;">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="85.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         </cursor>
+      </Button>
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="83.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resources/do-utilizador%20(1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="677.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="677.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resources/do-utilizador%20(1).png" />
          </image>
       </ImageView>
-      <Text fx:id="vez1" fill="#ff3333" layoutX="142.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
+      <Text fx:id="vez1" fill="#ff3333" layoutX="131.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
          <font>
             <Font name="Trebuchet MS Bold" size="16.0" />
          </font>
       </Text>
-      <Text fx:id="vez2" fill="#ffcc00" layoutX="592.0" layoutY="69.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
+      <Text fx:id="vez2" fill="#ffcc00" layoutX="599.0" layoutY="105.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
          <font>
             <Font name="Trebuchet MS Bold" size="16.0" />
          </font>
       </Text>
-      <Label fx:id="nomeJogador2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="609.0" layoutY="31.0" nodeOrientation="RIGHT_TO_LEFT" text="Label" textAlignment="RIGHT" textFill="WHITE">
+      <Label fx:id="nomeJogador2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="617.0" layoutY="42.0" nodeOrientation="RIGHT_TO_LEFT" text="Label" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Trebuchet MS" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="nomeJogador1" layoutX="144.0" layoutY="31.0" text="Label" textFill="WHITE">
+      <Label fx:id="nomeJogador1" layoutX="131.0" layoutY="42.0" text="Label" textFill="WHITE">
          <font>
             <Font name="Trebuchet MS" size="20.0" />
          </font>
@@ -329,5 +335,35 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Label layoutX="326.0" layoutY="22.0" text="Modo:" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelModo" layoutX="400.0" layoutY="22.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="131.0" layoutY="67.0" text="Pontuação: " textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="580.0" layoutY="67.0" text="Pontuação:" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelPontos1" layoutX="210.0" layoutY="68.0" prefHeight="21.0" prefWidth="9.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelPontos2" layoutX="659.0" layoutY="67.0" prefHeight="21.0" prefWidth="9.0" text="0" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

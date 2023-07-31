@@ -25,6 +25,7 @@ public class tabuleiroController {
     private int col, modo;
     protected Pessoa jogadorAtual, jogador1, jogador2;
     private Ranking rank;
+    private String nomeModo;
 
     @FXML
     private GridPane grid = new GridPane();
@@ -40,6 +41,15 @@ public class tabuleiroController {
 
     @FXML
     private Text vez2;
+
+    @FXML
+    private Label labelModo;
+
+    @FXML
+    private Label labelPontos1;
+
+    @FXML
+    private Label labelPontos2;
 
     @FXML
     protected void btColorir(MouseEvent event){
@@ -79,16 +89,15 @@ public class tabuleiroController {
         if(modo == 1){
             ClassicoGUI jogo = new ClassicoGUI(this.jogador1, this.jogador2);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
-            System.out.println("Pontos do jogador:");
-            System.out.println(jogadorAtual.getPontos());
-            
-
+            mostrarPontos(jogador1, jogador2);
         }else if(modo == 3 || modo == 4 || modo == 5){
             TurboMalucoGui jogo = new TurboMalucoGui(jogador1, jogador2, modo);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
+            mostrarPontos(jogador1, jogador2);
         }else if(modo == 2){
             TurboGUI jogo = new TurboGUI(jogador1, jogador2);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
+            mostrarPontos(jogador1, jogador2);
         }
 
         if(jogadorAtual == jogador1){
@@ -139,6 +148,15 @@ public class tabuleiroController {
 
     public void obterModo(int modo){
         this.modo = modo;
+    }
+
+    public void mostrarModo(String modo){
+        labelModo.setText(modo);
+    }
+
+    public void mostrarPontos(Pessoa jogador1, Pessoa jogador2){
+        labelPontos1.setText(Integer.toString(jogador1.getPontos()));
+        labelPontos2.setText(Integer.toString(jogador2.getPontos()));
     }
 
 }
