@@ -33,23 +33,10 @@ public class rankingController {
     @FXML
     private Label lab10;
     
-    @FXML
-    private List<Label> listaLabel = new ArrayList<>();
-    
+    private Label[] labels;
+
 
     public rankingController(){
-
-        listaLabel.add(lab1);
-        listaLabel.add(lab2);
-        listaLabel.add(lab3);
-        listaLabel.add(lab4);
-        listaLabel.add(lab5);
-        listaLabel.add(lab6);
-        listaLabel.add(lab7);
-        listaLabel.add(lab8);
-        listaLabel.add(lab9);
-        listaLabel.add(lab10);
-
 
     }
 
@@ -57,20 +44,22 @@ public class rankingController {
     public void initialize(){
         mostraRank();
     }
+
     public void mostraRank(){
+        labels = new Label[]{lab1,lab2,lab3,lab4,lab5,lab6,lab7,lab8,lab9,lab10};
         List<Pessoa> jogadores;
-        int tam = rank.getRanking().size();
+
         rank.carregaRanking();
-        lab1.setText(rank.getRanking().get(0).getNome());
-        
+        jogadores = rank.getRanking();
+
         for(int x = 0; x<10;x++){
-            if(x<(rank.getRanking().size())){
-                //listaLabel.get(x).setText(rank.getRanking().get(x).getNome() + "------" + Integer.toString(rank.getRanking().get(x).getPontos()));
+
+            if(x<jogadores.size()){
+                labels[x].setText(jogadores.get(x).getNome()+"----"+jogadores.get(x).getPontos());
             }else{
-                //listaLabel.get(x).setText("");
+                labels[x].setText("");
             }
-        
-         }
+        }
 
     }
     
