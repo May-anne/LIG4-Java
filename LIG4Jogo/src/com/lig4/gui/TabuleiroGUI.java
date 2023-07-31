@@ -3,6 +3,8 @@ package com.lig4.gui;
 import java.util.Optional;
 
 import com.lig4.jogadores.Pessoa;
+import com.lig4.jogadores.Ranking;
+
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -11,13 +13,14 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-
+//a
 public abstract class TabuleiroGUI {
 
     private final int linhaMax = 6;
     private final int colunaMax = 7;
     private int row, linhaAtual;
     private Pessoa jogador1, jogador2;
+    private Ranking rank;
 
     public TabuleiroGUI(Pessoa jogador1, Pessoa jogador2) {
         this.jogador1 = jogador1;
@@ -48,6 +51,11 @@ public abstract class TabuleiroGUI {
             jogadorAtual.setPontos(1);
             if(continuarJogando()){
                 reiniciarTab(gridPane);
+            }else{
+                rank.carregaRanking();
+                rank.addJogador(jogador1);
+                rank.addJogador(jogador2);
+                
             }
         }
     }

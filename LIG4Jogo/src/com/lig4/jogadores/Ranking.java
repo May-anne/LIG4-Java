@@ -37,7 +37,7 @@ public class Ranking {
         }
 
     }
-
+//a
     public void carregaRanking(){
 
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(FILE))) {
@@ -45,7 +45,7 @@ public class Ranking {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        
+
     }
 
     public List<Pessoa> getRanking(){

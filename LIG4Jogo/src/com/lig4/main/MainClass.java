@@ -41,7 +41,7 @@ public class MainClass extends Application {
         stage.setScene(menu);
         stage.show();
 	}
-//a
+//as
 	public static void changeScreen(String src){
 		if(src.equals("modoJogo")){
 			stage.setScene(modoJogo);
