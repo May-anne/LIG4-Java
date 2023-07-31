@@ -1,19 +1,16 @@
 package com.lig4.gui;
 
-import java.time.Year;
 import java.util.Random;
-
-//a
 import com.lig4.jogadores.Pessoa;
+import com.lig4.jogadores.Ranking;
 
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class TurboMalucoGui extends TabuleiroGUI{
-
     private int nivel;
-
+    
     public TurboMalucoGui(Pessoa jogador1, Pessoa jogador2, int nivel){
         super(jogador1,jogador2);
         this.nivel = nivel;
@@ -22,23 +19,30 @@ public class TurboMalucoGui extends TabuleiroGUI{
     @Override
     public void alteraTabuleiro(GridPane gridPane, int col, Pessoa jogadorAtual) {
         super.alteraTabGui(gridPane,col,jogadorAtual);
+        Ranking rank = new Ranking();
 
         int row = super.getLinhaAtual();
 
         if(this.nivel == 3 || this.nivel == 4)
-            turboMalucoAlteraGui(gridPane, jogadorAtual, col, row, this.nivel);
+            turboMalucoAlteraGui(gridPane, jogadorAtual, col-1, row, this.nivel);
         else if(this.nivel == 5)
             hospicio(gridPane, jogadorAtual);
 
         if(checaVitoria(gridPane, jogadorAtual) == 1){
             mostrarVitoria(jogadorAtual);
+            jogadorAtual.setPontos(1);
             if(continuarJogando()){
                 reiniciarTab(gridPane);
+            }else{
+                rank.carregaRanking();
+                rank.addJogador(super.getJogador1());
+                rank.addJogador(super.getJogador2());
+                rank.salvarRanking();
             }
         }
     }
 
-    public void turboMalucoAlteraGui(GridPane gridPane,Pessoa jogadorAtual,int coluna, int linhaAtual, int nivel ){
+    public void turboMalucoAlteraGui(GridPane gridPane,Pessoa jogadorAtual, int coluna, int linhaAtual, int nivel ){
         System.out.println("Entrei em turbo maluco");
         Circle circuloAtual;
         Random random = new Random();
@@ -71,11 +75,9 @@ public class TurboMalucoGui extends TabuleiroGUI{
                         }
                     }
                 } 
-            }
-           
+            }  
         }
     }
-
     public void hospicio(GridPane gridPane,Pessoa jogadorAtual){
 
         Random random = new Random();

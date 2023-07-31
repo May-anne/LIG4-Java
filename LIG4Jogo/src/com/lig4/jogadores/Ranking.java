@@ -25,21 +25,14 @@ public class Ranking {
     }
 
     public void salvarRanking(){
-
          try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(FILE))) {
-
             outputStream.writeObject(ranking);
-
         } catch (IOException e) {
-
             e.printStackTrace();
-
         }
-
     }
-//a
-    public void carregaRanking(){
 
+    public void carregaRanking(){
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(FILE))) {
             ranking = (List<Pessoa>) inputStream.readObject();
         } catch (IOException | ClassNotFoundException e) {

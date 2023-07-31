@@ -1,9 +1,8 @@
 package com.lig4.gui;
 
 import com.lig4.jogadores.Pessoa;
-
 import javafx.scene.layout.GridPane;
-//a
+
 public class ClassicoGUI extends TabuleiroGUI {
     
     public ClassicoGUI(Pessoa jogador1,Pessoa jogador2){
@@ -19,5 +18,5 @@ public class ClassicoGUI extends TabuleiroGUI {
     public int checaVitoria(GridPane gridPane, Pessoa pessoa){
         return super.checaVitoria(gridPane, pessoa);
     }
-//as
+
 }
