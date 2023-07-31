@@ -347,22 +347,22 @@
       </Label>
       <Label layoutX="131.0" layoutY="67.0" text="Pontuação: " textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font name="Trebuchet MS" size="15.0" />
          </font>
       </Label>
       <Label layoutX="580.0" layoutY="67.0" text="Pontuação:" textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font name="Trebuchet MS" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="labelPontos1" layoutX="210.0" layoutY="68.0" prefHeight="21.0" prefWidth="9.0" text="0" textFill="WHITE">
+      <Label fx:id="labelPontos1" layoutX="210.0" layoutY="67.0" prefHeight="21.0" prefWidth="9.0" text="0" textFill="WHITE">
          <font>
             <Font name="Trebuchet MS" size="15.0" />
          </font>
       </Label>
       <Label fx:id="labelPontos2" layoutX="659.0" layoutY="67.0" prefHeight="21.0" prefWidth="9.0" text="0" textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font name="Trebuchet MS" size="15.0" />
          </font>
       </Label>
    </children>
