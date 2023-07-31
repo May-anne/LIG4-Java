@@ -29,6 +29,13 @@ public class TurboMalucoGui extends TabuleiroGUI{
             turboMalucoAlteraGui(gridPane, jogadorAtual, col, row, this.nivel);
         else if(this.nivel == 5)
             hospicio(gridPane, jogadorAtual);
+
+        if(checaVitoria(gridPane, jogadorAtual) == 1){
+            mostrarVitoria(jogadorAtual);
+            if(continuarJogando()){
+                reiniciarTab(gridPane);
+            }
+        }
     }
 
     public void turboMalucoAlteraGui(GridPane gridPane,Pessoa jogadorAtual,int coluna, int linhaAtual, int nivel ){

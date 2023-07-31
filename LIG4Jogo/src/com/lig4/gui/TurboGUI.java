@@ -10,7 +10,6 @@ public class TurboGUI extends TabuleiroGUI{
 
     public TurboGUI(Pessoa jogador1, Pessoa jogador2) {
         super(jogador1, jogador2);
-        //TODO Auto-generated constructor stub
     }
 
     @Override
@@ -37,8 +36,11 @@ public class TurboGUI extends TabuleiroGUI{
             }
         }
 
-        if(checaVitoria(gridPane, jogadorAtual)==1){
-            System.out.println(jogadorAtual.getNome());
+        if(checaVitoria(gridPane, jogadorAtual) == 1){
+            mostrarVitoria(jogadorAtual);
+            if(continuarJogando()){
+                reiniciarTab(gridPane);
+            }
         }
     }
 
