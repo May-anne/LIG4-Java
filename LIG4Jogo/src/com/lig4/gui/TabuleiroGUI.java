@@ -55,7 +55,7 @@ public abstract class TabuleiroGUI {
                 rank.carregaRanking();
                 rank.addJogador(jogador1);
                 rank.addJogador(jogador2);
-                
+                rank.salvarRanking();
             }
         }
     }
