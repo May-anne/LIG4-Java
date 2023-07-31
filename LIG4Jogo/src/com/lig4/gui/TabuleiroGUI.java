@@ -2,6 +2,8 @@ package com.lig4.gui;
 
 import com.lig4.jogadores.Pessoa;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -37,6 +39,10 @@ public abstract class TabuleiroGUI {
                 setLinhaAtual(row);
             }
         }
+
+        if(checaVitoria(gridPane, jogadorAtual) == 1){
+            mostrarVitoria(jogadorAtual);
+        }
     }
     public boolean empate(GridPane gridPane){
         Circle circuloAtual;
@@ -60,9 +66,9 @@ public abstract class TabuleiroGUI {
     }
     public int checaVitoria(GridPane gridPane, Pessoa pessoa){
         char peca = pessoa.getCorPeca();
-        Circle p1,p2,p3,p4;
+        Circle p1, p2, p3, p4;
         Color cor = Color.rgb(0, 0, 0);
-        
+
         if(peca=='V')
            cor = Color.RED;
         else if(peca=='A')
@@ -101,7 +107,6 @@ public abstract class TabuleiroGUI {
              }
          }
 
-
          for(int row = 0; row<3;row++){//Horizontal Baixo-Cima
             for(int col = 0; col<4;col++){
             
@@ -117,9 +122,7 @@ public abstract class TabuleiroGUI {
                     }
                 }
              }
-         }
-
-         
+         }      
          for(int row = 0; row < 6;row++){//Horizontal Cima-Baixo
             for(int col = 0; col < 4;col++){
             
@@ -134,22 +137,20 @@ public abstract class TabuleiroGUI {
                         return 1;
                     }
                 }
-            
-             }
+            }
          }
         
-        if(empate(gridPane))
+        if(empate(gridPane)){
+            mostrarEmpate();
             return 2;
-        else
+        } else
             return 0;
     }
 
     public void setPeca(GridPane gridPane, int col, int row, Pessoa jogadorAtual){
-
         Circle circulo = getCirculo(gridPane, col, row);
         Color cor = jogadorAtual.equals(this.jogador1) ? Color.RED : Color.YELLOW;
         circulo.setFill(cor);
-
     }
 
     public Circle getCirculo(GridPane gridPane, int col, int row) {
@@ -166,6 +167,24 @@ public abstract class TabuleiroGUI {
             }
         }
         return null;
+    }
+
+    public void mostrarVitoria(Pessoa vencedor){
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Vitória");
+        alert.setHeaderText(null);
+        alert.setContentText(vencedor.getNome()+" venceu!");
+        alert.showAndWait();
+        return;
+    }
+
+    public void mostrarEmpate(){
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Empate");
+        alert.setHeaderText(null);
+        alert.setContentText("Houve um empate!");
+        alert.showAndWait();
+        return;   
     }
 
     public int getLinhas(){

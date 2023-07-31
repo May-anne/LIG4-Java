@@ -51,8 +51,8 @@ public class nomesController {
             return;
         }
 
-        peca1 = 'A';
-        peca2 = 'V';
+        peca1 = 'V';
+        peca2 = 'A';
 //a
         jogador1 = new Pessoa(nome1, peca1);
         jogador2 = new Pessoa(nome2, peca2);

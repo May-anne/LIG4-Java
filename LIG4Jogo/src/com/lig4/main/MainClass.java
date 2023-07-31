@@ -1,7 +1,5 @@
 package com.lig4.main;
 
-import com.lig4.jogo.Start;
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -13,10 +11,8 @@ import javafx.stage.Stage;
 public class MainClass extends Application {
 	
 	private static Stage stage;
-
-	private static Scene menu,tabuleiro,modoJogo,turboMaluco,nomes;
+	private static Scene menu, tabuleiro, modoJogo, turboMaluco, nomes;
 	
-//aaaaaa
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;

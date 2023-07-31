@@ -3,7 +3,6 @@ package com.lig4.main;
 import java.io.IOException;
 
 import com.lig4.gui.ClassicoGUI;
-import com.lig4.gui.TabuleiroGUI;
 import com.lig4.gui.TurboGUI;
 import com.lig4.gui.TurboMalucoGui;
 import com.lig4.jogadores.Pessoa;
@@ -14,7 +13,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -24,7 +22,6 @@ public class tabuleiroController {
     private String idBotaoClicado;
     private int col, modo;
     protected Pessoa jogadorAtual, jogador1, jogador2;
-    private char peca1, peca2;
 
     @FXML
     private GridPane grid = new GridPane();
@@ -68,8 +65,11 @@ public class tabuleiroController {
         Button botaoClicado = (Button) event.getSource();
         idBotaoClicado = botaoClicado.getId();
 
-        if (jogadorAtual == null)
+        if(jogadorAtual == null)
             jogadorAtual = jogador1;
+
+        System.out.println(jogador1.getNome());
+        System.out.println(jogador2.getNome());
         
         col = obterColuna();
 
