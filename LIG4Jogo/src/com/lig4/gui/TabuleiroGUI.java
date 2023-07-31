@@ -42,6 +42,7 @@ public abstract class TabuleiroGUI {
 
         if(checaVitoria(gridPane, jogadorAtual) == 1){
             mostrarVitoria(jogadorAtual);
+            jogadorAtual.setPontos(1);
         }
     }
 
@@ -54,6 +55,7 @@ public abstract class TabuleiroGUI {
             }
         }
     }
+
     public boolean empate(GridPane gridPane){
         Circle circuloAtual;
         boolean cheio = true;

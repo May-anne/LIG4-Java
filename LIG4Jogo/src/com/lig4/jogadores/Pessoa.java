@@ -8,7 +8,7 @@ public class Pessoa {
 	private String nome;
 	private char peca;
 	private int col;
-	private int pontos; // A cada vitória, soma +1
+	private int pontos=0; // A cada vitória, soma +1
 	
 	public Pessoa(String nome, char peca) {	
 		this.nome = nome; //Futuramente colocar verificação para ver se nome já existe no ranking
@@ -46,7 +46,7 @@ public class Pessoa {
 		return this.pontos;
 	}
 
-	public void setPontos(int pontos) throws AtributoInvalidoException{
-		this.pontos = pontos;
+	public void setPontos(int pontos) {
+		this.pontos += pontos;
 	}
 }

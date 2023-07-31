@@ -6,6 +6,8 @@ import com.lig4.gui.ClassicoGUI;
 import com.lig4.gui.TurboGUI;
 import com.lig4.gui.TurboMalucoGui;
 import com.lig4.jogadores.Pessoa;
+import com.lig4.jogadores.Ranking;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -22,6 +24,7 @@ public class tabuleiroController {
     private String idBotaoClicado;
     private int col, modo;
     protected Pessoa jogadorAtual, jogador1, jogador2;
+    private Ranking rank;
 
     @FXML
     private GridPane grid = new GridPane();
@@ -76,6 +79,10 @@ public class tabuleiroController {
         if(modo == 1){
             ClassicoGUI jogo = new ClassicoGUI(this.jogador1, this.jogador2);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
+            System.out.println("Pontos do jogador:");
+            System.out.println(jogadorAtual.getPontos());
+            
+
         }else if(modo == 3 || modo == 4 || modo == 5){
             TurboMalucoGui jogo = new TurboMalucoGui(jogador1, jogador2, modo);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
