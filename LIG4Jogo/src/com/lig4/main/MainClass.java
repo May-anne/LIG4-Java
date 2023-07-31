@@ -54,6 +54,8 @@ public class MainClass extends Application {
 		}else if(src.equals("sair")){
 			Platform.exit();
 			System.exit(0);
+		}else{
+			stage.setScene(menu);
 		}
 	}
 

@@ -49,5 +49,9 @@ public class modoTurboMalucoController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    protected void btVoltar(){
+        MainClass.changeScreen("modoJogo");
+    }
 }
-//a

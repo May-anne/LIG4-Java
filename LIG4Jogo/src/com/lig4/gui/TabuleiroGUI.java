@@ -214,19 +214,19 @@ public abstract class TabuleiroGUI {
     }
 
     public boolean continuarJogando(){
-    Alert alert = new Alert(AlertType.CONFIRMATION);
-    alert.setTitle("Continuar jogando?");
-    alert.setHeaderText("Deseja continuar jogando?");
-    alert.setContentText("Clique OK para continuar ou Cancelar para sair.");
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Continuar jogando?");
+        alert.setHeaderText("Deseja continuar jogando?");
+        alert.setContentText("Clique OK para continuar ou Cancelar para sair.");
 
-    ButtonType buttonOK = new ButtonType("OK");
-    ButtonType buttonCancelar = new ButtonType("Cancelar");
+        ButtonType buttonOK = new ButtonType("OK");
+        ButtonType buttonCancelar = new ButtonType("Cancelar");
 
-    alert.getButtonTypes().setAll(buttonOK, buttonCancelar);
+        alert.getButtonTypes().setAll(buttonOK, buttonCancelar);
 
-    Optional<ButtonType> result = alert.showAndWait();
+        Optional<ButtonType> result = alert.showAndWait();
 
-    return result.orElse(ButtonType.CANCEL) == buttonOK;
+        return result.orElse(ButtonType.CANCEL) == buttonOK;
     }
 
     public int getLinhas(){

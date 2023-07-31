@@ -41,4 +41,9 @@ public class modoJogoController {
         stage.setScene(scene);
         stage.show();
     }
-}//aaaa
+
+    @FXML
+    protected void btVoltar(){
+        MainClass.changeScreen("menu");
+    }
+}
