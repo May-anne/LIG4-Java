@@ -1,9 +1,12 @@
 package com.lig4.gui;
 
+import java.util.Optional;
+
 import com.lig4.jogadores.Pessoa;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -43,6 +46,9 @@ public abstract class TabuleiroGUI {
         if(checaVitoria(gridPane, jogadorAtual) == 1){
             mostrarVitoria(jogadorAtual);
             jogadorAtual.setPontos(1);
+            if(continuarJogando()){
+                reiniciarTab(gridPane);
+            }
         }
     }
 
@@ -197,6 +203,22 @@ public abstract class TabuleiroGUI {
         alert.setContentText("Houve um empate!");
         alert.showAndWait();
         return;   
+    }
+
+    public boolean continuarJogando(){
+    Alert alert = new Alert(AlertType.CONFIRMATION);
+    alert.setTitle("Continuar jogando?");
+    alert.setHeaderText("Deseja continuar jogando?");
+    alert.setContentText("Clique OK para continuar ou Cancelar para sair.");
+
+    ButtonType buttonOK = new ButtonType("OK");
+    ButtonType buttonCancelar = new ButtonType("Cancelar");
+
+    alert.getButtonTypes().setAll(buttonOK, buttonCancelar);
+
+    Optional<ButtonType> result = alert.showAndWait();
+
+    return result.orElse(ButtonType.CANCEL) == buttonOK;
     }
 
     public int getLinhas(){
