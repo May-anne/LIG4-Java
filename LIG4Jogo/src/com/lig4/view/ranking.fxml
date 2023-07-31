@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lig4.main.rankingController">
+   <children>
+      <Label fx:id="lab3" layoutX="355.0" layoutY="108.0" text="Label" />
+      <Label fx:id="lab1" layoutX="355.0" layoutY="47.0" text="Label" />
+      <Label fx:id="lab2" layoutX="355.0" layoutY="80.0" text="Label" />
+      <Label fx:id="lab5" layoutX="355.0" layoutY="165.0" text="Label" />
+      <Label fx:id="lab4" layoutX="355.0" layoutY="133.0" text="Label" />
+      <Label fx:id="lab6" layoutX="355.0" layoutY="198.0" text="Label" />
+      <Label fx:id="lab7" layoutX="355.0" layoutY="230.0" prefHeight="17.0" prefWidth="28.0" text="Label" />
+      <Label fx:id="lab8" layoutX="355.0" layoutY="267.0" text="Label" />
+      <Label fx:id="lab9" layoutX="355.0" layoutY="302.0" text="Label" />
+      <Label fx:id="lab10" layoutX="355.0" layoutY="339.0" text="Label" />
+   </children>
+</AnchorPane>

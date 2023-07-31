@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class MainClass extends Application {
 	
 	private static Stage stage;
-	private static Scene menu, tabuleiro, modoJogo, turboMaluco, nomes;
+	private static Scene menu, tabuleiro, modoJogo, turboMaluco, nomes, ranking;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -24,7 +24,10 @@ public class MainClass extends Application {
        
 		Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/view.fxml"));
 		menu = new Scene(fxmlMenu, 800, 550);
-		
+
+		Parent fxmlRanking = FXMLLoader.load(getClass().getResource("../view/ranking.fxml"));
+		ranking = new Scene(fxmlRanking, 800,550);
+
 		Parent fxmlModoJogo = FXMLLoader.load(getClass().getResource("../view/modo_jogo.fxml"));
 		modoJogo = new Scene(fxmlModoJogo, 800, 550);
 
@@ -36,7 +39,8 @@ public class MainClass extends Application {
 
 		Parent fxmlTabuleiro = FXMLLoader.load(getClass().getResource("../view/tabuleiro.fxml"));
 		tabuleiro = new Scene(fxmlTabuleiro, 800, 550);
-      
+		
+		
 	
         stage.setScene(menu);
         stage.show();
@@ -47,6 +51,8 @@ public class MainClass extends Application {
 			stage.setScene(modoJogo);
 		}else if(src.equals("turboMaluco")){
 			stage.setScene(turboMaluco);
+		}else if(src.equals("ranking")){
+			stage.setScene(ranking);
 		}else if(src.equals("nomes")){
 			stage.setScene(nomes);
 		}else if(src.equals("tabuleiro")){

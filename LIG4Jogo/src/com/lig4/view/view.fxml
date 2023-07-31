@@ -61,7 +61,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="324.0" layoutY="357.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="147.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Ranking" textFill="WHITE">
+                  <Button layoutX="324.0" layoutY="357.0" mnemonicParsing="false" onAction="#btRankingAction" prefHeight="59.0" prefWidth="147.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Ranking" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="25.0" />
                      </font>

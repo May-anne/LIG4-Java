@@ -10,6 +10,11 @@ public class MainController {
     }
 
     @FXML
+    protected void btRankingAction(){
+        MainClass.changeScreen("ranking");
+    }
+    
+    @FXML
     protected void btSairAction(){
         MainClass.changeScreen("sair");
     }

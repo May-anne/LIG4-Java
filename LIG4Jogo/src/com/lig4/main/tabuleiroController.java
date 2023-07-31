@@ -28,7 +28,7 @@ public class tabuleiroController {
     private String idBotaoClicado;
     private int col, modo;
     protected Pessoa jogadorAtual, jogador1, jogador2;
-    private Ranking rank;
+    private Ranking rank = new Ranking();
 
     @FXML
     private GridPane grid = new GridPane();
@@ -69,7 +69,7 @@ public class tabuleiroController {
     @FXML
     protected void btVoltar(){
         if(escolherVoltar()){
-            rank = new Ranking();
+            
             rank.carregaRanking();
             rank.addJogador(jogador1);
             rank.addJogador(jogador2);
