@@ -30,9 +30,8 @@ public class rankingController {
     private Label lab9;
     @FXML
     private Label lab10;
-    
-    private Label[] labels;
 
+    private Label[] labels;
 
     public rankingController(){
 

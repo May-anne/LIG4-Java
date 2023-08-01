@@ -80,9 +80,6 @@ public class tabuleiroController {
         if(jogadorAtual == null)
             jogadorAtual = jogador1;
 
-        System.out.println(jogador1.getNome());
-        System.out.println(jogador2.getNome());
-        
         col = obterColuna();
 
         if(modo == 1){

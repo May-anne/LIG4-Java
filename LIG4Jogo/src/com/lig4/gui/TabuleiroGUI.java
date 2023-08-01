@@ -41,7 +41,6 @@ public abstract class TabuleiroGUI {
                 setLinhaAtual(row);
                 break;
             } else if(!circuloAtual.getFill().equals(Color.WHITE)){
-                System.out.println("Espaço preenchido, passando pro próximo de cima");
                 setLinhaAtual(row);
             }
         }
@@ -97,7 +96,6 @@ public abstract class TabuleiroGUI {
                 
                 if(p1 != null && p2 != null && p3 != null && p4 != null){
                     if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
-                        System.out.println("Alguem venceu");
                         return 1;
                     }
                 }
@@ -113,7 +111,6 @@ public abstract class TabuleiroGUI {
             
                 if(p1 != null && p2 != null && p3 != null && p4 != null){
                     if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
-                        System.out.println("Alguem venceu");
                         return 1;
                     }
                 }
@@ -130,7 +127,6 @@ public abstract class TabuleiroGUI {
                
                 if(p1 != null && p2 != null && p3 != null && p4 != null){
                     if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
-                        System.out.println("Alguem venceu");
                         return 1;
                     }
                 }
@@ -146,7 +142,6 @@ public abstract class TabuleiroGUI {
                
                 if(p1 != null && p2 != null && p3 != null && p4 != null){
                     if(p1.getFill().equals(cor) && p2.getFill().equals(cor) && p3.getFill().equals(cor)&& p4.getFill().equals(cor)){
-                        System.out.println("Alguem venceu");
                         return 1;
                     }
                 }
