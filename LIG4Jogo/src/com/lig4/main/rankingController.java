@@ -1,11 +1,7 @@
 package com.lig4.main;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import com.lig4.jogadores.Pessoa;
 import com.lig4.jogadores.Ranking;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -53,7 +49,6 @@ public class rankingController {
         jogadores = rank.getRanking();
 
         for(int x = 0; x<10;x++){
-
             if(x<jogadores.size()){
                 labels[x].setText((x+1)+"º "+jogadores.get(x).getNome()+"----"+jogadores.get(x).getPontos());
             }else{

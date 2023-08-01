@@ -1,19 +1,12 @@
 package com.lig4.main;
 
-import java.io.IOException;
 import java.util.Optional;
-
 import com.lig4.gui.ClassicoGUI;
 import com.lig4.gui.TurboGUI;
 import com.lig4.gui.TurboMalucoGui;
 import com.lig4.jogadores.Pessoa;
 import com.lig4.jogadores.Ranking;
-
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -22,7 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class tabuleiroController {
     private String idBotaoClicado;

@@ -1,5 +1,6 @@
 package com.lig4.jogadores;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -33,14 +34,18 @@ public class Ranking {
     }
 
     public void carregaRanking(){
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(FILE))) {
-            ranking = (List<Pessoa>) inputStream.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+        File file = new File(FILE);
+        if (file.exists() && file.length() > 0) {
+            try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(file))) {
+                ranking = (List<Pessoa>) inputStream.readObject();
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("O arquivo do ranking está vazio ou não existe.");
         }
 
     }
-
     public List<Pessoa> getRanking(){
         return ranking;
     }
