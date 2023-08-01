@@ -26,7 +26,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="274.0" layoutY="362.0" mnemonicParsing="false" onAction="#btTarjaPreta" prefHeight="52.0" prefWidth="259.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Tarja preta" textFill="WHITE">
+            <Button layoutX="274.0" layoutY="373.0" mnemonicParsing="false" onAction="#btTarjaPreta" prefHeight="52.0" prefWidth="259.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Tarja preta" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="22.0" />
                </font>
@@ -34,7 +34,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="274.0" layoutY="433.0" mnemonicParsing="false" onAction="#btHospicio" prefHeight="52.0" prefWidth="259.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Hospício" textFill="WHITE">
+            <Button layoutX="274.0" layoutY="456.0" mnemonicParsing="false" onAction="#btHospicio" prefHeight="52.0" prefWidth="259.0" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 3;" text="Hospício" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="22.0" />
                </font>
@@ -47,23 +47,15 @@
                   <Image url="@resources/logoJogo.png" />
                </image>
             </ImageView>
-            <Circle fill="#ffcc00" layoutX="341.0" layoutY="179.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <Circle fill="#ffcc00" layoutX="439.0" layoutY="179.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <Circle fill="#ffcc00" layoutX="390.0" layoutY="179.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <Circle fill="#ffcc00" layoutX="488.0" layoutY="179.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <ImageView fitHeight="45.0" fitWidth="561.0" layoutX="134.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+            <Circle fill="#ffcc00" layoutX="331.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="429.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="380.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="478.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <ImageView fitHeight="45.0" fitWidth="561.0" layoutX="134.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@resources/tituloMaluquice.png" />
                </image>
             </ImageView>
-            <Button layoutX="739.0" layoutY="28.0" mnemonicParsing="false" onAction="#btVoltar" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
             <ImageView fitHeight="26.0" fitWidth="54.0" layoutX="746.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@resources/voltar.png" />
@@ -72,6 +64,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <Button layoutX="739.0" layoutY="28.0" mnemonicParsing="false" onAction="#btVoltar" opacity="0.52" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </Pane>
    </children>

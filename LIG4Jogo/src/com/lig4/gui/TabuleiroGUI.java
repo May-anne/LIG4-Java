@@ -45,19 +45,6 @@ public abstract class TabuleiroGUI {
                 setLinhaAtual(row);
             }
         }
-
-        if(checaVitoria(gridPane, jogadorAtual) == 1){
-            mostrarVitoria(jogadorAtual);
-            jogadorAtual.setPontos(1);
-            if(continuarJogando()){
-                reiniciarTab(gridPane);
-            }else{
-                rank.carregaRanking();
-                rank.addJogador(jogador1);
-                rank.addJogador(jogador2);
-                rank.salvarRanking();
-            }
-        }
     }
 
     public void reiniciarTab(GridPane gridPane){

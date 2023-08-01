@@ -55,12 +55,17 @@ public class rankingController {
         for(int x = 0; x<10;x++){
 
             if(x<jogadores.size()){
-                labels[x].setText(jogadores.get(x).getNome()+"----"+jogadores.get(x).getPontos());
+                labels[x].setText((x+1)+"º "+jogadores.get(x).getNome()+"----"+jogadores.get(x).getPontos());
             }else{
                 labels[x].setText("");
             }
         }
 
+    }
+
+    @FXML
+    protected void btVoltar(){
+        MainClass.changeScreen("menu");
     }
     
     

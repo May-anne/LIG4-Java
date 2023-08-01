@@ -47,18 +47,10 @@
                   <Image url="@resources/logoJogo.png" />
                </image>
             </ImageView>
-            <Circle fill="#ffcc00" layoutX="331.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <Circle fill="#ffcc00" layoutX="429.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <Circle fill="#ffcc00" layoutX="380.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <Circle fill="#ffcc00" layoutX="478.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-            <Button layoutX="739.0" layoutY="28.0" mnemonicParsing="false" onAction="#btVoltar" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+            <Circle fill="#ffcc00" layoutX="327.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="425.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="376.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+            <Circle fill="#ffcc00" layoutX="474.0" layoutY="169.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
             <ImageView fitHeight="49.0" fitWidth="492.0" layoutX="185.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@resources/tituloModo.png" />
@@ -72,6 +64,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <Button layoutX="739.0" layoutY="28.0" mnemonicParsing="false" onAction="#btVoltar" opacity="0.52" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </Pane>
    </children>

@@ -166,12 +166,12 @@ public class tabuleiroController {
 
     public boolean escolherVoltar(){
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Voltar");
-        alert.setHeaderText("Deseja voltar?");
-        alert.setContentText("Clique OK para continuar ou Cancelar para sair.");
+        alert.setTitle(null);
+        alert.setHeaderText("Deseja parar de jogar?");
+        alert.setContentText("Clique Sim para sair ou Não para continuar jogando.");
 
-        ButtonType buttonOK = new ButtonType("OK");
-        ButtonType buttonCancelar = new ButtonType("Cancelar");
+        ButtonType buttonOK = new ButtonType("Sim");
+        ButtonType buttonCancelar = new ButtonType("Não");
 
         alert.getButtonTypes().setAll(buttonOK, buttonCancelar);
 

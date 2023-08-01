@@ -304,12 +304,12 @@
             <Font name="Trebuchet MS Bold" size="16.0" />
          </font>
       </Text>
-      <Text fx:id="vez2" fill="#ffcc00" layoutX="599.0" layoutY="105.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
+      <Text fx:id="vez2" fill="#ffcc00" layoutX="580.0" layoutY="105.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUA VEZ!">
          <font>
             <Font name="Trebuchet MS Bold" size="16.0" />
          </font>
       </Text>
-      <Label fx:id="nomeJogador2" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="617.0" layoutY="42.0" nodeOrientation="RIGHT_TO_LEFT" text="Label" textAlignment="RIGHT" textFill="WHITE">
+      <Label fx:id="nomeJogador2" contentDisplay="RIGHT" layoutX="580.0" layoutY="42.0" nodeOrientation="RIGHT_TO_LEFT" text="Label" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Trebuchet MS" size="20.0" />
          </font>

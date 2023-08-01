@@ -3,6 +3,7 @@ package com.lig4.gui;
 import java.util.Random;
 import com.lig4.jogadores.Pessoa;
 import com.lig4.jogadores.Ranking;
+import com.lig4.main.MainClass;
 
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -38,6 +39,7 @@ public class TurboMalucoGui extends TabuleiroGUI{
                 rank.addJogador(super.getJogador1());
                 rank.addJogador(super.getJogador2());
                 rank.salvarRanking();
+                MainClass.changeScreen("menu");
             }
         }
     }
