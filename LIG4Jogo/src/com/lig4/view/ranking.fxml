@@ -61,10 +61,10 @@
             <Image url="@resources/logoJogo.png" />
          </image>
       </ImageView>
-      <Circle fill="#ffcc00" layoutX="327.0" layoutY="124.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-      <Circle fill="#ffcc00" layoutX="425.0" layoutY="124.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-      <Circle fill="#ffcc00" layoutX="376.0" layoutY="124.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
-      <Circle fill="#ffcc00" layoutX="474.0" layoutY="124.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+      <Circle fill="#ffcc00" layoutX="327.0" layoutY="131.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+      <Circle fill="#ffcc00" layoutX="425.0" layoutY="131.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+      <Circle fill="#ffcc00" layoutX="376.0" layoutY="131.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
+      <Circle fill="#ffcc00" layoutX="474.0" layoutY="131.0" radius="13.0" stroke="#ffcc00" strokeType="INSIDE" />
       <ImageView fitHeight="93.0" fitWidth="403.0" layoutX="199.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resources/tituloRanking.png" />
@@ -81,6 +81,14 @@
       <Button layoutX="739.0" layoutY="28.0" mnemonicParsing="false" onAction="#btVoltar" opacity="0.52" prefHeight="19.0" prefWidth="39.0" style="-fx-background-color: #FF1A1A;" textFill="WHITE">
          <font>
             <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="348.0" layoutY="479.0" mnemonicParsing="false" onAction="#btMostraRank" style="-fx-background-color: #FF3333; -fx-border-color: #FFCC00; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3;" text="Atualizar" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="23.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
