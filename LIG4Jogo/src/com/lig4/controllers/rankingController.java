@@ -1,7 +1,9 @@
-package com.lig4.main;
+package com.lig4.controllers;
 import java.util.List;
 import com.lig4.jogadores.Pessoa;
 import com.lig4.jogadores.Ranking;
+import com.lig4.main.MainClass;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 

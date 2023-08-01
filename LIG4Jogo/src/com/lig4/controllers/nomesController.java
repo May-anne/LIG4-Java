@@ -1,7 +1,9 @@
-package com.lig4.main;
+package com.lig4.controllers;
 
 import java.io.IOException;
 import com.lig4.jogadores.Pessoa;
+import com.lig4.main.MainClass;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

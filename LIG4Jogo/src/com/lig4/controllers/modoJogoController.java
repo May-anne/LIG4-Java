@@ -1,6 +1,8 @@
-package com.lig4.main;
+package com.lig4.controllers;
 
 import java.io.IOException;
+
+import com.lig4.main.MainClass;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,14 +11,19 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-//a
-public class modoTurboMalucoController {
+
+public class modoJogoController {
     @FXML
-    protected void btDorDeCabeca(ActionEvent event) throws IOException{
+    protected void btTurboMalucoAction() throws IOException{     
+        MainClass.changeScreen("turboMaluco");
+    }
+
+    @FXML
+    protected void btClassico(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/nomes.fxml"));
         Parent root = loader.load();
         nomesController modo = loader.getController();
-        modo.setModo(3);
+        modo.setModo(1);
 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -25,24 +32,11 @@ public class modoTurboMalucoController {
     }
 
     @FXML
-    protected void btTarjaPreta(ActionEvent event) throws IOException{
+    protected void btTurbo(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/nomes.fxml"));
         Parent root = loader.load();
         nomesController modo = loader.getController();
-        modo.setModo(4);
-
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    protected void btHospicio(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/nomes.fxml"));
-        Parent root = loader.load();
-        nomesController modo = loader.getController();
-        modo.setModo(5);
+        modo.setModo(2);
 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -52,6 +46,6 @@ public class modoTurboMalucoController {
 
     @FXML
     protected void btVoltar(){
-        MainClass.changeScreen("modoJogo");
+        MainClass.changeScreen("menu");
     }
 }
