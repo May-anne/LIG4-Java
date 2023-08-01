@@ -64,6 +64,12 @@ public class rankingController {
     protected void btVoltar(){
         MainClass.changeScreen("menu");
     }
+
+    @FXML
+    protected void btMostraRank(){
+        mostraRank();
+    }
+
     
     
 }
