@@ -1,9 +1,7 @@
 package com.lig4.controllers;
 
 import java.io.IOException;
-
 import com.lig4.main.MainClass;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-//a
+
 public class modoTurboMalucoController {
     @FXML
     protected void btDorDeCabeca(ActionEvent event) throws IOException{

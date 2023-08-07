@@ -1,5 +1,5 @@
 package com.lig4.main;
-//A
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class MainClass extends Application {
-	
 	private static Stage stage;
 	private static Scene menu, tabuleiro, modoJogo, turboMaluco, nomes, ranking;
 	
@@ -19,7 +18,6 @@ public class MainClass extends Application {
 		Image logoImage = new Image(getClass().getResourceAsStream("../view/resources/logo.png"));
         primaryStage.getIcons().add(logoImage);
 		
-		// TODO Auto-generated method stub
 		stage.setTitle("LIG4");
        
 		Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/view.fxml"));
@@ -33,19 +31,17 @@ public class MainClass extends Application {
 
 		Parent fxmlNomes = FXMLLoader.load(getClass().getResource("../view/nomes.fxml"));
 		nomes = new Scene(fxmlNomes, 800, 550);
-		//aaa
+
 		Parent fxmlTurboMaluco = FXMLLoader.load(getClass().getResource("../view/turbo_maluco.fxml"));
 		turboMaluco = new Scene(fxmlTurboMaluco, 800, 550);
 
 		Parent fxmlTabuleiro = FXMLLoader.load(getClass().getResource("../view/tabuleiro.fxml"));
 		tabuleiro = new Scene(fxmlTabuleiro, 800, 550);
 		
-		
-	
         stage.setScene(menu);
         stage.show();
 	}
-//as
+
 	public static void changeScreen(String src){
 		if(src.equals("modoJogo")){
 			stage.setScene(modoJogo);
@@ -65,10 +61,8 @@ public class MainClass extends Application {
 		}
 	}
 
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//new Start();
 		launch(args);
 	}
 

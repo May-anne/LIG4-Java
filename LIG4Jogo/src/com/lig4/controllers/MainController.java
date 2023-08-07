@@ -1,7 +1,6 @@
 package com.lig4.controllers;
 
 import com.lig4.main.MainClass;
-
 import javafx.fxml.FXML;
 
 public class MainController {
@@ -22,4 +21,3 @@ public class MainController {
     }
     
 }
-//as

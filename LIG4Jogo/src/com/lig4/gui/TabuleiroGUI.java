@@ -1,10 +1,8 @@
 package com.lig4.gui;
 
 import java.util.Optional;
-
 import com.lig4.jogadores.Pessoa;
 import com.lig4.jogadores.Ranking;
-
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -13,7 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-//a
+
 public abstract class TabuleiroGUI {
 
     private final int linhaMax = 6;

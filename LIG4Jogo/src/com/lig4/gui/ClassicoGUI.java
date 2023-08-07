@@ -3,7 +3,6 @@ package com.lig4.gui;
 import com.lig4.jogadores.Pessoa;
 import com.lig4.jogadores.Ranking;
 import com.lig4.main.MainClass;
-
 import javafx.scene.layout.GridPane;
 
 public class ClassicoGUI extends TabuleiroGUI {

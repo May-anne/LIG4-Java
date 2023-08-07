@@ -3,7 +3,6 @@ package com.lig4.gui;
 import com.lig4.jogadores.Pessoa;
 import com.lig4.jogadores.Ranking;
 import com.lig4.main.MainClass;
-
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -26,7 +25,6 @@ public class TurboGUI extends TabuleiroGUI{
         if(col < 7){
             circuloAtual = getCirculo(gridPane, col, row);
             if(!circuloAtual.getFill().equals(cor) && !circuloAtual.getFill().equals(Color.WHITE)){
-                System.out.println("entrei aquii");
                 super.setPeca(gridPane, col, row, jogadorAtual);
             }
         }
@@ -34,7 +32,6 @@ public class TurboGUI extends TabuleiroGUI{
             int antCol = col - 2;
             circuloAtual = getCirculo(gridPane, antCol, row);
             if(!circuloAtual.getFill().equals(cor) && !circuloAtual.getFill().equals(Color.WHITE)){
-                System.out.println("entrei aqui");
                 super.setPeca(gridPane, antCol, row, jogadorAtual);
             }
         }
