@@ -75,6 +75,7 @@ public class tabuleiroController {
     protected void btEscolherColuna(MouseEvent event) {
         Button botaoClicado = (Button) event.getSource();
         idBotaoClicado = botaoClicado.getId();
+        boolean colunaCheia = false;
 
         if(jogadorAtual == null)
             jogadorAtual = jogador1;
@@ -84,25 +85,28 @@ public class tabuleiroController {
         if(modo == 1){
             ClassicoGUI jogo = new ClassicoGUI(this.jogador1, this.jogador2);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
+            colunaCheia = jogo.getColunaCheia();
             mostrarPontos(jogador1, jogador2);
         }else if(modo == 3 || modo == 4 || modo == 5){
             TurboMalucoGui jogo = new TurboMalucoGui(jogador1, jogador2, modo);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
+            colunaCheia = jogo.getColunaCheia();
             mostrarPontos(jogador1, jogador2);
         }else if(modo == 2){
             TurboGUI jogo = new TurboGUI(jogador1, jogador2);
             jogo.alteraTabuleiro(grid, col, jogadorAtual);
+            colunaCheia = jogo.getColunaCheia();
             mostrarPontos(jogador1, jogador2);
         }
 
-        if(jogadorAtual == jogador1){
-            jogadorAtual = jogador2;
-            vez1.setOpacity(0);
-            vez2.setOpacity(1);
+        if (colunaCheia) {
+            jogadorAtual = (jogadorAtual == jogador1) ? jogador1 : jogador2;
+            vez1.setOpacity(jogadorAtual == jogador1 ? 1 : 0);
+            vez2.setOpacity(jogadorAtual == jogador2 ? 1 : 0);
         } else {
-            jogadorAtual = jogador1;
-            vez1.setOpacity(1);
-            vez2.setOpacity(0);  
+            jogadorAtual = (jogadorAtual == jogador1) ? jogador2 : jogador1;
+            vez1.setOpacity(jogadorAtual == jogador1 ? 1 : 0);
+            vez2.setOpacity(jogadorAtual == jogador2 ? 1 : 0);
         }
     }
 

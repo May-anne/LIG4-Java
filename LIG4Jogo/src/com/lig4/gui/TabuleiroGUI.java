@@ -19,6 +19,7 @@ public abstract class TabuleiroGUI {
     private int row, linhaAtual;
     private Pessoa jogador1, jogador2;
     private Ranking rank;
+    private boolean colunaCheia = false;
 
     public TabuleiroGUI(Pessoa jogador1, Pessoa jogador2) {
         this.jogador1 = jogador1;
@@ -30,8 +31,14 @@ public abstract class TabuleiroGUI {
     public void alteraTabGui(GridPane gridPane, int col, Pessoa jogadorAtual) {
         Circle circuloAtual;
         
-        for(int i = 1; i<=6; i++){
-            row = linhaMax - i;
+        for(int i = 1; i<=7; i++){
+            if (linhaMax - i >= 0) {
+                row = linhaMax - i;
+            } else {
+                row = 0;
+                colunaCheia = true;
+            }
+            
             circuloAtual = getCirculo(gridPane, col - 1, row);
 
             if(circuloAtual.getFill().equals(Color.WHITE)){
@@ -231,6 +238,10 @@ public abstract class TabuleiroGUI {
 
     public void setLinhaAtual(int linhaAtual){
         this.linhaAtual = linhaAtual;
+    }
+
+    public boolean getColunaCheia(){
+        return this.colunaCheia;
     }
 
 }
