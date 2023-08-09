@@ -22,7 +22,7 @@ O jogo precisa, necessariamente, de dois jogadores. Sendo possível jogar em 3 m
 ## Requisitos
 Certifique-se de que você tenha os seguintes requisitos instalados:
 - Java (versão 20.0.2)
-- JavaFX (versão 20.0.1)
+- JavaFX (versão 20.0.1) -> A pasta se encontra dentro do projeto
 
 ## Créditos
 Este jogo foi desenvolvido por Igor Balbino e Mayanne Gomes como parte da avaliação na disciplina de LPOO do 3º período do curso de Engenharia da Computação (UPE).
